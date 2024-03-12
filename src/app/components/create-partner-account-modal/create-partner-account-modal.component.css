@@ -1,0 +1,85 @@
+.new-line {
+    /*display: block;*/
+    display: flex;
+    /* align-content: center; */
+    align-items: center;
+}
+
+
+.myclass {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #e0e0e0;
+    display: inline-flex;
+}
+.e-dialog .e-dlg-header {
+    color: white;
+    font-size: small;
+    
+}
+
+.e-dialog .e-dlg-header-content {
+    color: white;
+    font-size: 10px;
+    font-weight: normal;
+    background-color: black;
+    margin-bottom: 10px;
+    padding: 0px;
+    padding-left: 2%;
+    
+}
+.e-ddl.e-input-group.e-control-wrapper .e-input {
+    font-size: 10px;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 2px black;
+    
+}
+.e-input-group:not(.e-float-icon-left){
+    border-width: 1px;
+}
+
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::before, .e-ddl.e-input-group.e-control-wrapper.e-input-focus::after {
+    background: black;
+    color: black;
+    border-top: 2px black;
+    
+}
+
+.e-footer-content {
+    
+    
+}
+
+.e-input{
+    font-size: 20px;
+    font-family: emoji;
+    color: black;
+    
+}
+.value {
+    border-radius: 50%;
+    float: left;
+    margin-top: 2px;
+    position: relative;
+    height: 20px;
+    width: 20px;
+}
+.e-dropdownbase .e-list-item.e-item-focus, .e-dropdownbase .e-list-item.e-active, .e-dropdownbase .e-list-item.e-active.e-hover, .e-dropdownbase .e-list-item.e-hover {
+   
+    color: black;
+}
+
+.form-control:focus {
+    border-color: black; /* Change to your desired color */
+    border-width: 2px;
+}
+
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after {
+    background-color: black;
+  }
+
+  .e-dialog .e-dlg-content {
+    font-size: 12px;
+}

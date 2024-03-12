@@ -1,0 +1,76 @@
+<button class="e-control e-btn" style="position: absolute; margin-top: 25px; margin-left: 330px;" (click)="onOpenDialog($event); myForm.form.reset()">Open Dialog</button>
+
+<ejs-dialog #dialogcomponent id="dialogcomponent" height="60%" width="60%" header="Create Partner Account" [buttons]="dialogButtons" [visible]="dialogVisibility" [position]="dialogPosition" [animationSettings]="dialogAnimationSettings" isModal='true'>
+  
+  <form #myForm="ngForm"  >
+    <div class="form-group row mt-1 mb-1">
+      <label for="name" class="align-self-center p-2 col-sm font-weight-normal">Name</label>
+      <div class="col-9">
+        <input [ngModel]="nameInput" name="name" required type="text" class="form-control" id="name" #name="ngModel" placeholder="e.g., John Doe" />
+        <!-- <small *ngIf="name.invalid && name.touched">Name is required</small> -->
+      </div>
+    </div>
+
+    <div class="form-group row  mt-1 mb-1">
+      <label for="emailAddress" class="align-self-center p-2 col-sm font-weight-normal">Email address</label>
+      <div class="col-9">
+        <input [(ngModel)]="emailInput" name="emailAddress" required email type="email" class="form-control" id="emailAddress" #emailAddress="ngModel" placeholder="johnDoe@gmail.com" />
+        <!-- <small *ngIf="emailAddress.errors?.['required'] && emailAddress.touched">Email Address is required</small> -->
+        <!-- <small *ngIf="emailAddress.errors?.['email'] && emailAddress.touched">Email Address should be valid</small> -->
+      </div>
+    </div>
+
+    <div class="form-group row  mt-1 mb-1">
+      <label for="uname" class="align-self-center p-2 col-sm font-weight-normal">Username</label>
+      <div class="col-9">
+        <input [ngModel]="unameInput" name="uname" required type="text" class="form-control" id="uname" #uname="ngModel" placeholder="e.g., JDoe" />
+        <small *ngIf="uname.invalid && uname.touched">Username is required</small>
+      </div>
+    </div>
+
+    <div class="form-group row  mt-1 mb-1">
+      <label for="password" class="align-self-center p-2 col-sm font-weight-normal">Password</label>
+      <div class="col-9">
+        <input [(ngModel)]="passwordInput" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"   type="password" class="form-control" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <div class="d-flex">
+          <!-- <small *ngIf="password.errors?.['minlength']" class="flex-shrink-1">Password should be more than 12 characters</small> -->
+          <!-- <small *ngIf="password.errors?.['required'] && password.touched" class="flex-shrink-1">Password is required</small> -->
+          <!-- <small *ngIf="password.errors?.['pattern'] && password.dirty && !password.errors?.['minlength']" class="flex-shrink-1">Password does not contain special characters</small> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row  mt-1 mb-1">
+      <label for="cpassword" class="align-self-center p-2 col-sm font-weight-normal">Password Confirm</label>
+      <div class="col-9">
+        <input [ngModel]="" name="cpassword" required type="password"  class="form-control" id="cpassword" #cpassword="ngModel" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <!-- <small *ngIf="cpassword.invalid && cpassword.touched">Password Confirmation is required</small> -->
+        <!-- <small *ngIf="password.value!= cpassword.value && cpassword.dirty ">Passwords need to be matching!</small> -->
+      </div>
+    </div>
+
+    <div class=" row align-items-center">
+      <div for="timeZone" class="align-self-center p-2 col-sm fw-bold font-weight-normal">Timezone</div>
+      <div class="col-9">
+        <ejs-dropdownlist id='timeZone' #timeZone="ngModel" [(ngModel)]="timeZoneInput" name="timeZone" required  #sample [dataSource]='dropDownDataTimeZone' [fields]="dataFields" placeholder='Select an Option'  popupHeight='220px' ></ejs-dropdownlist>
+      </div>
+    </div>
+    <div class=" row align-items-center">
+      <div for="language" class="align-self-center p-2 col-sm fw-bold font-weight-normal ">Language</div>
+      <div class="col-9">
+        <ejs-dropdownlist id='language' #language   #sample [dataSource]='dropDownDataLocation' [fields]="dataFields" placeholder='' value="EN"  popupHeight='220px' ></ejs-dropdownlist>
+      </div>
+    </div>
+    <div *ngIf="myForm.touched" class="d-flex justify-content-center justify-self-center mt-2">
+      <div *ngIf="(myForm.invalid && !password.errors?.['pattern'] && myForm.dirty )|| timeZoneInput==null && timeZoneInput " class="text-danger">Please fill all the fields ! {{ " " }} </div>
+      <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger">Password Mismatch! </div>
+      <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">Your password length must be between 6 and 20 characters in length, consisting of at least 1 lower case letter, 1 upper case letter, 1 number and 1 special character. </div>
+      <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger">Please enter a valid email format </div>
+    </div>
+  </form>
+  
+    
+  
+
+  
+</ejs-dialog>
