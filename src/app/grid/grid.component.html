@@ -1,0 +1,21 @@
+<div class="header">
+    <span class="left">Select Companies</span>
+    <div class="right-group">
+        <span class="right">Total Companies {{totalCompanies}}</span>
+        <span class="right">Selected Companies {{selectedCompanies}}</span>
+    </div>
+</div>
+
+<!-- help: https://ej2.syncfusion.com/angular/documentation/grid/getting-started/ -->
+<ejs-grid [dataSource]='data' [allowPaging]="true" [toolbar]='toolbarOptions' [allowSorting]="true" [pageSettings]="pageSettings" >
+    <e-columns>
+        <e-column field='CompanyID' headerText='Company ID' textAlign='Left' width=80></e-column>
+        <e-column field='CompanyName' headerText='Company Name' width=140></e-column>
+        <e-column field='UserName' headerText='User Name' textAlign='Right' format='C2' width=120></e-column>
+        <e-column field='Email' headerText='Email' textAlign='Left' format='yMd' width=190></e-column>
+        <e-column field='PatrolLicences' headerText='Patrol Licences:' textAlign='Left' format='yMd' width=70></e-column>
+        <e-column field='License' headerText='License' textAlign='Right' format='yMd' width=170></e-column>
+        <e-column field='Demo' headerText='Demo' textAlign='Right' format='yMd' width=70></e-column>
+        <e-column field='Parent' headerText='Parent' textAlign='Right' format='yMd' width=120></e-column>
+    </e-columns>
+    </ejs-grid>
