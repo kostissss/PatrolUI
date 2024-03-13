@@ -133,3 +133,50 @@
 .mt-20{
     margin-top: 20px;
 }
+
+.e-calendar .e-content td.e-today.e-selectedspan.e-day, .e-calendar .e-content td.e-selected span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+    background-color: black !important;
+    color: #fff;
+}
+
+.e-calendar .e-content td.e-today:hover span.e-day, .e-calendar .e-content td.e-focused-date.e-today:hover span.e-day, .e-calendar .e-content td.e-focused-date.e-today:focus span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today:focus span.e-day {
+    background-color: #eee !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+}
+
+.e-btn.e-flat.e-primary:hover, .e-css.e-btn.e-flat.e-primary:hover .e-btn.e-flat.e-primary, .e-css.e-btn.e-flat.e-primary  {
+    background: rgba(227, 22, 91, 0.04) !important;
+    border-color: transparent !important;
+    color: #000000 !important;
+}
+/* .e-btn.e-flat.e-primary, .e-css.e-btn.e-flat.e-primary {
+    background: rgba(227, 22, 91, 0.04) !important;
+    border-color: transparent !important;
+    color: #000000 !important;
+} */
+
+  
+
+.e-calendar .e-content td.e-today span.e-day, .e-calendar .e-content td.e-focused-date.e-today span.e-day, .e-calendar .e-content td.e-focused-date.e-today span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today span.e-day {
+    background-color: #eee !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+}
+
+
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day .e-calendar .e-content td.e-today.e-selected span.e-day, .e-calendar .e-content td.e-selected span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day .e-calendar .e-content td.e-today.e-selected span.e-day, .e-calendar .e-content td.e-selected span.e-day, .e-calendar .e-content td.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day {
+    background-color: #000000 !important;
+    color: #fff !important;
+}
+
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+    background-color: #101010 !important;
+    color: #fff !important;
+}
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+    background-color: #101010 !important;
+    color: #fff !important;
+}
+
+

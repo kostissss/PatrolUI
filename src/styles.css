@@ -21,9 +21,29 @@
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+/* @import './material3.css'; */
 @import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
 
+
+/* Override calendars selected colors */
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+    background-color: #101010 !important;
+    color: #fff !important;
+}
+.e-calendar .e-content td.e-today span.e-day, .e-calendar .e-content td.e-focused-date.e-today span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today span.e-day {
+    background: none;
+    border: 1px solid #000;
+    border-radius: 50%;
+    box-shadow: none;
+    color: #000;
+  }
+
+  .e-calendar .e-content td.e-today:hover span.e-day, .e-calendar .e-content td.e-focused-date.e-today:hover span.e-day, .e-calendar .e-content td.e-focused-date.e-today:focus span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today:focus span.e-day {
+    background-color: #eee;
+    border: 1px solid #1a1919;
+    color: #000;
+  }
 
 html,
 body {

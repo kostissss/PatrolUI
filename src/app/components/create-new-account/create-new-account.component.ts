@@ -144,7 +144,13 @@ export class CreateNewAccountComponent implements OnInit {
 
   public month: number = new Date().getMonth();
   public fullYear: number = new Date().getFullYear();
-  public minDate: Date = new Date(this.fullYear, this.month , 22, 12);
+  public minDate: Date = new Date();
   public maxDate: Date = new Date(this.fullYear, this.month+99, 25, 17);
+
+  public onDemoClick() {
+    const currentDate = new Date();
+    
+    this.user.datetime = new Date(currentDate.setDate(currentDate.getDate() + 30));
+}
 
 }

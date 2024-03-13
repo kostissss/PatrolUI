@@ -76,7 +76,7 @@
   <div class="col-9"> <!-- This div will contain the two small dropdowns -->
     <div class="row align-items-center"> <!-- Nested row for small dropdowns -->
       <div class="col-6"> <!-- Each small dropdown will take half of the width -->
-        <ejs-datetimepicker [cssClass]="" name="datetime"  [(ngModel)]="user.datetime" #date="ngModel"  required [min]='minDate' [max]='maxDate' depth="year" openOnFocus="true"></ejs-datetimepicker>
+        <ejs-datetimepicker [cssClass]="" name="datetime" [disabled]="demoSelected"  [(ngModel)]="user.datetime" #date="ngModel"  required [min]='minDate' [max]='maxDate' depth="year" openOnFocus="true"></ejs-datetimepicker>
       </div>
       <div class="col-6">
         
@@ -103,7 +103,7 @@
  
 </div>
 
-<div class="col-3  align-items-start mr-auto"><label class="font-weight-normal mr-3 align-self-start" for="demo">DEMO</label><input type="checkbox" class="mr-3 " id="demo" name="demo" #demo="ngModel" [(ngModel)]="demoSelected">
+<div class="col-3  align-items-start mr-auto"><label class="font-weight-normal mr-3 align-self-start" for="demo">DEMO</label><input (click)="onDemoClick()" type="checkbox" class="mr-3 " id="demo" name="demo" #demo="ngModel" [(ngModel)]="demoSelected">
     </div>
 
 </div> 
@@ -115,6 +115,7 @@
   <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">Your password length must be between 6 and 20 characters in length, consisting of at least 1 lower case letter, 1 upper case letter, 1 number and 1 special character. </div>
   <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger">Please enter a valid email format </div>
 </div>
+
 </form>
 
 
