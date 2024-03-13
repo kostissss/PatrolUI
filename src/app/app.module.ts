@@ -11,13 +11,15 @@ import {CheckBoxModule} from '@syncfusion/ej2-angular-buttons';
 import {DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
 import { CreateNewAccountComponent } from './components/create-new-account/create-new-account.component';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ManagePartnerAccountModalComponent } from './components/manage-partner-account-modal/manage-partner-account-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatePartnerAccountModalComponent,
     FormsDirectiveDirective,
-    CreateNewAccountComponent
+    CreateNewAccountComponent,
+    ManagePartnerAccountModalComponent
   ],
   imports: [
     BrowserModule,
