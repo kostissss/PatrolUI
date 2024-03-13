@@ -46,11 +46,6 @@
     
 }
 
-.e-footer-content {
-    
-    
-}
-
 .e-input{
     font-size: 20px;
     font-family: emoji;
@@ -180,3 +175,9 @@
 }
 
 
+.form-control{
+    height: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px ;
+    
+}
