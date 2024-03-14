@@ -11,6 +11,8 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
 
 import { GridModule, SearchService, ToolbarService } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     AppRoutingModule,
     FormsModule,
     GridModule,
-    ButtonModule
+    ButtonModule,
+    ToolbarModule,
+    DropDownListModule
 
   ],
   providers: [SearchService, ToolbarService],

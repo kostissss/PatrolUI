@@ -1,0 +1,16 @@
+.container {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding: 2px 50px; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ddlelement {
+    width: 150px; 
+    background-color: white;
+}
