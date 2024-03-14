@@ -1,35 +1,47 @@
 .e-paste:before {
     content: '\e99d';
 }
-
-.container {
-    background-color: #f2f2f2; /* Grey background */
-    color: #333; /* Text color */
-    padding: 20px;
-}
-
-.flex-container {
-    display: flex;
-    align-items: flex-start;
-}
-
 .e-btn {
-    background-color: #ffffff; /* Blue button background color */
-    color: #000000; /* Button text color */
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px; /* Adjust padding to make it smaller */
-    margin: 5px 0; /* Adjust margin as needed */
-    cursor: pointer;
-    font-size: 14px; /* Adjust font size to make it smaller */
+    background-color: rgb(135, 159, 182);
+    color: rgb(0, 0, 0);
+}
+.container {
+    display: flex;
+    background-color: rgb(135, 159, 182);
+}
+.toolbar-buttons .e-btn {
+    background-color: rgb(135, 159, 182);
+    color: rgb(0, 0, 0);
+}
+.addB {
+    background-color: rgb(135, 159, 182);
+}
+.viewB {
+    background-color: rgb(135, 159, 182);
+}
+.deleteB {
+    background-color: rgb(135, 159, 182);
+}
+.assignB {
+    background-color: rgb(135, 159, 182);
+}
+.toolbar-buttons {
+    background-color: rgb(135, 159, 182);
+}
+.icon-refresh {
+    display: flex;
+    background-color: rgb(135, 159, 182);
 }
 
-.e-btn:hover {
-    background-color: #ffffff; /* Darker blue on hover */
+.e-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-.e-icons {
-    font-size: 16px; /* Adjust icon size as needed */
-    vertical-align: middle;
-    margin-right: 5px; /* Adjust margin as needed */
+.e-btn[disabled] .e-icons {
+    color: #999;
+}
+
+.e-btn[disabled] span {
+    color: #999;
 }

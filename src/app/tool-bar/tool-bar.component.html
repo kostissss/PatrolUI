@@ -1,14 +1,13 @@
-<div style="display: flex; align-items: flex-start;">
+<div class="container">
     <div style="margin-right: 2px;" class="icon-refresh">
         <button class='e-btn e-tbar-btn'><span class="e-icons e-paste"></span></button>
     </div>
-    <ejs-toolbar style="margin-left: 2px;" >
-        <div>
-            <div><button class='e-btn e-tbar-btn'>Add new Notification</button></div>
-            <div><button class='e-btn e-tbar-btn'>View Notification Details</button></div>
-            <div><button class='e-btn e-tbar-btn'>Delete Notification</button></div>
-            <div><button class='e-btn e-tbar-btn'>Assign To Partner</button></div>
+    <ejs-toolbar style="margin-left: 2px;">
+        <div class="toolbar-buttons">
+            <div class="addB"><button class='e-btn e-tbar-btn'>Add new Notification</button></div>
+            <div class="viewB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">View Notification Details</button></div>
+            <div class="deleteB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">Delete Notification</button></div>
+            <div class="assignB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">Assign To Partner</button></div>
         </div>
     </ejs-toolbar>
-    <ejs-grid ></ejs-grid>
 </div>
