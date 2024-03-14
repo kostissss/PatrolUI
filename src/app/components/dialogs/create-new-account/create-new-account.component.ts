@@ -2,13 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
+import { environment } from '../../../../../enviroment';
+import { ApiServiceService } from '../../../services/api-service.service';
 
-class User {
-  public datetime?: Date;
-  constructor() {
-  }
-}
-
+import { Account } from '../../../interfaces/account';
 @Component({
   selector: 'app-create-new-account',
   templateUrl: './create-new-account.component.html',
@@ -18,25 +15,29 @@ class User {
 
 export class CreateNewAccountComponent implements OnInit {
 
-
-  user?: User | any;
+  public account: Account = {
+    nameInput: "",
+    emailInput: "",
+    passwordInput: "",
+    unameInput: "",
+    paymentFrequencyInput: "",
+    planInput: "",
+    timezoneInput: "",
+    selectedOption: "",
+    demoSelected: false,
+    datetime: new Date()
+};
+  
     ngOnInit() {
-        this.user = new User();
-        this.demoSelected=false;
+        
+        this.account.demoSelected=false;
+        this.account.datetime = new Date();
     }
 
-  public nameInput='';
-  public emailInput='';
-  public passwordInput='';
-  public unameInput='';
-  public paymentFrequencyInput=" ";
-  public planInput="";
-  public timezoneInput="";
-  selectedOption: string="option1" ;
-  public demoSelected: boolean = false;
   
-  constructor() {
-    this.demoSelected=false;
+  
+  constructor(private apiService: ApiServiceService) { 
+    this.account.demoSelected=false;
    }
 
   
@@ -64,7 +65,8 @@ export class CreateNewAccountComponent implements OnInit {
      this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
-    if(this.myForm.valid &&  this.paymentFrequencyInput!=null && this.planInput!=null && this.timezoneInput!=null && this.user.datetime!=null && this.selectedOption!=null) {
+    console.log(this.account);
+    if(this.myForm.valid &&  this.account.paymentFrequencyInput!=null && this.account.planInput!=null && this.account.timezoneInput!=null && this.account.datetime!=null && this.account.selectedOption!=null) {
     this.onSubmit() 
     this.dialogObject.hide();}
     else {
@@ -75,6 +77,16 @@ export class CreateNewAccountComponent implements OnInit {
   public onSubmit(){
 
     //put request to the server
+    
+    this.apiService.createAccount(this.account).subscribe(
+
+      (response) => {
+        alert('Account created successfully');
+      },
+      (error) => {
+        alert('An error occurred');
+      }
+    )
 
   }
 
@@ -150,7 +162,7 @@ export class CreateNewAccountComponent implements OnInit {
   public onDemoClick() {
     const currentDate = new Date();
     
-    this.user.datetime = new Date(currentDate.setDate(currentDate.getDate() + 30));
+    this.account.datetime = new Date(currentDate.setDate(currentDate.getDate() + 30));
 }
 
 }
