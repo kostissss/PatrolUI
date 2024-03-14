@@ -7,7 +7,7 @@ import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
   templateUrl: './tool-bar.component.html',
   styleUrl: './tool-bar.component.css'
 })
-export class ToolBarComponent {
+export class ToolBarComponent implements OnInit {
   public data?: object[];
   public toolbarOptions?: ToolbarItems[];
   

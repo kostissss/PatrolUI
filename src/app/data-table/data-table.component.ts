@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { data } from './datasource';
 import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 
@@ -14,7 +14,6 @@ export class DataTableComponent implements OnInit {
   
 
   ngOnInit(): void {
-      this.data = data;
-      this.toolbarOptions = ['Search'];
+      this.data = data;;
   }
 }

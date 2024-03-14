@@ -1,6 +1,8 @@
-
 <div>
-    <ejs-grid [dataSource]='data' [toolbar]='toolbarOptions' height='272px' >
+    <ejs-grid [dataSource]='data'>
+        <div style="display: flex; align-items: flex-start;">
+    </div>
+    </ejs-grid>
         <e-columns>
             <e-column field='Date Created' headerText='Date Created' width=150></e-column>
             <e-column field='User ID' headerText='User ID' width=150></e-column>
@@ -9,5 +11,4 @@
             <e-column field='Notification Message' headerText='Notification Message' width=150></e-column>
             <e-column field='Last Modified Date' headerText='Last Modified Date' width=150></e-column>
         </e-columns>
-    </ejs-grid>
 </div>

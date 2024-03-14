@@ -1,7 +1,7 @@
 export let data: Object[] = [
     {
-        UserID: 10248, Username: 'VINET', LastModifiedDate: new Date(123213),
-        NotificationTitle: 'Vins et alcools Chevalier', NotificationMessage: '59 rue de l Abbaye',
+        DateCreated: 123123, UserID: 1111, Username: 'Vvancheese',
+        NotificationTitle: 'testadsadasdasdasd', NotificationMessage: 'test test', LastModifiedDate: 123234,
 
     }
 ]
