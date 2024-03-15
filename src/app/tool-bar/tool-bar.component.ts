@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-tool-bar',
@@ -12,20 +11,11 @@ export class ToolBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enableButtons(): void {
-    this.isNotificationSelected = true;
-  }
-
-  disableButtons(): void {
-    this.isNotificationSelected = false;
-  }
-
-  onNotificationSelect(): void {
-    const notificationSelected: boolean = true; 
-    if (notificationSelected) {
-      this.enableButtons();
+  onSelectItemFromDataSource(selectedItem: any): void {
+    if (selectedItem) {
+      this.isNotificationSelected = true;
     } else {
-      this.disableButtons();
+      this.isNotificationSelected = false;
     }
   }
 }

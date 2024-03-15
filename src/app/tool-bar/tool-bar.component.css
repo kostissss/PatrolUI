@@ -1,47 +1,47 @@
 .e-paste:before {
     content: '\e99d';
 }
+
 .e-btn {
     background-color: rgb(135, 159, 182);
     color: rgb(0, 0, 0);
 }
+
 .container {
     display: flex;
     background-color: rgb(135, 159, 182);
 }
+
 .toolbar-buttons .e-btn {
     background-color: rgb(135, 159, 182);
     color: rgb(0, 0, 0);
 }
-.addB {
-    background-color: rgb(135, 159, 182);
-}
-.viewB {
-    background-color: rgb(135, 159, 182);
-}
-.deleteB {
-    background-color: rgb(135, 159, 182);
-}
+
+.addB,
+.viewB,
+.deleteB,
 .assignB {
     background-color: rgb(135, 159, 182);
 }
+
 .toolbar-buttons {
     background-color: rgb(135, 159, 182);
 }
+
 .icon-refresh {
     display: flex;
     background-color: rgb(135, 159, 182);
 }
 
 .e-btn[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
+    opacity: 0.5; 
+    cursor: not-allowed; 
 }
 
 .e-btn[disabled] .e-icons {
-    color: #999;
+    color: #999; 
 }
 
 .e-btn[disabled] span {
-    color: #999;
+    color: #999
 }

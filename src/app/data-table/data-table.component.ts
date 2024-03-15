@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from './datasource';
-import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
+import { ToolbarItems, SearchSettingsModel } from '@syncfusion/ej2-angular-grids';
 
 
 @Component({
@@ -11,9 +11,14 @@ import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 export class DataTableComponent implements OnInit {
   public data?: object[];
   public toolbarOptions?: ToolbarItems[];
+  public searchOptions?: SearchSettingsModel;
   
 
   ngOnInit(): void {
-      this.data = data;;
+      this.data = data;
+      this.searchOptions = { fields: ['Username','Notification Title','Notification Message'], 
+      operator: 'contains', key: '', ignoreCase: true, ignoreAccent:true };
+        this.toolbarOptions = ['Search'];
+    }
+
   }
-}
