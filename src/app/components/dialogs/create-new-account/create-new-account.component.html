@@ -109,12 +109,23 @@
 </div> 
 
 
-<div class="d-flex justify-content-center justify-self-center mt-20 ">
-  <div *ngIf="myForm.invalid && !password.errors?.['pattern']  && myForm.touched && myForm.dirty &&( account.expirationDate==null || account.subscriptionFrequency==null || account.plan==null || account.timeZone==null ||account.selectedOption==null) " class="text-danger">Please fill all the fields ! {{ " " }} </div>
-  <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger">Password Mismatch! </div>
-  <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">Your password length must be between 6 and 20 characters in length, consisting of at least 1 lower case letter, 1 upper case letter, 1 number and 1 special character. </div>
-  <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger">Please enter a valid email format </div>
+<div class="d-flex justify-content-center justify-self-center mt-20">
+  <div *ngIf="(myForm.invalid && myForm.dirty) || (!password.errors?.['pattern'] && myForm.touched && myForm.dirty && (account.expirationDate==null || account.subscriptionFrequency==null || account.plan==null || account.timeZone==null || account.selectedOption==null))" class="text-danger">
+    Please fill in all fields!
+  </div>
+  <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger">
+    Passwords do not match!
+  </div>
+  <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">
+    Your password must be 6-20 characters long, with at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 special character.
+  </div>
+  <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger">
+    Please enter a valid email address.
+  </div>
 </div>
+
+
+
 
 </form>
 

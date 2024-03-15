@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
+import { ApiServiceService } from '../../../services/api-service.service';
 
 @Component({
   selector: 'app-manage-partner-account-modal',
@@ -9,6 +10,8 @@ import { EmitType } from '@syncfusion/ej2-base';
   styleUrl: './manage-partner-account-modal.component.css'
 })
 export class ManagePartnerAccountModalComponent {
+
+  constructor(private apiService : ApiServiceService) { }
 
   public passwordInput='';
   public enabledSelected :boolean = false;
@@ -45,6 +48,15 @@ export class ManagePartnerAccountModalComponent {
 
   public onSubmit(){
     //put request to the server
+    this.apiService.resetPartnerPassword(this.passwordInput).subscribe(
+
+      (response) => {
+        alert('Password resseted successfully');
+      },
+      (error) => {
+        alert('An error occurred');
+      }
+    )
 
   }
 

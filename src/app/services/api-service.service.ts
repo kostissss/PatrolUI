@@ -29,4 +29,9 @@ export class ApiServiceService {
     console.log(accountData);
     return this.http.post<Account>(`${this.apiUrl}partner/accounts/`, accountData,httpOptions);
   }
+
+  resetPartnerPassword(password :String): Observable<any> {
+    console.log(password);
+    return this.http.put<Account>(`${this.apiUrl}partner/accounts/passwordReset/1`, {"password":password},httpOptions);
+  }
 }
