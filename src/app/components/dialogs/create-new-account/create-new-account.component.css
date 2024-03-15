@@ -181,3 +181,6 @@
     padding-bottom: 0px ;
     
 }
+.warning-margin{
+    margin: inherit;
+}

@@ -4,7 +4,7 @@
   
   <form #myForm="ngForm" class="mb-1"  >
     <div class="form-group mt-1 mb-1 row">
-      <label for="name" class="align-self-center pl-2 pr-2 col-sm font-weight-normal">Name</label>
+      <label for="name" class="align-self-center pl-2 pr-2 col-sm font-weight-normal">Company Name</label>
       <div class="col-9">
         <input [(ngModel)]="account.name" name="name" required type="text" class="form-control" id="name" #name="ngModel" placeholder="e.g., John Doe" />
         <!-- <small *ngIf="name.invalid && name.touched">Name is required</small> -->
@@ -85,13 +85,14 @@
   </div>
 </div>
   <div class="d-flex flex-column"></div>
- <div class=" mt-1 mb-1   row gx-10 ">
-<div class="d-flex flex-column col-6 align-items-end mt-1 mb-1  gx-10">
+ <div class=" mt-1 mb-1   row  ">
+  
+<div [ngStyle]="{'line-height': '0px'}" class="d-flex flex-column col-6 align-items-end mt-1 mb-1   p-0"><div class="col-sm fw-bold font-weight-normal p-2">Plan</div>
 <div class="col-6 float-right ">
     <input type="radio" class="mr-3" id="option1" name="option1" value="option1" [(ngModel)]="account.selectedOption">
     <label class="font-weight-normal" for="option1">Base</label>
   </div>
-  <div class=" col-6">
+  <div class=" col-6 mt-1 mb-1">
     <input type="radio" class="mr-3" id="option2" name="option2" value="option2" [(ngModel)]="account.selectedOption">
     <label class="font-weight-normal" for="option2">Pro</label>
   </div>
@@ -109,17 +110,17 @@
 </div> 
 
 
-<div class="d-flex justify-content-center justify-self-center mt-20">
-  <div *ngIf="(myForm.invalid && myForm.dirty) || (!password.errors?.['pattern'] && myForm.touched && myForm.dirty && (account.expirationDate==null || account.subscriptionFrequency==null || account.plan==null || account.timeZone==null || account.selectedOption==null))" class="text-danger">
+<div  class="d-flex justify-content-center justify-self-center mt-20 ">
+  <div *ngIf="(myForm.invalid && myForm.dirty && !password.errors?.['pattern']) || (!password.errors?.['pattern'] && myForm.touched && myForm.dirty && (account.expirationDate==null || account.subscriptionFrequency==null || account.plan==null || account.timeZone==null || account.selectedOption==null))" class="text-danger warning-margin">
     Please fill in all fields!
   </div>
-  <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger">
+  <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger warning-margin">
     Passwords do not match!
   </div>
-  <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">
+  <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger warning-margin">
     Your password must be 6-20 characters long, with at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 special character.
   </div>
-  <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger">
+  <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger warning-margin">
     Please enter a valid email address.
   </div>
 </div>
