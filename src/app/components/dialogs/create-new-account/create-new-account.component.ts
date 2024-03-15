@@ -16,22 +16,22 @@ import { Account } from '../../../interfaces/account';
 export class CreateNewAccountComponent implements OnInit {
 
   public account: Account = {
-    nameInput: "",
-    emailInput: "",
-    passwordInput: "",
-    unameInput: "",
-    paymentFrequencyInput: "",
-    planInput: "",
-    timezoneInput: "",
+    name: "",
+    email: "",
+    password: "",
+    uname: "",
+    subscriptionFrequency: "",
+    plan: "",
+    timeZone: "",
     selectedOption: "",
     demoSelected: false,
-    datetime: new Date()
+    expirationDate: new Date()
 };
   
     ngOnInit() {
         
         this.account.demoSelected=false;
-        this.account.datetime = new Date();
+        this.account.expirationDate = new Date();
     }
 
   
@@ -66,7 +66,7 @@ export class CreateNewAccountComponent implements OnInit {
   }
   public submitDialog: EmitType<object> = () => {
     console.log(this.account);
-    if(this.myForm.valid &&  this.account.paymentFrequencyInput!=null && this.account.planInput!=null && this.account.timezoneInput!=null && this.account.datetime!=null && this.account.selectedOption!=null) {
+    if(this.myForm.valid &&  this.account.subscriptionFrequency!=null && this.account.plan!=null && this.account.timeZone!=null && this.account.expirationDate!=null && this.account.selectedOption!=null) {
     this.onSubmit() 
     this.dialogObject.hide();}
     else {
@@ -162,7 +162,7 @@ export class CreateNewAccountComponent implements OnInit {
   public onDemoClick() {
     const currentDate = new Date();
     
-    this.account.datetime = new Date(currentDate.setDate(currentDate.getDate() + 30));
+    this.account.expirationDate = new Date(currentDate.setDate(currentDate.getDate() + 30));
 }
 
 }

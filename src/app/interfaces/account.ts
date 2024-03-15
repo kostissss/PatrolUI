@@ -1,13 +1,13 @@
 export interface Account  {
-    nameInput: string;
-    emailInput: string;
-    passwordInput: string;
-    unameInput: string;
-    paymentFrequencyInput: string;
-    planInput: string;
-    timezoneInput: string;
+    name: string;
+    email: string;
+    password: string;
+    uname: string;
+    subscriptionFrequency: string;
+    plan: string;
+    timeZone: string;
     selectedOption: string;
     demoSelected: boolean;
-    datetime: Date ;
+    expirationDate: Date ;
   }
   

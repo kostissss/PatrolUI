@@ -6,7 +6,7 @@
     <div class="form-group mt-1 mb-1 row">
       <label for="name" class="align-self-center pl-2 pr-2 col-sm font-weight-normal">Name</label>
       <div class="col-9">
-        <input [(ngModel)]="account.nameInput" name="name" required type="text" class="form-control" id="name" #name="ngModel" placeholder="e.g., John Doe" />
+        <input [(ngModel)]="account.name" name="name" required type="text" class="form-control" id="name" #name="ngModel" placeholder="e.g., John Doe" />
         <!-- <small *ngIf="name.invalid && name.touched">Name is required</small> -->
       </div>
     </div>
@@ -14,7 +14,7 @@
     <div class="form-group mt-1 mb-1 row">
       <label for="emailAddress" class="align-self-center pl-2 pr-2 col-sm font-weight-normal">Email address</label>
       <div class="col-9">
-        <input [(ngModel)]="account.emailInput" name="emailAddress" required email type="email" class="form-control" id="emailAddress" #emailAddress="ngModel" placeholder="johnDoe@gmail.com" />
+        <input [(ngModel)]="account.email" name="emailAddress" required email type="email" class="form-control" id="emailAddress" #emailAddress="ngModel" placeholder="johnDoe@gmail.com" />
         <!-- <small *ngIf="emailAddress.errors?.['required'] && emailAddress.touched">Email Address is required</small> -->
         <!-- <small *ngIf="emailAddress.errors?.['email'] && emailAddress.touched">Email Address should be valid</small> -->
       </div>
@@ -23,7 +23,7 @@
     <div class="form-group mt-1 mb-1 row">
       <label for="uname" class="align-self-center pl-2 pr-2 col-sm font-weight-normal">Username</label>
       <div class="col-9">
-        <input [(ngModel)]="account.unameInput" name="uname" required type="text" class="form-control" id="uname" #uname="ngModel" placeholder="e.g., JDoe" />
+        <input [(ngModel)]="account.uname" name="uname" required type="text" class="form-control" id="uname" #uname="ngModel" placeholder="e.g., JDoe" />
         <!-- <small *ngIf="uname.invalid && uname.touched">Username is required</small> -->
       </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="form-group mt-1 mb-1 row">
       <label for="password" class="align-self-center pl-2 pr-2 col-sm font-weight-normal">Password</label>
       <div class="col-9">
-        <input [(ngModel)]="account.passwordInput" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" appFormsDirective type="password" class="form-control" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <input [(ngModel)]="account.password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" appFormsDirective type="password" class="form-control" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="e.g., 6+-i\nw63IYyC*E" />
         <!-- <div class="d-flex"> -->
           <!-- <small *ngIf="password.errors?.['minlength']" class="flex-shrink-1">Password should be more than 12 characters</small> -->
           <!-- <small *ngIf="password.errors?.['required'] && password.touched" class="flex-shrink-1">Password is required</small> -->
@@ -52,7 +52,7 @@
     <div class="row align-items-center">
   <div class="col-sm fw-bold font-weight-normal p-2">Timezone</div>
   <div class="col-9">
-    <ejs-dropdownlist id='timeZone' #timeZone="ngModel" [(ngModel)]="account.timezoneInput" name="timeZone"  required [dataSource]='dropDownDataTimeZone' [fields]="dataFields" placeholder='Select an Option' value="null" popupHeight='220px'></ejs-dropdownlist>
+    <ejs-dropdownlist id='timeZone' #timeZone="ngModel" [(ngModel)]="account.timeZone" name="timeZone"  required [dataSource]='dropDownDataTimeZone' [fields]="dataFields" placeholder='Select an Option' value="null" popupHeight='220px'></ejs-dropdownlist>
   </div>
 </div>
 <div class="row mt-1 mb-1 align-items-center">
@@ -60,10 +60,10 @@
   <div class="col-9"> <!-- This div will contain the two small dropdowns -->
     <div class="row align-items-center"> <!-- Nested row for small dropdowns -->
       <div class="col-6"> <!-- Each small dropdown will take half of the width -->
-        <ejs-dropdownlist id='plan' name="plan" #plan="ngModel" [(ngModel)]="account.planInput" [dataSource]='dropDownPlan' [fields]="dataFields" placeholder=''  popupHeight='220px'></ejs-dropdownlist>
+        <ejs-dropdownlist id='plan' name="plan" #plan="ngModel" [(ngModel)]="account.plan" [dataSource]='dropDownPlan' [fields]="dataFields" placeholder=''  popupHeight='220px'></ejs-dropdownlist>
       </div>
       <div class="col-6">
-        <ejs-dropdownlist id='paymentFrequency' name="paymentFrequency"  [(ngModel)]="account.paymentFrequencyInput" #paymentFrequency="ngModel" [dataSource]='dropDownPlanPayment' [fields]="dataFields" placeholder=''  popupHeight='220px'></ejs-dropdownlist>
+        <ejs-dropdownlist id='paymentFrequency' name="paymentFrequency"  [(ngModel)]="account.subscriptionFrequency" #paymentFrequency="ngModel" [dataSource]='dropDownPlanPayment' [fields]="dataFields" placeholder=''  popupHeight='220px'></ejs-dropdownlist>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@
   <div class="col-9"> <!-- This div will contain the two small dropdowns -->
     <div class="row align-items-center"> <!-- Nested row for small dropdowns -->
       <div class="col-6"> <!-- Each small dropdown will take half of the width -->
-        <ejs-datetimepicker [cssClass]="" name="datetime" [disabled]="account.demoSelected"  [(ngModel)]="account.datetime" #date="ngModel"  required [min]='minDate' [max]='maxDate' depth="year" openOnFocus="true"></ejs-datetimepicker>
+        <ejs-datetimepicker [cssClass]="" name="datetime" [disabled]="account.demoSelected"  [(ngModel)]="account.expirationDate" #date="ngModel"  required [min]='minDate' [max]='maxDate' depth="year" openOnFocus="true"></ejs-datetimepicker>
       </div>
       <div class="col-6">
         
@@ -110,7 +110,7 @@
 
 
 <div class="d-flex justify-content-center justify-self-center mt-20 ">
-  <div *ngIf="myForm.invalid && !password.errors?.['pattern']  && myForm.touched && myForm.dirty &&( account.datetime==null || account.paymentFrequencyInput==null || account.planInput==null || account.timezoneInput==null ||account.selectedOption==null) " class="text-danger">Please fill all the fields ! {{ " " }} </div>
+  <div *ngIf="myForm.invalid && !password.errors?.['pattern']  && myForm.touched && myForm.dirty &&( account.expirationDate==null || account.subscriptionFrequency==null || account.plan==null || account.timeZone==null ||account.selectedOption==null) " class="text-danger">Please fill all the fields ! {{ " " }} </div>
   <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger">Password Mismatch! </div>
   <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">Your password length must be between 6 and 20 characters in length, consisting of at least 1 lower case letter, 1 upper case letter, 1 number and 1 special character. </div>
   <div *ngIf="emailAddress.errors?.['email'] && !password.errors?.['pattern']" class="text-danger">Please enter a valid email format </div>
