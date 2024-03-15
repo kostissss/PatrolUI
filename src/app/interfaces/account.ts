@@ -9,5 +9,6 @@ export interface Account  {
     selectedOption: string;
     demoSelected: boolean;
     expirationDate: Date ;
+    language: string;
   }
   

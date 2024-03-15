@@ -24,4 +24,9 @@ export class ApiServiceService {
     console.log(accountData);
     return this.http.post<Account>(`${this.apiUrl}accounts/`, accountData,httpOptions);
   }
+
+  createPartnerAccount(accountData :Account): Observable<any> {
+    console.log(accountData);
+    return this.http.post<Account>(`${this.apiUrl}partner/accounts/`, accountData,httpOptions);
+  }
 }

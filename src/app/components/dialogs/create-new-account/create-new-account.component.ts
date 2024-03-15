@@ -25,7 +25,8 @@ export class CreateNewAccountComponent implements OnInit {
     timeZone: "",
     selectedOption: "",
     demoSelected: false,
-    expirationDate: new Date()
+    expirationDate: new Date(),
+    language: ""
 };
   
     ngOnInit() {

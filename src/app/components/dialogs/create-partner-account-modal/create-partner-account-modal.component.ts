@@ -4,6 +4,8 @@ import { EmitType} from '@syncfusion/ej2-base';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { Account } from '../../../interfaces/account';
+import { ApiServiceService } from '../../../services/api-service.service';
 
 @Component({
   selector: 'app-create-partner-account-modal',
@@ -11,12 +13,22 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './create-partner-account-modal.component.css'
 })
 export class CreatePartnerAccountModalComponent {
-  public nameInput='';
-  public emailInput='';
-  public passwordInput='';
-  public unameInput='';
-  public timeZoneInput='';
-  public languageInput='';
+  constructor(private apiService :ApiServiceService) { }
+  
+
+  public account: Account = {
+    name: "",
+    email: "",
+    password: "",
+    uname: "",
+    subscriptionFrequency: "",
+    plan: "",
+    timeZone: "",
+    selectedOption: "",
+    demoSelected: false,
+    expirationDate: new Date(),
+    language: ""
+};
   
   
   // DIALOG CONFIGURATION
@@ -41,7 +53,7 @@ export class CreatePartnerAccountModalComponent {
      this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
-    if(this.myForm.valid  && this.timeZoneInput != null) {
+    if(this.myForm.valid  && this.account.timeZone != null) {
     this.onSubmit() 
     this.dialogObject.hide();}
     else {
@@ -50,7 +62,17 @@ export class CreatePartnerAccountModalComponent {
   }
 
   public onSubmit(){
-    //put request to the server
+    
+    
+    this.apiService.createPartnerAccount(this.account).subscribe(
+
+      (response) => {
+        alert('Account created successfully');
+      },
+      (error) => {
+        alert('An error occurred');
+      }
+    )
 
   }
 
