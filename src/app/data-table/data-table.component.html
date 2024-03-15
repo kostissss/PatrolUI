@@ -1,14 +1,12 @@
-<div>
-    <ejs-grid [dataSource]='data' [searchSettings]='searchOptions' [toolbar]='toolbarOptions' height='272px'>
-        <div style="display: flex; align-items: flex-start;">
-    </div>
-    </ejs-grid>
+<div class="container">
+    <ejs-grid [dataSource]="data" [toolbar]="toolbarOptions" [allowSorting]="true" height='272px' class="searchField">
         <e-columns>
-            <e-column field='Date Created' headerText='Date Created' width=150></e-column>
-            <e-column field='User ID' headerText='User ID' width=150></e-column>
-            <e-column field='Username' headerText='Username' width=150></e-column>
-            <e-column field='Notification Title' headerText='Notification Title' width=150></e-column>
-            <e-column field='Notification Message' headerText='Notification Message' width=150></e-column>
-            <e-column field='Last Modified Date' headerText='Last Modified Date' width=150></e-column>
+                <e-column field='DateCreated' headerText='DateCreated' width=120></e-column>
+                <e-column field='UserID' headerText='UserID' width=120></e-column>
+                <e-column field='Username' headerText='Username' width=120></e-column>
+                <e-column field='NotificationTitle' headerText='NotificationTitle' width=120></e-column>
+                <e-column field='NotificationMessage' headerText='NotificationMessage' width=120></e-column>
+                <e-column field='LastModifiedDate' headerText='LastModifiedDate' width=120></e-column>
         </e-columns>
+    </ejs-grid>
 </div>

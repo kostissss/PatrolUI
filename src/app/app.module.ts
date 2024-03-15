@@ -9,7 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 
-import { GridModule, SearchService, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { GridModule, SearchService, ToolbarService, SortService } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -33,10 +33,11 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     ButtonModule,
     ToolbarModule,
     DropDownListModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    
 
   ],
-  providers: [SearchService, ToolbarService],
+  providers: [SearchService, ToolbarService, SortService],
   bootstrap: [AppComponent]
 })
 

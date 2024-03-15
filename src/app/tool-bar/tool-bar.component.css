@@ -3,17 +3,19 @@
 }
 
 .e-btn {
-    background-color: rgb(135, 159, 182);
-    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    background-color: rgb(158, 176, 193);
+    color: rgb(4, 4, 4);
+    border-radius: 4px;
 }
 
 .container {
     display: flex;
-    background-color: rgb(135, 159, 182);
+    background-color: rgb(158, 176, 193);
 }
 
 .toolbar-buttons .e-btn {
-    background-color: rgb(135, 159, 182);
+    background-color: rgb(158, 176, 193);
     color: rgb(0, 0, 0);
 }
 
@@ -21,16 +23,16 @@
 .viewB,
 .deleteB,
 .assignB {
-    background-color: rgb(135, 159, 182);
+    background-color: rgb(158, 176, 193);
 }
 
 .toolbar-buttons {
-    background-color: rgb(135, 159, 182);
+    background-color: rgb(158, 176, 193);
 }
 
 .icon-refresh {
     display: flex;
-    background-color: rgb(135, 159, 182);
+    background-color: rgb(158, 176, 193);
 }
 
 .e-btn[disabled] {
@@ -44,4 +46,9 @@
 
 .e-btn[disabled] span {
     color: #999
+}
+
+.container {
+    padding: 0px 0px;
+    border-radius: 4px;
 }
