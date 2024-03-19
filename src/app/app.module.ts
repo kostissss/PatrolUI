@@ -14,7 +14,6 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
-import { AutoCompleteModule } from 'primeng/autocomplete';
 
 
 @NgModule({
@@ -33,11 +32,15 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     ButtonModule,
     ToolbarModule,
     DropDownListModule,
-    AutoCompleteModule,
-    
 
   ],
-  providers: [SearchService, ToolbarService, SortService],
+  providers: [
+    SearchService,
+    ToolbarService, 
+    SortService, 
+  
+  ],
+
   bootstrap: [AppComponent]
 })
 

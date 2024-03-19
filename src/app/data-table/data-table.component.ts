@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from '../shared/datasource';
+import { MyNotification, data } from '../shared/datasource';
 import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 
 
@@ -10,12 +10,11 @@ import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 })
 export class DataTableComponent implements OnInit {
 
-  public data?: object[];
+  public data?: MyNotification[];
   public toolbarOptions?: ToolbarItems[];
 
   ngOnInit(): void {
       this.data = data;
-      this.toolbarOptions = ['Search'];
   }
-
+  
 }

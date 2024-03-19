@@ -4,16 +4,19 @@
     </div>
     <ejs-toolbar style="margin-left: 2px;" >
         <div class="toolbar-buttons">
-            <div class="addB"><button class='e-btn e-tbar-btn'>Add new Notification</button></div>
-            <div class="viewB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">View Notification Details</button></div>
-            <div class="deleteB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">Delete Notification</button></div>
-            <div class="assignB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">Assign To Partner</button></div>
+            <div class="addB"><button class='e-btn e-tbar-btn' 
+                (click)="onAddNotification()">Add new Notification</button></div>
+            <div class="viewB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected" 
+                (click)="onViewNotificationDetails()">View Notification Details</button></div>
+            <div class="deleteB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected" 
+                (click)="onDeleteNotification()">Delete Notification</button></div>
+            <div class="assignB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected" 
+                (click)="onAssignToPartner()">Assign To Partner</button></div>
         </div>
     </ejs-toolbar>
     <div class="search-box">
         <input type="text" placeholder="Search">
     </div>
 </div>
-
 
 

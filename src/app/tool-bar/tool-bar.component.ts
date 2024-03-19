@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from '../shared/datasource';
-import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
+import { data, MyNotification } from '../shared/datasource';
+import { ToolbarItems,  } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-tool-bar',
@@ -9,14 +9,14 @@ import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 })
 export class ToolBarComponent implements OnInit {
   public isNotificationSelected: boolean = false;
-
-  public data?: object[];
+  public selectedNotification: MyNotification | null = null;
+  public data?: MyNotification[];
   public toolbarOptions?: ToolbarItems[];
   
   ngOnInit(): void {
     this.data = data;
-    this.toolbarOptions = ['Search'];
-}
+    this.toolbarOptions = ['Search'];  
+  }
 
   onSelectItemFromDataSource(selectedItem: any): void {
     if (selectedItem) {
@@ -25,6 +25,20 @@ export class ToolBarComponent implements OnInit {
       this.isNotificationSelected = false;
     }
   }
+
+  onViewNotificationDetails(): void {
+    
+  }
+
+  onAddNotification(): void {
+    
+  }
+
+  onDeleteNotification(): void {
+    
+  }
+
+  onAssignToPartner(): void {
+    
+  }
 }
-
-

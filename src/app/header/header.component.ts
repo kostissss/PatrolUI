@@ -4,7 +4,7 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'] 
+  styleUrl: './header.component.css' 
 })
 export class HeaderComponent implements OnInit {
 
