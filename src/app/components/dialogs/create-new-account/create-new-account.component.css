@@ -185,3 +185,11 @@
 .warning-margin{
     margin: inherit;
 }
+
+.border-lightgray:hover{
+    font-weight: bold;
+}
+.border-lightgray{
+    border: 1px solid rgb(204,204,204) !important;
+    background: #FBFBFB;
+}

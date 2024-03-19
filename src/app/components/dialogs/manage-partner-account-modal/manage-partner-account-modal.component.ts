@@ -66,14 +66,14 @@ export class ManagePartnerAccountModalComponent {
       'click': this.hideDialog.bind(this),
       buttonModel : {
         content: 'Cancel',
-        cssClass: 'border border-secondary col-sm-2 m-auto p-0 float-left text-lowercase font-weight-normal '
+        cssClass: 'border border-lightgray col-sm-2 m-auto p-0 float-left text-lowercase font-weight-normal '
       }
     },{
       'click': this.submitDialog.bind(this),
       buttonModel : {
         
         content: 'Apply',
-        cssClass: 'border border-secondary m-auto   p-0 col-sm-2 float-right text-lowercase font-weight-normal submit ',
+        cssClass: 'border border-lightgray m-auto   p-0 col-sm-2 float-right text-lowercase font-weight-normal submit ',
         
         
       }

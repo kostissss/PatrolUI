@@ -89,3 +89,10 @@
     padding-bottom: 0px ;
     
 }
+.border-lightgray{
+    border: 1px solid rgb(204,204,204) !important;
+    background: #FBFBFB;
+}
+.border-lightgray:hover{
+    font-weight: bold;
+}
