@@ -1,8 +1,8 @@
 <div class="container">
     <div style="margin-right: 2px;" class="icon-refresh">
-        <button class='e-btn e-tbar-btn'><span class="e-icons e-paste"></span></button>
+        <button class='e-btn e-tbar-btn'><span class="e-icons e-paste" ></span></button>
     </div>
-    <ejs-toolbar style="margin-left: 2px;">
+    <ejs-toolbar style="margin-left: 2px;" >
         <div class="toolbar-buttons">
             <div class="addB"><button class='e-btn e-tbar-btn'>Add new Notification</button></div>
             <div class="viewB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">View Notification Details</button></div>
@@ -10,4 +10,10 @@
             <div class="assignB"><button class='e-btn e-tbar-btn' [disabled]="!isNotificationSelected">Assign To Partner</button></div>
         </div>
     </ejs-toolbar>
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+    </div>
 </div>
+
+
+
