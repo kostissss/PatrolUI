@@ -15,6 +15,9 @@ import { Account } from '../../../interfaces/account';
 
 export class CreateNewAccountComponent implements OnInit {
 
+  dialogWidth: string="";
+  dialogHeight: string="";
+
   public account: Account = {
     name: "",
     email: "",
@@ -28,11 +31,23 @@ export class CreateNewAccountComponent implements OnInit {
     expirationDate: new Date(),
     language: ""
 };
+
+setDialogSize(): void {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 768) { // Adjust this breakpoint according to your requirements
+    this.dialogWidth = '62%'; // Or any percentage you prefer for small screens
+    this.dialogHeight = '60%';
+  } else {
+    this.dialogWidth = '752px'; // Fixed width for large screens
+    this.dialogHeight = '534px'; // You can also use a fixed height for large screens
+  }
+}
   
     ngOnInit() {
         
         this.account.demoSelected=false;
         this.account.expirationDate = new Date();
+        this.setDialogSize();
     }
 
   

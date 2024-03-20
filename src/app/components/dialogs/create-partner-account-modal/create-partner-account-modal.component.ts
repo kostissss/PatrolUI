@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType} from '@syncfusion/ej2-base';
 import { NgModule } from '@angular/core';
@@ -12,9 +12,12 @@ import { ApiServiceService } from '../../../services/api-service.service';
   templateUrl: './create-partner-account-modal.component.html',
   styleUrl: './create-partner-account-modal.component.css'
 })
-export class CreatePartnerAccountModalComponent {
+export class CreatePartnerAccountModalComponent implements OnInit {
   constructor(private apiService :ApiServiceService) { }
-  
+  dialogWidth: string="";
+  dialogHeight: string="";
+
+
 
   public account: Account = {
     name: "",
@@ -29,8 +32,24 @@ export class CreatePartnerAccountModalComponent {
     expirationDate: new Date(),
     language: ""
 };
+
+setDialogSize(): void {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 768) { // Adjust this breakpoint according to your requirements
+    this.dialogWidth = '62%'; // Or any percentage you prefer for small screens
+    this.dialogHeight = '60%';
+  } else {
+    this.dialogWidth = '752px'; // Fixed width for large screens
+    this.dialogHeight = '534px'; // You can also use a fixed height for large screens
+  }
+}
   
   
+ngOnInit(): void {
+    
+    this.setDialogSize();
+}
+
   // DIALOG CONFIGURATION
   public dialogAnimationSettings: Object = { effect: 'SlideTop', duration: 200};
   public dialogResizeDirections: ResizeDirections[] = [
