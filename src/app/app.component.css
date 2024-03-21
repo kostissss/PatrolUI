@@ -26,5 +26,17 @@ body {
 
 .no-resize {
     resize: none;
-  }
-  
+}
+
+
+.rounded-dialog {
+  border-radius: 10px; /* Adjust as needed */
+  overflow: hidden; /* Ensures content doesn't overflow rounded corners */
+}
+
+
+/* CSS class for rounded corners */
+.rounded-dialog {
+  border-radius: 10px; /* Adjust the value to change the roundness of the corners */
+  overflow: hidden; /* Ensure content inside the container stays within rounded corners */
+}

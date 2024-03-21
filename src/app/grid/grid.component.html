@@ -6,16 +6,46 @@
     </div>
 </div>
 
+
+
 <!-- help: https://ej2.syncfusion.com/angular/documentation/grid/getting-started/ -->
-<ejs-grid [dataSource]='data' [allowPaging]="true" [toolbar]='toolbarOptions' [allowSorting]="true" [pageSettings]="pageSettings" >
-    <e-columns>
-        <e-column field='CompanyID' headerText='Company ID' textAlign='Left' width=80></e-column>
-        <e-column field='CompanyName' headerText='Company Name' width=140></e-column>
-        <e-column field='UserName' headerText='User Name' textAlign='Right' format='C2' width=120></e-column>
-        <e-column field='Email' headerText='Email' textAlign='Left' format='yMd' width=190></e-column>
-        <e-column field='PatrolLicences' headerText='Patrol Licences:' textAlign='Left' format='yMd' width=70></e-column>
-        <e-column field='License' headerText='License' textAlign='Right' format='yMd' width=170></e-column>
-        <e-column field='Demo' headerText='Demo' textAlign='Right' format='yMd' width=70></e-column>
-        <e-column field='Parent' headerText='Parent' textAlign='Right' format='yMd' width=120></e-column>
-    </e-columns>
-    </ejs-grid>
+<!-- <ejs-grid [dataSource]='data' [allowPaging]="false" [toolbar]='toolbarOptions' [allowSorting]="true" [pageSettings]="pageSettings" > -->
+
+<div class="grid">
+
+    <ejs-grid #grid [dataSource]='data' height='200px' [allowSorting]="true">
+    
+        <ng-template #toolbarTemplate let-data>
+            <div id='toolbar'>
+                
+                <input type="checkbox" id="selectAll" [(ngModel)]="selectAllCompanies" (change)="onSelectAllChange($event)"> Select All companies
+                <input type="checkbox" id="myCheckbox" (change)="onCheckboxChange($event)"> Show selected companies
+                <ejs-pager (pageChange)="onPageChange($event)" [pageCount]="1" [currentPage]="1"></ejs-pager>
+                <select [(ngModel)]="pageSize" (change)="onPageSizeChange($event)">
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                    <option value="60">60</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <input type="checkbox" id="myCheckbox" (change)="onCheckboxChange($event)"> Show Demo
+                <input type="text" placeholder="Search..." style="margin-right: 10px;" />
+            </div>
+        </ng-template>
+
+
+        <e-columns>
+            <e-column type="checkbox" width="50"></e-column> 
+            <e-column field='CompanyID' headerText='Company ID' textAlign='Left' width=80></e-column>
+            <e-column field='CompanyName' headerText='Company Name' width=140></e-column>
+            <e-column field='UserName' headerText='User Name' textAlign='Right' format='C2' width=120></e-column>
+            <e-column field='Email' headerText='Email' textAlign='Left' format='yMd' width=190></e-column>
+            <e-column field='PatrolLicences' headerText='Patrol Licences:' textAlign='Left' format='yMd' width=70></e-column>
+            <e-column field='License' headerText='License' textAlign='Right' format='yMd' width=170></e-column>
+            <e-column field='Demo' headerText='Demo' textAlign='Right' format='yMd' width=70></e-column>
+            <e-column field='Parent' headerText='Parent' textAlign='Right' format='yMd' width=120></e-column>
+        </e-columns>
+        </ejs-grid>
+
+</div>
+
+

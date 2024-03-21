@@ -1,6 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType} from '@syncfusion/ej2-base';
+import { ApiService } from './api.service'; 
+
+
 
 
 @Component({
@@ -8,8 +11,12 @@ import { EmitType} from '@syncfusion/ej2-base';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'angular-dialog';
+
+
+export class AppComponent{
+
+
+  //title = 'angular-dialog';
   public dialogAnimationSettings: Object = { effect: 'FlipXUp', duration: 600};
   public dialogResizeDirections: ResizeDirections[] = [
     'All'
@@ -60,5 +67,16 @@ export class AppComponent {
   onUpdateServerName(event : any){
     //this.notificationTitle = (<HTMLInputElement>event.target).value;
   }
+
+
+  title = 'frontEnd'; 
+    message: any; 
+    constructor(private apiService: ApiService) { }; 
+    ngOnInit() { 
+        this.apiService.getMessage().subscribe(data => { 
+            this.message = data; 
+        }); 
+    } 
+  
 
 }

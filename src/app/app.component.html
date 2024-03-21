@@ -4,17 +4,18 @@
 
 </button>
 
-<div id="container"> 
 
-  <ejs-dialog #dialogcomponent height="85%" width="900px" content=""
+
+<div id="container" > 
+  
+
+  <ejs-dialog  class="dialog" #dialogcomponent height="90%" width="900px" content="" 
 
   
     [buttons]="dialogButton" 
 
   
-  [visible]="dialogVisibility" [position]="dialogPosition" allowDragging='true'
-  
-  enableResize='false' [resizeHandles]="dialogResizeDirections" 
+  [visible]="dialogVisibility" [position]="dialogPosition"  [resizeHandles]="dialogResizeDirections" 
   
   [animationSettings]="dialogAnimationSettings" isModal='true'>
 
@@ -42,7 +43,7 @@
 
     <br>
     
-    <textarea class="form-control no-resize" rows="13" [(ngModel)]="notificationMessage"></textarea>
+    <textarea class="form-control no-resize" rows="10" [(ngModel)]="notificationMessage"></textarea>
     <!--Testing-->
     <p>{{notificationMessage}}</p>  
 
