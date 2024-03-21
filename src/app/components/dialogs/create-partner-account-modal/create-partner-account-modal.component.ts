@@ -69,7 +69,7 @@ ngOnInit(): void {
   };
 
   public hideDialog: EmitType<object> = () => {
-    this.myForm.resetForm();
+     this.myForm.resetForm();
      this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
@@ -93,7 +93,7 @@ ngOnInit(): void {
         localStorage.setItem('token', response.token);
       },
       (error) => {
-        alert('An error occurred');
+        alert(error.error);
       }
     )
 

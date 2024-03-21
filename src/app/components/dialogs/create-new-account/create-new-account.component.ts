@@ -104,7 +104,8 @@ setDialogSize(): void {
         localStorage.setItem('token', response.token);
       },
       (error) => {
-        alert('An error occurred');
+        //debugger
+        alert(error.error);
       }
      
     )
