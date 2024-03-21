@@ -4,8 +4,6 @@ import { EmitType} from '@syncfusion/ej2-base';
 import { ApiService } from './api.service'; 
 
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -47,10 +45,17 @@ export class AppComponent{
         cssClass: 'cancel-button'
       }
     },
-    {buttonModel : {
-      content: 'Save template',
-      //align : 'left'
-    }
+    // {buttonModel : {
+    //   content: 'Save template',
+    //   //align : 'left'
+    // }
+    // },
+    {
+      'click': this.onSaveTemplate.bind(this), // Call onSaveTemplate when clicked
+      buttonModel : {
+        content: 'Save template',
+        cssClass: 'Save-template-button'
+      }
     },
     {buttonModel : {
       content: 'send',
@@ -63,20 +68,26 @@ export class AppComponent{
   
   notificationTitle = '';
   notificationMessage = '';
+  apiService: any;
 
   onUpdateServerName(event : any){
     //this.notificationTitle = (<HTMLInputElement>event.target).value;
   }
 
 
-  title = 'frontEnd'; 
-    message: any; 
-    constructor(private apiService: ApiService) { }; 
-    ngOnInit() { 
-        this.apiService.getMessage().subscribe(data => { 
-            this.message = data; 
-        }); 
-    } 
-  
+  onSaveTemplate() {
+    // Call the service method to save the notification
+    this.apiService.saveNotification(this.notificationTitle, this.notificationMessage).subscribe(response => {
+      // Handle success response if necessary
+      console.log('Notification saved successfully:', response);
+      // Close the dialog or perform any other action upon successful save
+      this.dialogObject.hide(); // Assuming this is the dialog reference
+    }, error => {
+      // Handle error
+      console.error('Error saving notification:', error);
+      // Display error message or perform other error handling
+    });
+  }
+
 
 }

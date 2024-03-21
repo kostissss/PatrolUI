@@ -10,7 +10,7 @@ import { PageSettingsModel, SearchSettingsModel, ToolbarItems } from '@syncfusio
 })
 export class GridComponent {
 
-
+  
   checkboxes: boolean[] = [];
   totalCompanies = 0;
   selectedCompanies = 0;
@@ -18,12 +18,12 @@ export class GridComponent {
   showSelectedCompanies = false;
   public toolbar?: ToolbarItems[];
 
+
   //public toolbarOptions?: ToolbarItems[];
   public searchOptions?: SearchSettingsModel;
   public data?: object[];
   public pageSettings?: PageSettingsModel;
 
-  public toolbarOptions: any[] = [];
 
   selectAll = false;
   grid: any;
@@ -36,7 +36,6 @@ export class GridComponent {
       this.pageSettings = { pageSize: 6 };
       this.searchOptions = { fields: ['CompanyID'], operator: 'contains', key: 'Ha', ignoreCase: true, ignoreAccent:true};   
       this.totalCompanies = this.data.length;
-      //  this.toolbar = ['Print', 'Search'];
       this.pageSettings = { pageSize: this.pageSize };
 
     }
@@ -64,9 +63,5 @@ export class GridComponent {
       this.pageSize = parseInt(event.target.value);
       this.pageSettings.pageSize = this.pageSize;
     }
-
-
-    
-
   
 }

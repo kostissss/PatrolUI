@@ -16,12 +16,23 @@ body {
 .cancel-button {
     float: left;
     margin-left: 10px; 
-    color: rgb(33, 100, 17);
+    color: rgb(255, 250, 251) !important;
     background-color: rgb(255, 187, 0) !important;
+    border-radius: 10px;
   }
   
 .send-button{
     background-color: rgb(61, 136, 221) !important;
+    border-radius: 10px;
+}
+
+.Save-template-button{
+  border-radius: 10px;
+  background-color:blanchedalmond;
+}
+
+.e-control{
+  border-radius: 10px;
 }
 
 .no-resize {

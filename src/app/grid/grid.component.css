@@ -91,3 +91,22 @@
 
 
 
+/* Increase specificity to override default styles */
+:host ::ng-deep .e-checkbox-wrapper .e-frame, 
+:host ::ng-deep .e-checkbox-wrapper .e-icons::before {
+    border-color: grey !important; 
+    width: 15px !important; 
+    height: 16px !important; 
+}
+
+
+/* Change background color of the checkbox when checked */
+.e-checkbox-wrapper .e-frame.e-check {
+  background-color: #328bd4 !important; /* Change background color to blue */
+}
+
+
+.checkbox-container {
+  display: left;
+  align-items: center;
+}

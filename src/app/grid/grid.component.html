@@ -18,19 +18,24 @@
         <ng-template #toolbarTemplate let-data>
             <div id='toolbar'>
                 
-                <input type="checkbox" id="selectAll" [(ngModel)]="selectAllCompanies" (change)="onSelectAllChange($event)"> Select All companies
+                <!-- <input type="checkbox" id="selectAll" [(ngModel)]="selectAllCompanies" (change)="onSelectAllChange($event)"> Select All companies -->
+                <div class="checkbox-container">
+                    <input type="checkbox" id="selectAll" [(ngModel)]="selectAllCompanies" (change)="onSelectAllChange($event)">
+                    <label for="selectAll">Select All companies</label>
+                </div>
+                
                 <input type="checkbox" id="myCheckbox" (change)="onCheckboxChange($event)"> Show selected companies
                 <ejs-pager (pageChange)="onPageChange($event)" [pageCount]="1" [currentPage]="1"></ejs-pager>
                 <select [(ngModel)]="pageSize" (change)="onPageSizeChange($event)">
                     <option value="20">20</option>
                     <option value="40">40</option>
                     <option value="60">60</option>
-                    <!-- Add more options as needed -->
                 </select>
                 <input type="checkbox" id="myCheckbox" (change)="onCheckboxChange($event)"> Show Demo
                 <input type="text" placeholder="Search..." style="margin-right: 10px;" />
             </div>
         </ng-template>
+
 
 
         <e-columns>
