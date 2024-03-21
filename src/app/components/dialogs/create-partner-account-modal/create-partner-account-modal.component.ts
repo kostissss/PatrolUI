@@ -69,11 +69,13 @@ ngOnInit(): void {
   };
 
   public hideDialog: EmitType<object> = () => {
+    this.myForm.resetForm();
      this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
     if(this.myForm.valid  && this.account.timeZone != null) {
     this.onSubmit() 
+    this.myForm.resetForm();
     this.dialogObject.hide();}
     else {
       

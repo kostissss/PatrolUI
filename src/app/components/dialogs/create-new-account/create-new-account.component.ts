@@ -78,12 +78,14 @@ setDialogSize(): void {
   };
 
   public hideDialog: EmitType<object> = () => {
+     this.myForm.resetForm();
      this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
     console.log(this.account);
     if(this.myForm.valid &&  this.account.subscriptionFrequency!=null && this.account.plan!=null && this.account.timeZone!=null && this.account.expirationDate!=null && this.account.selectedOption!=null) {
     this.onSubmit() 
+    this.myForm.resetForm();
     this.dialogObject.hide();}
     else {
       

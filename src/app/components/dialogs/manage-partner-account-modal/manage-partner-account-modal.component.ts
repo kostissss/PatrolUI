@@ -35,11 +35,13 @@ export class ManagePartnerAccountModalComponent {
   };
 
   public hideDialog: EmitType<object> = () => {
-     this.dialogObject.hide();
+    this.myForm.resetForm();
+    this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
     if(this.myForm.valid ) {
     this.onSubmit() 
+    this.myForm.resetForm();
     this.dialogObject.hide();}
     else {
       
