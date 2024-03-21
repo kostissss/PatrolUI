@@ -9,3 +9,7 @@
     background-color: rgb(245, 245, 245);
     font-weight: 420;
 }
+
+.e-paste:before{
+    content:'\e716';
+}
