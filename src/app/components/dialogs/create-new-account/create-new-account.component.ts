@@ -95,14 +95,18 @@ setDialogSize(): void {
     //put request to the server
     
     this.apiService.createAccount(this.account).subscribe(
-
-      (response) => {
+      
+      (response ) => {
+        
         alert('Account created successfully');
+        localStorage.setItem('token', response.token);
       },
       (error) => {
         alert('An error occurred');
       }
+     
     )
+    
 
   }
 

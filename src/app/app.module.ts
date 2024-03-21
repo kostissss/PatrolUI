@@ -13,6 +13,9 @@ import { CreateNewAccountComponent } from './components/dialogs/create-new-accou
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { AccountsDropDownButtonComponent } from './components/accounts-drop-down-button/accounts-drop-down-button.component';
+
 
 
 @NgModule({
@@ -22,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsDirectiveDirective,
     CreateNewAccountComponent,
     ManagePartnerAccountModalComponent,
+    AccountsDropDownButtonComponent,
+    
     
     
   ],
@@ -34,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     DropDownListModule,
     DateTimePickerModule,
     HttpClientModule,
+    DropDownButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

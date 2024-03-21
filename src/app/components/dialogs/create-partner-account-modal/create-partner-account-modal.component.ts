@@ -84,9 +84,11 @@ ngOnInit(): void {
     
     
     this.apiService.createPartnerAccount(this.account).subscribe(
-
-      (response) => {
+      
+      (response ) => {
+        
         alert('Account created successfully');
+        localStorage.setItem('token', response.token);
       },
       (error) => {
         alert('An error occurred');
