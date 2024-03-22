@@ -13,7 +13,7 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 
 import { AppRoutingModule }  from './app-routing.module'; 
 import { HttpClientModule }  from '@angular/common/http';
-
+import { ToolbarItem } from '@syncfusion/ej2-grids';
 
 
 
@@ -22,7 +22,7 @@ import { HttpClientModule }  from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    GridComponent 
+    GridComponent
   ],
   imports: [
     BrowserModule,
