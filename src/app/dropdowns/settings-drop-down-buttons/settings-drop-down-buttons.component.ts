@@ -11,16 +11,14 @@ export class SettingsDropDownButtonsComponent {
   public items: ItemModel[] = [
     
     {
-        text: 'Create Account',
+        text: 'Account Settings',
         
         
     },
     {
-        text: 'Create Partner Account'
-    },
-    {
-      text: 'Manage Partner'
+        text: 'Logout'
     }
+    
   ];
 
 }
