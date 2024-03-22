@@ -1,0 +1,18 @@
+.MainToolbarStyle {
+    color: rgb(255, 255, 255) !important;
+
+    background-color: rgb(23, 92, 126) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(28, 111, 151)), to(rgb(18, 74, 101))) !important;
+    height: 68px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.fs-12 {
+    font-size: 12px;
+}
+a:hover {
+    text-decoration: none;
+    
+  }
+.custom-fs{
+    font-family:  "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+}

@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ItemModel,MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
-import { CreateNewAccountComponent } from '../dialogs/create-new-account/create-new-account.component';
-import { CreatePartnerAccountModalComponent } from '../dialogs/create-partner-account-modal/create-partner-account-modal.component';
-import { ManagePartnerAccountModalComponent } from '../dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
+import { CreateNewAccountComponent } from '../../components/dialogs/create-new-account/create-new-account.component';
+import { CreatePartnerAccountModalComponent } from '../../components/dialogs/create-partner-account-modal/create-partner-account-modal.component';
+import { ManagePartnerAccountModalComponent } from '../../components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
 
 @Component({
   selector: 'app-accounts-drop-down-button',
@@ -23,7 +23,9 @@ export class AccountsDropDownButtonComponent {
   public items: ItemModel[] = [
     
     {
-        text: 'Create Account'
+        text: 'Create Account',
+        
+        
     },
     {
         text: 'Create Partner Account'

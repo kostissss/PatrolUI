@@ -14,8 +14,11 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { AccountsDropDownButtonComponent } from './components/accounts-drop-down-button/accounts-drop-down-button.component';
-
+import { AccountsDropDownButtonComponent } from './dropdowns/accounts-drop-down-button/accounts-drop-down-button.component';
+import { Menu, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { HeaderComponent } from './components/header/header.component';
+import { SettingsDropDownButtonsComponent } from './dropdowns/settings-drop-down-buttons/settings-drop-down-buttons.component';
+import { HelpDropDownButtonComponent } from './dropdowns/help-drop-down-button/help-drop-down-button.component';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { AccountsDropDownButtonComponent } from './components/accounts-drop-down
     CreateNewAccountComponent,
     ManagePartnerAccountModalComponent,
     AccountsDropDownButtonComponent,
+    HeaderComponent,
+    SettingsDropDownButtonsComponent,
+    HelpDropDownButtonComponent,
     
     
     
@@ -40,6 +46,7 @@ import { AccountsDropDownButtonComponent } from './components/accounts-drop-down
     DateTimePickerModule,
     HttpClientModule,
     DropDownButtonModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
