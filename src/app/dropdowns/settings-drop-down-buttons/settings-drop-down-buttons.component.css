@@ -16,15 +16,9 @@
     
     color: white;
 }
-.e-dropdown-btn .e-caret::before, .e-dropdown-btn.e-btn .e-caret::before{
-    visibility: collapse;
-}
+
 
 .custom-ff{
     
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.e-dropdown-btn .e-caret, .e-dropdown-btn.e-btn .e-caret {
-	
-	visibility: collapse;
 }
