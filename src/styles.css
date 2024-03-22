@@ -25,23 +25,30 @@
 
 
 .e-toolbar-left {
-    background-color: rgb(167, 172, 185);
+    background-color: rgb(173, 181, 196);
 }
 .e-toolbar-center{
-    background-color: rgb(167, 172, 185);
+    background-color: rgb(173, 181, 196);
 }
 .e-toolbar-right{
-    background-color: rgb(167, 172, 185);
+    background-color: rgb(173, 181, 196);
 }
 .e-toolbar {
-    background-color: rgb(167, 172, 185);
+    background-color: rgb(173, 181, 196);
+}
+.e-toolbar .e-toolbar-item .e-tbar-btn{
+    background-color: rgb(173, 181, 196);
 }
 .e-search{
     background-color: white;
 }
-.e-toolbar .e-toolbar-item .e-tbar-btn.e-tbtn-txt .e-icons.e-btn-icon{
-    display: none;
+.e-toolbar .e-search{
+    width: 150px;
+    height: 25px;
+    background-color: white ;
+    border-radius: 2px;
+    padding: 0px 2px;
+    align-items: center;
 }
-.e-toolbar .e-toolbar-item .e-tbar-btn{
-    background-color: rgb(167, 172, 185);
-}
+
+
