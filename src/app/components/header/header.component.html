@@ -1,11 +1,11 @@
 
-<ng-container *ngIf="screenWidth<850; else desktopHeader">
+<!-- <ng-container *ngIf="screenWidth<850; else desktopHeader"> -->
     <!-- Show this if we are on mobile -->
     <!-- Your mobile-specific component goes here -->
     
-  </ng-container>
+  <!-- </ng-container> -->
 
-<ng-template #desktopHeader>
+<!-- <ng-template #desktopHeader> -->
 <div  class="MainToolbarStyle d-flex  align-items-center ">
     <img src="../../../assets/shield.png" class="m-3" width="32" height="32" alt="" ondragstart="return false;">
 <app-accounts-drop-down-button class="m-3"></app-accounts-drop-down-button>
@@ -20,4 +20,4 @@
 <app-settings-drop-down-buttons class="m-3 "><img src="../../../assets/gear.png" alt="" width="32" height="32"></app-settings-drop-down-buttons>
 
 </div>
-</ng-template>
+<!-- </ng-template> -->

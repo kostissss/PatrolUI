@@ -60,6 +60,7 @@
 
 .form-control{
     height: 24px;
+    box-shadow: none;
     
 }
 .form-control:focus {

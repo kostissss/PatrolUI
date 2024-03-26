@@ -1,0 +1,22 @@
+
+<button class="e-control e-btn" style="position: absolute; margin-top: 25px; margin-left: 630px;" (click)="onOpenDialog($event); myForm.form.reset()">Open Dialog</button>
+
+<ejs-dialog #dialogcomponent id="dialogcomponent" height="24%" width="36%"  [buttons]="dialogButtons" [visible]="dialogVisibility" [position]="dialogPosition" [animationSettings]="dialogAnimationSettings" isModal='true'>
+    <ng-template class="mb-0 p-4 " #header>
+       <div class="pl-2 small-text reset_pw_custom_div"> Username Change</div>
+        <div class="gray-line-divider mt-0 flex-grow-1"></div>
+    </ng-template>
+    
+
+    <div class=" row align-items-center">
+        <div for="language" class="align-self-center  pr-2 col-sm fw-bold font-weight-normal ">Language</div>
+        <div class="col-sm-9">
+          <ejs-dropdownlist id='language' #language="ngModel" [(ngModel)]="languageInput" name="language"   #sample [dataSource]='dropDownDataLocation' [fields]="dataFields" placeholder='' value="EN"  popupHeight='220px' ></ejs-dropdownlist>
+        </div>
+      </div>
+  
+    
+  
+
+  
+</ejs-dialog>
