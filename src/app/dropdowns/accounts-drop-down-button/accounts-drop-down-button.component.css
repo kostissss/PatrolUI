@@ -21,4 +21,13 @@
 .custom-ff{
     
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 11px;
+        
+}
+.e-btn, .e-css.e-btn {
+    
+    line-height: inherit;
+    
+    padding: 0px 0px 0px 0px;
+    
 }

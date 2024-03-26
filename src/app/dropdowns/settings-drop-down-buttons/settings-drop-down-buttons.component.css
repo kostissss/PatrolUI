@@ -21,4 +21,9 @@
 .custom-ff{
     
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 11px;
+}
+
+.e-paste:before{
+    content:'\e679';
 }
