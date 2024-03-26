@@ -25,22 +25,22 @@
 
 
 .e-toolbar-left {
-    background-color: rgb(173, 181, 196);
+    background-color: rgb(184, 196, 206);
 }
 .e-toolbar-center{
-    background-color: rgb(173, 181, 196);
+    background-color: rgb(184, 196, 206);
 }
 .e-toolbar-right{
-    background-color: rgb(173, 181, 196);
+    background-color: rgb(184, 196, 206);
 }
 .e-toolbar {
-    background-color: rgb(173, 181, 196);
+    background-color: rgb(184, 196, 206);
 }
 .e-toolbar .e-toolbar-item .e-tbar-btn{
-    background-color: rgb(173, 181, 196);
+    background-color: rgb(184, 196, 206);
 }
 .e-search{
-    background-color: white;
+    color: #fff;
 }
 .e-toolbar .e-search{
     width: 150px;
@@ -52,3 +52,5 @@
 }
 
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -4,7 +4,7 @@ export interface MyNotification {
     Username: string;
     NotificationTitle: string;
     NotificationMessage: string;
-    LastModifiedDate: number;    
+    LastModifiedDate: number;
 }
 
 export let data: MyNotification[] = [

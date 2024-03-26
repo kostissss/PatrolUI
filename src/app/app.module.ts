@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +17,10 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { AddNotificationDialogComponent } from './data-table/add-notification-dialog/add-notification-dialog.component';
+import { EditNotificationDialogComponent } from './data-table/edit-notification-dialog/edit-notification-dialog.component';
+import { AssignToPartnersDialogComponent } from './data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+
 
 
 @NgModule({
@@ -23,11 +28,15 @@ import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
     AppComponent,
     HeaderComponent,
     DataTableComponent,
+    AddNotificationDialogComponent,
+    EditNotificationDialogComponent,
+    AssignToPartnersDialogComponent,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     FormsModule,
     GridModule,
     ButtonModule,
