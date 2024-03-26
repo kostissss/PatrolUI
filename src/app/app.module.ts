@@ -20,6 +20,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { SettingsDropDownButtonsComponent } from './dropdowns/settings-drop-down-buttons/settings-drop-down-buttons.component';
 import { HelpDropDownButtonComponent } from './dropdowns/help-drop-down-button/help-drop-down-button.component';
 
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigations';
+import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-down/account-change-drop-down.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { HelpDropDownButtonComponent } from './dropdowns/help-drop-down-button/h
     HeaderComponent,
     SettingsDropDownButtonsComponent,
     HelpDropDownButtonComponent,
+    AccountChangeDropDownComponent,
+   
     
     
     
@@ -46,7 +51,10 @@ import { HelpDropDownButtonComponent } from './dropdowns/help-drop-down-button/h
     DateTimePickerModule,
     HttpClientModule,
     DropDownButtonModule,
-    MenuModule
+    MenuModule,
+    ListViewModule,
+    AccordionModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
