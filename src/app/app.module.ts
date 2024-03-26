@@ -23,6 +23,7 @@ import { HelpDropDownButtonComponent } from './dropdowns/help-drop-down-button/h
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-down/account-change-drop-down.component';
+import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-
     SettingsDropDownButtonsComponent,
     HelpDropDownButtonComponent,
     AccountChangeDropDownComponent,
+    ChangeUsernameDialogComponent,
    
     
     

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { DropDownButtonComponent, ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
+import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
+import { ChangeUsernameDialogComponent } from '../../components/dialogs/change-username-dialog/change-username-dialog.component';
 
 @Component({
   selector: 'app-account-change-drop-down',
@@ -9,6 +10,9 @@ import { DropDownButtonComponent, ItemModel } from '@syncfusion/ej2-angular-spli
 export class AccountChangeDropDownComponent {
   @ViewChild('myDropDown')
   public myComp!: DropDownButtonComponent;
+
+  @ViewChild(ChangeUsernameDialogComponent)
+  public unameChangeDropdown!: ChangeUsernameDialogComponent;
 
 
   public items: ItemModel[] = [
@@ -41,6 +45,15 @@ export class AccountChangeDropDownComponent {
       this.myComp.toggle();
     } catch (error) {
       console.log(error);
+    }
+  }
+
+
+  public select(args: MenuEventArgs) {
+    if (args.item.text === 'Username Change') {
+      const event: any = null; // Pass any relevant event object here
+      this.unameChangeDropdown.onOpenDialog(event);
+      
     }
   }
 
