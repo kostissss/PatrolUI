@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChangLanguageDialogComponent } from './chang-language-dialog.component';
+import { ChangeLanguageDialogComponent } from './change-language-dialog.component';
 
 describe('ChangLanguageDialogComponent', () => {
-  let component: ChangLanguageDialogComponent;
-  let fixture: ComponentFixture<ChangLanguageDialogComponent>;
+  let component: ChangeLanguageDialogComponent;
+  let fixture: ComponentFixture<ChangeLanguageDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChangLanguageDialogComponent]
+      declarations: [ChangeLanguageDialogComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ChangLanguageDialogComponent);
+    fixture = TestBed.createComponent(ChangeLanguageDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

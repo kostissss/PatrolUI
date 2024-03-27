@@ -24,7 +24,7 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-down/account-change-drop-down.component';
 import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
-import { ChangLanguageDialogComponent } from './components/dialogs/chang-language-dialog/chang-language-dialog.component';
+import { ChangeLanguageDialogComponent } from './components/dialogs/change-language-dialog/change-language-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { ChangLanguageDialogComponent } from './components/dialogs/chang-languag
     HelpDropDownButtonComponent,
     AccountChangeDropDownComponent,
     ChangeUsernameDialogComponent,
-    ChangLanguageDialogComponent,
+    ChangeLanguageDialogComponent,
    
     
     

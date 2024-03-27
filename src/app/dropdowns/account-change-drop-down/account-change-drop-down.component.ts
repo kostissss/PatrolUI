@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { ChangeUsernameDialogComponent } from '../../components/dialogs/change-username-dialog/change-username-dialog.component';
+import { ChangeLanguageDialogComponent } from '../../components/dialogs/change-language-dialog/change-language-dialog.component';
 
 @Component({
   selector: 'app-account-change-drop-down',
@@ -13,6 +14,8 @@ export class AccountChangeDropDownComponent {
 
   @ViewChild(ChangeUsernameDialogComponent)
   public unameChangeDropdown!: ChangeUsernameDialogComponent;
+  @ViewChild(ChangeLanguageDialogComponent)
+  public langChangeDropdown!: ChangeLanguageDialogComponent;
 
 
   public items: ItemModel[] = [
@@ -53,6 +56,11 @@ export class AccountChangeDropDownComponent {
     if (args.item.text === 'Username Change') {
       const event: any = null; // Pass any relevant event object here
       this.unameChangeDropdown.onOpenDialog(event);
+      
+    }
+    else if (args.item.text === 'Language Change') {
+      const event: any = null; // Pass any relevant event object here
+      this.langChangeDropdown.onOpenDialog(event);
       
     }
   }

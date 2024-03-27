@@ -6,13 +6,13 @@ import { NgForm } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-chang-language-dialog',
-  templateUrl: './chang-language-dialog.component.html',
-  styleUrl: './chang-language-dialog.component.css'
+  selector: 'app-change-language-dialog',
+  templateUrl: './change-language-dialog.component.html',
+  styleUrl: './change-language-dialog.component.css'
 })
-export class ChangLanguageDialogComponent {
+export class ChangeLanguageDialogComponent {
   constructor(private apiService: ApiServiceService) { }
-  public languageInput='';
+  public languageInput='EN';
   public enabledSelected :boolean = false;
 
   // DIALOG CONFIGURATION
@@ -27,37 +27,37 @@ export class ChangLanguageDialogComponent {
   @ViewChild('dialogcomponent') dialogObject! : DialogComponent
  
 
-  @ViewChild('myForm',{static:true}) myForm!: NgForm;
+  
   public dialogVisibility : Boolean = false;
   public onOpenDialog = (event: any): void => {
     this.dialogObject.show();
   };
 
   public hideDialog: EmitType<object> = () => {
-    this.myForm.resetForm();
+    
     this.dialogObject.hide();
   }
   public submitDialog: EmitType<object> = () => {
-    if(this.myForm.valid ) {
+    
     this.onSubmit() 
-    this.myForm.resetForm();
-    this.dialogObject.hide();}
-    else {
+    
+    this.dialogObject.hide();
+    
       
-    }
+    
   }
 
   public onSubmit(){
     //put request to the server
-    this.apiService.changeUserName(this.languageInput).subscribe(
+    // this.apiService.changeUserName(this.languageInput).subscribe(
 
-      (response) => {
-        alert('UserName changed successfully');
-      },
-      (error) => {
-        alert('An error occurred');
-      }
-    )
+    //   (response) => {
+    //     alert('Language changed successfully');
+    //   },
+    //   (error) => {
+    //     alert('An error occurred');
+    //   }
+    // )
 
   }
 
@@ -81,11 +81,16 @@ export class ChangLanguageDialogComponent {
     }
   ];
 
+  public onOpen(args: any): void {
+    //Preventing the default dialog focus
+    args.preventFocus = true;
+  }
+
   //DROPDOWN CONFIGURATION
 
   public dataFields: Object = { text: 'text', value: 'value' };
-  public dropDownDataLocation: Object = [
-    { text: 'English', value: 'EN' },
+  public dropDownDataLanguage: Object = [
+    { text: 'English(for Security Use)', value: 'EN' },
     { text: 'Greek', value: 'GR' },
     { text: 'Netherlands', value: 'NL' }
 
