@@ -44,8 +44,8 @@ import { ChangeLanguageDialogComponent } from '../components/dialogs/change-lang
   imports: [
     CommonModule,
     HomeRoutingModule,
-    BrowserModule,
-    AppRoutingModule,
+    //BrowserModule,
+    //AppRoutingModule,
     DialogModule,
     FormsModule,
     CheckBoxModule,
