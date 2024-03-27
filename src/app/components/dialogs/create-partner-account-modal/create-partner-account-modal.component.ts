@@ -30,7 +30,8 @@ export class CreatePartnerAccountModalComponent implements OnInit {
     selectedOption: "",
     demoSelected: false,
     expirationDate: new Date(),
-    language: ""
+    language: "",
+    role: "partner"
 };
 
 setDialogSize(): void {

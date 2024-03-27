@@ -25,21 +25,14 @@ import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigatio
 import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-down/account-change-drop-down.component';
 import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
 import { ChangeLanguageDialogComponent } from './components/dialogs/change-language-dialog/change-language-dialog.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatePartnerAccountModalComponent,
+    
     FormsDirectiveDirective,
-    CreateNewAccountComponent,
-    ManagePartnerAccountModalComponent,
-    AccountsDropDownButtonComponent,
-    HeaderComponent,
-    SettingsDropDownButtonsComponent,
-    HelpDropDownButtonComponent,
-    AccountChangeDropDownComponent,
-    ChangeUsernameDialogComponent,
-    ChangeLanguageDialogComponent,
+    
    
     
     
@@ -59,6 +52,7 @@ import { ChangeLanguageDialogComponent } from './components/dialogs/change-langu
     ListViewModule,
     AccordionModule,
     SidebarModule,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

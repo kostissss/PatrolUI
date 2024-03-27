@@ -29,7 +29,9 @@ export class CreateNewAccountComponent implements OnInit {
     selectedOption: "",
     demoSelected: false,
     expirationDate: new Date(),
-    language: ""
+    language: "",
+    role: "admin"
+
 };
 
 setDialogSize(): void {

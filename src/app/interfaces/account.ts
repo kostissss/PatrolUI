@@ -10,5 +10,6 @@ export interface Account  {
     demoSelected: boolean;
     expirationDate: Date ;
     language: string;
+    role: string;
   }
   
