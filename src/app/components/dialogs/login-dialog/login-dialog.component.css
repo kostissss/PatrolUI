@@ -1,0 +1,95 @@
+.container{
+    width: 362px;
+    height: 302px;
+    padding: 0;
+}
+.header{
+    background: rgb(228,228,228) !important;
+    font-family: "Open Sans", "Verdana", sans-serif !important;
+    font-weight: bold !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    font-size: 145% !important;
+    text-align: center !important;
+    color: rgba(50, 50, 50, 0.76) !important;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.form-control:focus {
+    border-color: black; /* Change to your desired color */
+    border-width: 2px;
+    
+}
+.form-control{
+    height: 32px;
+    padding-top: 0px;
+    padding-bottom: 0px ;
+    box-shadow: none;
+    margin: 0px;
+    
+}
+.form-group{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.footer{
+    background: rgb(228,228,228) !important;
+    /* margin-top: auto; */
+    margin-top: 12px;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 40px;
+}
+.BtnOrange {
+    font-family: "Open Sans", "Verdana", sans-serif !important;
+    font-size: 110% !important;
+    color: rgb(255, 255, 255) !important;
+    border-width: 1px;
+    border-color: rgba(220, 130, 75, 0.82) !important;
+    
+    border-radius: 3px;
+    padding: 0px 20px  20px;
+    
+    background-color: rgba(220, 130, 75, 0.82) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(223, 142, 94, 0.82)), to(rgba(217, 116, 55, 0.82)), color-stop(12%, rgba(221, 131, 77, 0.82)), color-stop(85%, rgba(221, 131, 77, 0.82))) !important;
+}
+
+.BtnGray {
+    font-family: "Open Sans", "Verdana", sans-serif !important;
+    font-size: 110% !important;
+    color: rgb(255, 255, 255) !important;
+    border-top: 1px solid rgba(93, 93, 93, 0.50) !important;
+    border-left: 1px solid rgba(93, 93, 93, 0.50) !important;
+    border-bottom: 1px solid rgba(93, 93, 93, 0.50) !important;
+    border-right: 1px solid rgba(93, 93, 93, 0.50) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.09) !important;
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.10) !important;
+    -webkit-border-top-left-radius: 3px !important;
+    -webkit-border-bottom-left-radius: 3px !important;
+    -webkit-border-bottom-right-radius: 3px !important;
+    -webkit-border-top-right-radius: 3px !important;
+    background-color: rgba(57, 59, 66, 0.89) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(57, 59, 66, 0.80)), to(rgba(57, 59, 66, 0.80)), color-stop(12%, rgb(57, 59, 66)), color-stop(85%, rgb(57, 59, 66))) !important;
+}
+.LoginBtn{
+        
+        font-family: "Open Sans", "Verdana", sans-serif !important;
+        font-size: 110% !important;
+        color: rgb(255, 255, 255) !important;
+        border: 1px solid rgba(93, 93, 93, 0.50) !important;
+        width: 50%;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.09) !important;
+        -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.10) !important;
+        border-radius: 3px;
+        background-color: rgba(63, 120, 174, 0.71) !important;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(64, 121, 179, 0.66)), to(rgba(64, 121, 179, 0.66)), color-stop(14%, rgba(63, 119, 169, 0.76)), color-stop(83%, rgba(63, 119, 169, 0.76))) !important;
+        margin-top: auto;
+        
+}
+
+.forms{
+    width: 80%;
+}
+

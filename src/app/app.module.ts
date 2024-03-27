@@ -26,12 +26,16 @@ import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-
 import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
 import { ChangeLanguageDialogComponent } from './components/dialogs/change-language-dialog/change-language-dialog.component';
 import { HomeModule } from './home/home.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     
     FormsDirectiveDirective,
+          
+    
     
    
     

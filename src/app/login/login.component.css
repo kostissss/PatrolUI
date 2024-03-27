@@ -1,0 +1,7 @@
+.my-component {
+    background-image: url('../../assets/patrol_bckg.jpg'); /* Set the image */ 
+    background-size: cover; /* Adjust how the image fills the space */
+    background-repeat: no-repeat; /* Prevent image repetition if needed */
+    width: 100%; /* Set the width */
+    height: 100%; /* Set the height */
+}
