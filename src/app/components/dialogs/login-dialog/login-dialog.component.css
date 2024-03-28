@@ -40,7 +40,7 @@
     width: 100%;
     padding-top: 2px;
     padding-bottom: 2px;
-    height: 40px;
+    height: 50px;
 }
 .BtnOrange {
     font-family: "Open Sans", "Verdana", sans-serif !important;
@@ -50,7 +50,7 @@
     border-color: rgba(220, 130, 75, 0.82) !important;
     
     border-radius: 3px;
-    padding: 0px 20px  20px;
+    padding: 0px 20px ;
     
     background-color: rgba(220, 130, 75, 0.82) !important;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(223, 142, 94, 0.82)), to(rgba(217, 116, 55, 0.82)), color-stop(12%, rgba(221, 131, 77, 0.82)), color-stop(85%, rgba(221, 131, 77, 0.82))) !important;
@@ -60,10 +60,8 @@
     font-family: "Open Sans", "Verdana", sans-serif !important;
     font-size: 110% !important;
     color: rgb(255, 255, 255) !important;
-    border-top: 1px solid rgba(93, 93, 93, 0.50) !important;
-    border-left: 1px solid rgba(93, 93, 93, 0.50) !important;
-    border-bottom: 1px solid rgba(93, 93, 93, 0.50) !important;
-    border-right: 1px solid rgba(93, 93, 93, 0.50) !important;
+    border: 1px solid rgba(93, 93, 93, 0.50) !important;
+    
     text-shadow: 1px 1px 2px rgba(0,0,0,0.09) !important;
     -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.10) !important;
     -webkit-border-top-left-radius: 3px !important;
@@ -79,7 +77,8 @@
         font-size: 110% !important;
         color: rgb(255, 255, 255) !important;
         border: 1px solid rgba(93, 93, 93, 0.50) !important;
-        width: 50%;
+        width: 60%;
+        height: 120%;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.09) !important;
         -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.10) !important;
         border-radius: 3px;
@@ -89,7 +88,23 @@
         
 }
 
+.BtnOrange:hover {
+    background-color: rgba(217,119,59,0.82) !important;
+    background-image: -moz-linear-gradient(top, rgba(219,126,70,0.82) 0%, rgba(215,112,49,0.82) 14%, rgba(215,112,49,0.82) 86%, rgba(219,126,70,0.82) 100%) !important;
+  }
+
+
+  .BtnBlack:hover {
+    background-color: rgba(43,45,49,0.87) !important;
+    background-image: -moz-linear-gradient(top, rgba(43,45,49,0.75) 0%, rgb(43,45,49) 14%, rgb(43,45,49) 86%, rgba(43,45,49,0.75) 100%) !important;
+  }
+
 .forms{
     width: 80%;
 }
 
+.spacer{
+    
+    visibility: block;
+    height: 10px;
+}

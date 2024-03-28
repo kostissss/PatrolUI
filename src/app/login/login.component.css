@@ -4,4 +4,11 @@
     background-repeat: no-repeat; /* Prevent image repetition if needed */
     width: 100%; /* Set the width */
     height: 100%; /* Set the height */
+    font-family: "Open Sans", "Verdana", sans-serif !important;
+}
+.fs-16{
+    font-size: 16px;
+}
+.fs-24{
+    font-size: 24px;
 }

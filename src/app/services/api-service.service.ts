@@ -34,6 +34,9 @@ export class ApiServiceService {
     console.log(password);
     return this.http.put<Account>(`${this.apiUrl}partner/accounts/passwordReset/1`, {"password":password},httpOptions);
   }
+  logIn(accountData :Account): Observable<any> {
+    return this.http.post<Account>(`${this.apiUrl}accounts/login/`, accountData,httpOptions);
+  }
 
   logOut(): Observable<any> {
     return this.http.delete(`${this.apiUrl}accounts/logout/`,httpOptions);

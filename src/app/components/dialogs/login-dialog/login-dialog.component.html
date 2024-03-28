@@ -1,58 +1,34 @@
-<div class="bg-light container d-flex flex-column align-items-center border border-secondary"> 
+<div class="bg-light container d-flex flex-column align-items-center">
     <div class="header border border-secondary">LOGIN</div>
-    <div class=" row forms"><form #myForm="ngForm" class="mb-1 mt-4  flex-column align-items-center "  >
-        
-    
-        <div class=" mt-1 mb-3 row  flex-grow-1 align-self-center justify-self-center">
-          
-          
-            <input [(ngModel)]="unameInput" name="uname" required type="text" class="form-control flex-grow-1 mb-1 "id="uname" #uname="ngModel" placeholder="Username" />
+    <div class="row forms">
+      <form #myForm="ngForm" class="mb-1 mt-4 flex-column align-items-center">
+        <div class="mt-1 mb-3 row flex-grow-1 align-self-center justify-self-center">
             
-          
-        
-    
-        
-          
-          
-            <input [(ngModel)]="passwordInput" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" appFormsDirective type="password" class="form-control mt-1" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="Password" />
-            
-          
+          <input [(ngModel)]="unameInput" name="uname" required type="text" class="form-control flex-grow-1 mb-1" id="uname" #uname="ngModel" placeholder="Username" />
+          <input [(ngModel)]="passwordInput" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" appFormsDirective type="password" class="form-control mt-1" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="Password" />
         </div>
-    
-        
-    
-    
-        
-    
-      
-     
-    
-    
-    
-    </form></div><div class="d-flex flex-column justify-content-end mt-auto p-0 ">
-        <div  class="d-flex justify-content-center justify-self-start ">
-            <div class="">
-          <div *ngIf="(myForm.invalid && myForm.dirty && !password.errors?.['pattern'])" class="text-danger warning-margin">
-            Invalid Username or password
-          </div></div>
-          
-          
-          
-        </div>
-    
-        
-        
-        <div class="row justify-content-center mt-5">
-        <button class="LoginBtn ">Login</button></div>
-        <div class="d-flex justify-content-center align-items-center mt-3"><input (click)="{}" type="checkbox" class="mr-3 " id="demo" name="demo" #demo="" ><label class="font-weight-normal m-0 mr-3 " for="demo">Remember Me</label>
-    
-            <a class="flex-grow-1" href="">Forgot Your Password?</a>
+        <div class="spacer d-flex justify-content-center">
+        <div *ngIf="(invalidLogin)" 
+             class="text-danger warning-margin" style="height: 20px;"> 
+          Invalid Username or password
         </div>
     </div>
-    
-
- 
-
-    
-    <div class="footer d-flex border border-secondary"><button class="m-2 BtnGray flex-grow-1  mr-4">Free Test</button> <button class="ml-4 m-2 BtnOrange flex-grow-1">Sign Up</button></div>
-</div>
+      </form>
+    </div>
+    <div class="d-flex flex-column justify-content-end mt-auto p-0">
+      <div class="row justify-content-center mt-5">
+        <button class="LoginBtn" (click)="onLoginSubmit()">Login</button>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-3">
+        <input (click)="{}" type="checkbox" class="mr-3" id="demo" name="demo" #demo="" />
+        <label class="font-weight-normal m-0 mr-3" for="demo">Remember Me</label>
+        <a class="flex-grow-1" href="">Forgot Your Password?</a>
+      </div>
+      
+    </div>
+    <div class="footer d-flex border border-secondary">
+      <button class="m-2 BtnGray flex-grow-1 mr-4">Free Test</button>
+      <button class="ml-4 m-2 BtnOrange flex-grow-1">Sign Up</button>
+    </div>
+  </div>
+  
