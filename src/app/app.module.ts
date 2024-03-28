@@ -12,7 +12,7 @@ import {DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
 import { CreateNewAccountComponent } from './components/dialogs/create-new-account/create-new-account.component';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { AccountsDropDownButtonComponent } from './dropdowns/accounts-drop-down-button/accounts-drop-down-button.component';
 import { Menu, MenuModule } from '@syncfusion/ej2-angular-navigations';
@@ -28,6 +28,7 @@ import { ChangeLanguageDialogComponent } from './components/dialogs/change-langu
 import { HomeModule } from './home/home.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
+import { AuthTokenInterceptor } from './inrerceptors/auth-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { LoginDialogComponent } from './components/dialogs/login-dialog/login-di
     SidebarModule,
     HomeModule,
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

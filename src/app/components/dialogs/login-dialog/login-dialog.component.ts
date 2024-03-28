@@ -4,6 +4,8 @@ import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popup
 import { NgForm } from '@angular/forms';
 import { EmitType } from '@syncfusion/ej2-base';
 import { Account } from '../../../interfaces/account';
+import { AuthServiceService } from '../../../services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-dialog',
@@ -15,18 +17,20 @@ export class LoginDialogComponent  {
   passwordInput :string = '';
   invalidLogin :boolean = false;
 
-  constructor(private apiService: ApiServiceService) { }
+  constructor(private authService: AuthServiceService,private router:Router) { }
 
   onLoginSubmit() {
     let account : Account = {} as Account;
     account.uname = this.unameInput;
     account.password = this.passwordInput;
     console.log(account);
-    this.apiService.logIn(account).subscribe(
+    this.authService.logIn(account).subscribe(
       (response ) => {
         console.log(response);
         alert('Logged In successfully');
-        localStorage.setItem('token', response.authToken);
+        localStorage.setItem('Authtoken', response.authToken);
+        this.router.navigate(['/home']);
+
         
       },
       (error) => {

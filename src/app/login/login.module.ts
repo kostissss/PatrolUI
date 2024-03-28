@@ -7,6 +7,8 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { LoginDialogComponent } from '../components/dialogs/login-dialog/login-dialog.component';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthTokenInterceptor } from '../inrerceptors/auth-token.interceptor';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     LoginRoutingModule,
     DialogModule,
     FormsModule
-  ]
+  ],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}]
 })
 export class LoginModule { }

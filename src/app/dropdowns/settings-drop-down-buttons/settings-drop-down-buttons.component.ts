@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { AccountChangeDropDownComponent } from '../account-change-drop-down/account-change-drop-down.component';
 import { ApiServiceService } from '../../services/api-service.service';
+import { AuthServiceService } from '../../services/auth-service.service';
 
 @Component({
   selector: 'app-settings-drop-down-buttons',
@@ -10,7 +11,7 @@ import { ApiServiceService } from '../../services/api-service.service';
 })
 export class SettingsDropDownButtonsComponent {
 
-  constructor(private apiService: ApiServiceService) { }
+  constructor(private authService: AuthServiceService) { }
   @ViewChild(AccountChangeDropDownComponent)
   public accountChangeDropdown!: AccountChangeDropDownComponent;
   @ViewChild('myDropD')
@@ -39,7 +40,7 @@ export class SettingsDropDownButtonsComponent {
     }
     if (args.item.text === 'Logout') {
       //const event: any = null; // Pass any relevant event object here
-      this.apiService.logOut().subscribe(
+      this.authService.logOut().subscribe(
 
         (response) => {
           alert('Logged out successfully');
