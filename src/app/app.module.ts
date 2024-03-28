@@ -29,7 +29,7 @@ import { HomeModule } from './home/home.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
 import { AuthTokenInterceptor } from './inrerceptors/auth-token.interceptor';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +58,7 @@ import { AuthTokenInterceptor } from './inrerceptors/auth-token.interceptor';
     AccordionModule,
     SidebarModule,
     HomeModule,
+    FontAwesomeModule,
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}],
   bootstrap: [AppComponent]

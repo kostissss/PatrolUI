@@ -9,6 +9,7 @@ import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthTokenInterceptor } from '../inrerceptors/auth-token.interceptor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AuthTokenInterceptor } from '../inrerceptors/auth-token.interceptor';
     CommonModule,
     LoginRoutingModule,
     DialogModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule,
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}]
 })
