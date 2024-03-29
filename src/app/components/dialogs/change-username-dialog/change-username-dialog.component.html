@@ -1,0 +1,50 @@
+
+<!-- <button class="e-control e-btn" style="position: absolute; margin-top: 25px; margin-left: 630px;" (click)="onOpenDialog($event); myForm.form.reset()">Open Dialog</button> -->
+
+<ejs-dialog #dialogcomponent id="dialogcomponent" height="24%" width="36%"  [buttons]="dialogButtons" [visible]="dialogVisibility" [position]="dialogPosition" [animationSettings]="dialogAnimationSettings" isModal='true'>
+    <ng-template class="mb-0 p-4 " #header>
+       <div class="pl-2 small-text reset_pw_custom_div"> Username Change</div>
+        <div class="gray-line-divider mt-0 flex-grow-1"></div>
+    </ng-template>
+    
+
+  <form #myForm="ngForm" class="mt-0 mr-3"  >
+   
+
+    
+
+    
+
+    <div class="form-group row  mt-2 mb-2">
+      <label for="uname" class="align-self-center  col-sm font-weight-normal fs-14">New Username</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="unameInput" name="uname" required    type="text" class="form-control" id="uname" #uname="ngModel"  placeholder="e.g., JohnD" />
+        <div class="d-flex">
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row  mt-2 mb-2">
+      <label for="cuname" class="align-self-center  col-sm font-weight-normal fs-14">Retype Username</label>
+      <div class="col-sm-8">
+        <input [ngModel]="" name="cuname" required type="text"  class="form-control" id="cuname" #cuname="ngModel" placeholder="e.g., JohnD" />
+        
+      </div>
+    </div>
+
+    
+    
+    <div *ngIf="myForm.touched" class="d-flex justify-content-center justify-self-center mt-2">
+      <div *ngIf="(myForm.invalid &&  myForm.dirty ) " class="text-danger">Please fill all the fields ! {{ " " }} </div>
+      <div *ngIf="uname.value != cuname.value && cuname.dirty && myForm.valid" class="text-danger">Username Mismatch! </div>
+      
+      
+    </div>
+  </form>
+  
+    
+  
+
+  
+</ejs-dialog>

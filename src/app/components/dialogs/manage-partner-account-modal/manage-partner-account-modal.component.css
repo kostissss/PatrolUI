@@ -1,0 +1,74 @@
+.e-dialog .e-dlg-header {
+   
+    font-weight: bold !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    font-size: 125% !important;
+    color: rgb(68, 68, 68) !important;
+    border-bottom: 2px solid rgba(239, 239, 239, 0.93) !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    
+}
+.e-dialog .e-dlg-header-content {
+    color: white;
+    font-size: 10px;
+    font-weight: normal;
+    
+    margin-bottom: 10px;
+    padding: 0px;
+    /* padding-left: 2%; */
+    
+}
+.e-ddl.e-input-group.e-control-wrapper .e-input {
+    font-size: 10px;
+    text-align: center;
+    
+    background: white;
+    
+    
+}
+
+.e-dialog .e-dlg-content {
+   
+    font-size: 12px;
+    font-weight: normal;
+    
+    margin-bottom: 10px;
+    padding: 2px;
+    padding-left: 2%;
+    
+}
+
+.gray-line-divider {
+    height: 1px; /* Height of the line */
+    background-color: #ccc; /* Gray color */
+    margin: 20px 0; /* Adjust margin as needed */
+  }
+
+  .e-dialog .e-dlg-header {
+    
+    width: 100%;
+    height: 38px;
+}
+.reset_pw_custom_div{
+    font-size: 125% !important;
+    font-weight: bold;
+}
+
+.form-control{
+    height: 24px;
+    box-shadow: none;
+    
+}
+.form-control:focus {
+    border-color: black; /* Change to your desired color */
+    border-width: 2px;
+}
+.border-lightgray:hover{
+    font-weight: bold;
+}
+.border-lightgray{
+    border: 1px solid rgb(204,204,204) !important;
+    background: #FBFBFB;
+}

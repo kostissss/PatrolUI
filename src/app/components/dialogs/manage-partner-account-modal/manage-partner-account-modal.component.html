@@ -1,0 +1,56 @@
+<!-- <button class="e-control e-btn" style="position: absolute; margin-top: 25px; margin-left: 630px;" (click)="onOpenDialog($event); myForm.form.reset()">Open Dialog</button> -->
+
+<ejs-dialog #dialogcomponent id="dialogcomponent" height="34%" width="36%"  [buttons]="dialogButtons" [visible]="dialogVisibility" [position]="dialogPosition" [animationSettings]="dialogAnimationSettings" isModal='true'>
+    <ng-template class="mb-0 " #header>
+       <div class="pl-2 small-text reset_pw_custom_div"> Manage Partner Account</div>
+        <div class="gray-line-divider mt-0 flex-grow-1"></div>
+    </ng-template>
+    
+
+  <form #myForm="ngForm" class="mt-0 mr-3"  >
+   
+
+    <div class="d-flex align-items-center mb-2">
+        <label class="font-weight-normal mr-3 mb-0" for="enabled">Enabled</label>
+        <input type="checkbox" class="" id="enabled" name="demo" #enabled="ngModel" [(ngModel)]="enabledSelected">
+    </div>
+
+    <div class="reset_pw_custom_div">Reset Password</div>
+    <div class="gray-line-divider mt-0 flex-grow-1"></div>
+
+    <div class="form-group row  mt-1 mb-1">
+      <label for="password" class="align-self-center  col-sm font-weight-normal">Password</label>
+      <div class="col-sm-9">
+        <input [(ngModel)]="passwordInput" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"   type="password" class="form-control" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <div class="d-flex">
+          <!-- <small *ngIf="password.errors?.['minlength']" class="flex-shrink-1">Password should be more than 12 characters</small> -->
+          <!-- <small *ngIf="password.errors?.['required'] && password.touched" class="flex-shrink-1">Password is required</small> -->
+          <!-- <small *ngIf="password.errors?.['pattern'] && password.dirty && !password.errors?.['minlength']" class="flex-shrink-1">Password does not contain special characters</small> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row  mt-1 mb-1">
+      <label for="cpassword" class="align-self-center  col-sm font-weight-normal">Password Confirm</label>
+      <div class="col-sm-9">
+        <input [ngModel]="" name="cpassword" required type="password"  class="form-control" id="cpassword" #cpassword="ngModel" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <!-- <small *ngIf="cpassword.invalid && cpassword.touched">Password Confirmation is required</small> -->
+        <!-- <small *ngIf="password.value!= cpassword.value && cpassword.dirty ">Passwords need to be matching!</small> -->
+      </div>
+    </div>
+
+    
+    
+    <div *ngIf="myForm.touched" class="d-flex justify-content-center justify-self-center mt-2">
+      <div *ngIf="(myForm.invalid && !password.errors?.['pattern'] && myForm.dirty ) " class="text-danger">Please fill all the fields ! {{ " " }} </div>
+      <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger">Password Mismatch! </div>
+      <div *ngIf="password.errors?.['pattern'] && password.dirty" class="text-danger">Your password length must be between 6 and 20 characters in length, consisting of at least 1 lower case letter, 1 upper case letter, 1 number and 1 special character. </div>
+      
+    </div>
+  </form>
+  
+    
+  
+
+  
+</ejs-dialog>
