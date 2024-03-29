@@ -1,0 +1,112 @@
+/* @import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-calendars/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-notifications/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-angular-grids/styles/material.css'; */
+
+@import '../../../node_modules/@syncfusion/ej2-angular-grids/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';
+
+@import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+
+
+
+.e-search-wrapper {
+  float: right; /* Αλλαγή θέσης στο search bar */
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  order: -1; /* Θέτει το πρώτο span αριστερά */
+}
+
+.right-group {
+  display: flex; /* Κάνει τα spans να είναι σειρά */
+}
+
+.right {
+  margin-left: 10px; /* Προσθέτει κάποιο διάστημα μεταξύ των spans */
+}
+
+
+
+#toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+#toolbar input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+#toolbar ejs-pager .e-prev,
+#toolbar ejs-pager .e-next {
+  margin: 0 5px;
+}
+
+
+
+/* Reduce the size of the pager container */
+.e-pager {
+  font-size: 12px; /* Optionally reduce font size */
+  width: 70px;
+  height: 50px;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  padding: 3px 6px; /* Adjust padding as needed */
+  .e-pager .e-firstpage,
+  .e-pager .e-prevpage,
+  .e-pager .e-pagenumber,
+  .e-pager .e-nextpage,
+  .e-pager .e-lastpage,
+  .e-pager .e-pagecount {
+    display: none;  
+  } 
+
+  /* Adjust the size of the next and back buttons */
+  .e-pager .e-prevpagedisabled,
+  .e-pager .e-nextpagedisabled {
+    width: 20px; /* Set width */
+    padding: 3px 6px; /* Adjust padding as needed */
+  }
+
+}
+
+
+
+
+/* Increase specificity to override default styles */
+:host ::ng-deep .e-checkbox-wrapper .e-frame, 
+:host ::ng-deep .e-checkbox-wrapper .e-icons::before {
+    border-color: grey !important; 
+    width: 15px !important; 
+    height: 16px !important; 
+}
+
+
+/* Change background color of the checkbox when checked */
+.e-checkbox-wrapper .e-frame.e-check {
+  background-color: #328bd4 !important; /* Change background color to blue */
+}
+
+
+.checkbox-container {
+  display: left;
+  align-items: center;
+}

@@ -47,6 +47,12 @@
     "@syncfusion/ej2-icons": "^24.2.3",
     "bootstrap": "^5.3.3",
     "primeng": "^17.10.0",
+    "@syncfusion/ej2-angular-buttons": "^24.2.7",
+    "@syncfusion/ej2-angular-grids": "^24.2.9",
+    "@syncfusion/ej2-angular-navigations": "^24.2.8",
+    "@syncfusion/ej2-angular-popups": "^24.2.10",
+    "bootstrap": "^3.4.1",
+    "material-icons": "^1.13.12",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

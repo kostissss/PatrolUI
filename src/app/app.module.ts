@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { CreatePartnerAccountModalComponent } from './components/dialogs/create-partner-account-modal/create-partner-account-modal.component';
 import { FormsDirectiveDirective } from './forms-directive.directive';
-import {CheckBoxModule} from '@syncfusion/ej2-angular-buttons';
 import { CreateNewAccountComponent } from './components/dialogs/create-new-account/create-new-account.component';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
@@ -39,7 +38,7 @@ import { AppComponent } from './app.component';
 import { NotifHeaderComponent } from './NotificationGrid/header/header.component';
 import { DataTableComponent } from './NotificationGrid/data-table/data-table.component';
 
-import { GridModule, SearchService, ToolbarService, SortService, PageService, EditService } from '@syncfusion/ej2-angular-grids';
+import { GridModule, SearchService, ToolbarService, SortService, PageService, EditService, PagerModule } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -51,6 +50,13 @@ import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AddNotificationDialogComponent } from './NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
 import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
 import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+import { GridComponent } from './grid/grid.component';
+import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { ToolbarItem } from '@syncfusion/ej2-grids';
+import { MainComponent } from './main/main.component';
+
+
 
 
 
@@ -62,9 +68,8 @@ import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/a
     AddNotificationDialogComponent,
     EditNotificationDialogComponent,
     AssignToPartnersDialogComponent,
-    NotifHeaderComponent,
-    DataTableComponent,
-    
+    GridComponent,
+    MainComponent,
     FormsDirectiveDirective,
   ],
 
@@ -93,8 +98,7 @@ import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/a
     SidebarModule,
     HomeModule,
     FontAwesomeModule,
-    
-
+    PagerModule,
   ],
   providers: [
     SearchService,
@@ -102,6 +106,8 @@ import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/a
     SortService,
     EditService,
     PageService,
+    FilterService,
+    GroupService,
     {provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}
   
   ],
