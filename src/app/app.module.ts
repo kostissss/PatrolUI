@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
-import { HeaderComponent } from './header/header.component';
-import { DataTableComponent } from './data-table/data-table.component';
+import { HeaderComponent } from './NotificationGrid/header/header.component';
+import { DataTableComponent } from './NotificationGrid/data-table/data-table.component';
 
 import { GridModule, SearchService, ToolbarService, SortService, PageService, EditService } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -17,9 +17,9 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
-import { AddNotificationDialogComponent } from './data-table/add-notification-dialog/add-notification-dialog.component';
-import { EditNotificationDialogComponent } from './data-table/edit-notification-dialog/edit-notification-dialog.component';
-import { AssignToPartnersDialogComponent } from './data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+import { AddNotificationDialogComponent } from './NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
+import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
+import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
 
 
 
