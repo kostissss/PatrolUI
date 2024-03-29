@@ -1,0 +1,16 @@
+<div class="container">
+    <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowSorting]='true' 
+     (toolbarClick)='clickHandler($event)'>
+        <e-columns>
+                <e-column field='DateCreated' headerText='Date Created' width=120></e-column>
+                <e-column field='UserID' headerText='User ID' width=120></e-column>
+                <e-column field='Username' headerText='Username' width=120></e-column>
+                <e-column field='NotificationTitle' headerText='Notification Title' width=120></e-column>
+                <e-column field='NotificationMessage' headerText='Notification Message' width=120></e-column>
+                <e-column field='LastModifiedDate' headerText='Last Modified Date' width=120></e-column>
+        </e-columns>
+    </ejs-grid>
+    <div class="notification-count">
+        Total Notifications: {{ notificationCount }}
+    </div>
+</div>

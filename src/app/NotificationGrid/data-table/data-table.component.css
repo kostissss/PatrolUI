@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    padding: 0px 0px;  
+}
+.e-headertext {
+    font-weight: normal;
+    color: rgb(159,159,159);
+}
+.e-rowcell {
+    background-color: rgb(245, 245, 245);
+    font-weight: 400;
+}
+.notification-count {
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #000000; 
+    padding: 0px 0;
+    font-size: 0.8em;
+}

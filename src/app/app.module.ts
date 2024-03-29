@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { CreatePartnerAccountModalComponent } from './components/dialogs/create-partner-account-modal/create-partner-account-modal.component';
-import { FormsModule } from '@angular/forms';
 import { FormsDirectiveDirective } from './forms-directive.directive';
 import {CheckBoxModule} from '@syncfusion/ej2-angular-buttons';
-import {DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
 import { CreateNewAccountComponent } from './components/dialogs/create-new-account/create-new-account.component';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
@@ -30,26 +26,64 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
 import { AuthTokenInterceptor } from './inrerceptors/auth-token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
+
+
+
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+
+import { NotifHeaderComponent } from './NotificationGrid/header/header.component';
+import { DataTableComponent } from './NotificationGrid/data-table/data-table.component';
+
+import { GridModule, SearchService, ToolbarService, SortService, PageService, EditService } from '@syncfusion/ej2-angular-grids';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DatePickerAllModule } from '@syncfusion/ej2-angular-calendars';
+import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { AddNotificationDialogComponent } from './NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
+import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
+import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    NotifHeaderComponent,
+    DataTableComponent,
+    AddNotificationDialogComponent,
+    EditNotificationDialogComponent,
+    AssignToPartnersDialogComponent,
+    NotifHeaderComponent,
+    DataTableComponent,
     
     FormsDirectiveDirective,
-          
-    
-    
-   
-    
-    
-    
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DialogModule,
+    RouterModule,
     FormsModule,
-    CheckBoxModule,
+    GridModule,
+    ButtonModule,
+    ToolbarModule,
     DropDownListModule,
+    DatePickerAllModule,
+    TimePickerModule,
+    TextBoxModule,
+    MultiSelectModule,
+    AutoCompleteModule,
+    DialogModule,
+    CheckBoxModule,
     DateTimePickerModule,
     HttpClientModule,
     DropDownButtonModule,
@@ -59,8 +93,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarModule,
     HomeModule,
     FontAwesomeModule,
+    
+
   ],
-  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}],
+  providers: [
+    SearchService,
+    ToolbarService, 
+    SortService,
+    EditService,
+    PageService,
+    {provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}
+  
+  ],
+
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
