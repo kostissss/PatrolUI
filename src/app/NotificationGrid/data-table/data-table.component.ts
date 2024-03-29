@@ -34,7 +34,7 @@ export class DataTableComponent implements OnInit {
     this.toolbar = [
       { prefixIcon: 'e-refresh'},
       { text: 'Add new Notification', tooltipText: 'Add', id: 'Add'},
-      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit' },
+      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit' }, 
       { text: 'Delete Notification', tooltipText: 'Delete', id: 'Delete'}, 
       { text: 'Assign To Partners', tooltipText: 'Assign', id: 'Assign'},
       'Search',
@@ -48,7 +48,7 @@ export class DataTableComponent implements OnInit {
     if (args.item.id === 'Add') {
       this.openAddNotificationDialog();
     }
-    if (args.item.id === 'Edit') {
+    if (args.item.id === 'Edit') { 
       this.openEditNotificationDialog();
     }
     if (args.item.id === 'Assign') {
@@ -90,5 +90,5 @@ export class DataTableComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-
+  
 }
