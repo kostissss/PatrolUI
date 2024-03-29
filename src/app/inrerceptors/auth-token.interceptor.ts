@@ -9,10 +9,10 @@ export class AuthTokenInterceptor implements HttpInterceptor {
   constructor(private authService: AuthServiceService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // Skip requests that don't need auth
-    // if (request.url.includes('/login') || request.url.includes('/signup')) {
-    //   return next.handle(request); 
-    // }
+    
+    if (request.url.includes('/login') || request.url.includes('/signup')) {
+      return next.handle(request); 
+    }
 
     const authToken = this.authService.authToken;
     if (authToken) {

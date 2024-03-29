@@ -29,8 +29,7 @@ export class LoginDialogComponent  {
       (response ) => {
         console.log(response);
         alert('Logged In successfully');
-        localStorage.setItem('Authtoken', response.authToken);
-        this.router.navigateByUrl('/home');
+        
 
         
       },

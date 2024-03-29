@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../enviroment';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Account } from '../interfaces/account';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -25,7 +26,7 @@ export class AuthServiceService {
   private authSubject = new BehaviorSubject<AuthResponse | null>(null);
 
   
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private router:Router) { 
     this.loadTokenFromStorage(); // Try loading existing tokens
   }
 
@@ -35,7 +36,7 @@ export class AuthServiceService {
     // debugger
     // console.log(this.authSubject);
     // debugger
-    return this.http.post<Account>(`${this.apiUrl}accounts/login/`, accountData,httpOptions);
+    return this.http.post<AuthResponse>(`${this.apiUrl}accounts/login/`, accountData,httpOptions).pipe(tap(res => this.handleLoginSuccess(res)));;
   }
 
   logOut(): Observable<any> {
@@ -58,15 +59,35 @@ export class AuthServiceService {
     }
   }
 
+
+  refreshToken(): Observable<any> {
+    const header= new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.get(`${this.apiUrl}accounts/refresh/`, { headers: header ,withCredentials: true})
+  }
+
   get authToken(): string {
     return this.authSubject.value?.authToken || '';
   }
+
+
 
   private clearTokensFromStorage() {
     localStorage.removeItem('authToken');
     localStorage.removeItem('refreshToken');
   }
 
+
+
+  private handleLoginSuccess(res: AuthResponse) {
+    this.authSubject.next(res);
+    this.storeTokens(res.authToken); 
+    this.router.navigateByUrl('/home');
+  }
+
+  private storeTokens(authToken: string) {
+    localStorage.setItem('AuthToken', authToken);
+        
+  }
   
 
 

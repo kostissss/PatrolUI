@@ -1,2 +1,2 @@
-<div class="d-flex flex-column justify-content-center align-items-center" ><img src="../../../assets/help.png" width="32" height="32" alt=""><button ejs-dropdownbutton [items]='items' content='Help'  cssClass="text-white bg-transparent e-caret-hide  justify-content-center custom-ff" (select)='select($event)'></button>
+<div class="d-flex flex-column justify-content-center align-items-center" ><img src="../../../assets/help.png" class="your-element-class" width="32" height="32" alt=""(click)="myEl.toggle()"><button ejs-dropdownbutton #myEl [items]='items' content='Help'  cssClass="text-white bg-transparent e-caret-hide  justify-content-center custom-ff" (select)='select($event)'></button>
 </div>

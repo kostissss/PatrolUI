@@ -103,7 +103,7 @@ setDialogSize(): void {
       (response ) => {
         
         alert('Account created successfully');
-        localStorage.setItem('token', response.token);
+        //localStorage.setItem('token', response.token);
       },
       (error) => {
         //debugger

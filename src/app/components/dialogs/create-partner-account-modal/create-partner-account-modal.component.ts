@@ -91,7 +91,7 @@ ngOnInit(): void {
       (response ) => {
         
         alert('Account created successfully');
-        localStorage.setItem('token', response.token);
+        //localStorage.setItem('token', response.token);
       },
       (error) => {
         alert(error.error);

@@ -27,3 +27,6 @@
 .e-paste:before{
     content:'\e679';
 }
+.cursor-pointer{
+    cursor: pointer;
+}
