@@ -1,0 +1,33 @@
+.e-dropdown-popup ul {
+    box-shadow: none;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    border-color: rgb(23, 92, 126) !important;
+    border-width: 2px !important;
+    border:groove;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.e-dropdown-popup ul .e-item:hover {
+    background-color: rgb(23, 92, 126);
+    border-radius: 5px;
+    
+    color: white;
+}
+
+
+.custom-ff{
+    
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 11px;
+        
+}
+.e-btn, .e-css.e-btn {
+    
+    line-height: inherit;
+    
+    padding: 0px 0px 0px 0px;
+    
+}
