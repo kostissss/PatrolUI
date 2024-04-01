@@ -22,7 +22,7 @@ export class MainComponent {
     //public closeIcon: Boolean = true;
     @ViewChild('dialogcomponent') dialogObject! : DialogComponent
     public dialogVisibility : Boolean = false;
-    public onOpenDialog = (event: any): void => {
+    public onOpenDialog = (): void => {
       this.dialogObject.show();
     };
   

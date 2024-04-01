@@ -6,6 +6,7 @@ import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent 
 import { AddNotificationDialogComponent } from './add-notification-dialog/add-notification-dialog.component';
 import { EditNotificationDialogComponent } from './edit-notification-dialog/edit-notification-dialog.component';
 import { AssignToPartnersDialogComponent } from './assign-to-partners-dialog/assign-to-partners-dialog.component';
+import { MainComponent } from '../../main/main.component';
 
 
 
@@ -15,11 +16,13 @@ import { AssignToPartnersDialogComponent } from './assign-to-partners-dialog/ass
   styleUrls: ['./data-table.component.css']
 })
 export class DataTableComponent implements OnInit {
+  @ViewChild('createNewNotificationDialog') 
+  public createNewNotificationDialog!: MainComponent;
 
   public data?: MyNotification[];
   public editSettings?: EditSettingsModel;
   @ViewChild('grid')
-  public grid: GridComponent;
+  public grid!: GridComponent;
   public notificationCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
@@ -46,7 +49,7 @@ export class DataTableComponent implements OnInit {
       this.reloadPage();
     }
     if (args.item.id === 'Add') {
-      this.openAddNotificationDialog();
+      this.createNewNotificationDialog.onOpenDialog();
     }
     if (args.item.id === 'Edit') { 
       this.openEditNotificationDialog();

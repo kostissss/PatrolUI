@@ -75,7 +75,7 @@ import {
 
 
 export class GridComponent implements OnInit {
-  @ViewChild('grid') grid: GridComponent;
+  @ViewChild('grid') grid!: GridComponent;
 
   public pageSettings: PageSettingsModel = {
     pageSize: 20, // Set your desired page size
@@ -91,8 +91,10 @@ export class GridComponent implements OnInit {
   selectedCompanies = 0;
   selectAllCompanies = false;
   showSelectedCompanies = false;
+  searchValue: string = '';
 
-  public data?: object[];
+
+  public data!: object[];
 
   selectAll = false;
   pageSize: number = 20;
@@ -125,7 +127,7 @@ export class GridComponent implements OnInit {
   // }
 
   onCheckboxChange(event: any, index: number): void {
-    this.data[index]['isSelected'] = event.target.checked;
+    (this.data[index] as any)['isSelected'] = event.target.checked;
     this.updateSelectedCompaniesCount();
   }
 
@@ -138,7 +140,7 @@ export class GridComponent implements OnInit {
     }
 
     // Update data and selected companies count
-    this.data.forEach((company, index) => {
+    this.data.forEach((company: any, index) => {
       company['isSelected'] = this.selectAllCompanies;
     });
     this.updateSelectedCompaniesCount();
