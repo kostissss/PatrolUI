@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
-import { ChangeUsernameDialogComponent } from '../../components/dialogs/change-username-dialog/change-username-dialog.component';
-import { ChangeLanguageDialogComponent } from '../../components/dialogs/change-language-dialog/change-language-dialog.component';
+import { ChangeUsernameDialogComponent } from '../../dialogs/change-username-dialog/change-username-dialog.component';
+import { ChangeLanguageDialogComponent } from '../../dialogs/change-language-dialog/change-language-dialog.component';
 
 @Component({
   selector: 'app-account-change-drop-down',

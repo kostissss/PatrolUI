@@ -86,7 +86,7 @@ ngOnInit(): void {
   public onSubmit(){
     
     
-    this.apiService.createPartnerAccount(this.account).subscribe(
+    this.apiService.createAccount(this.account).subscribe(
       
       (response ) => {
         

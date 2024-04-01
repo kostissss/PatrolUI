@@ -50,7 +50,7 @@ export class ManagePartnerAccountModalComponent {
 
   public onSubmit(){
     //put request to the server
-    this.apiService.resetPartnerPassword(this.passwordInput).subscribe(
+    this.apiService.resetPassword(this.passwordInput).subscribe(
 
       (response) => {
         alert('Password resseted successfully');

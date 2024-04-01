@@ -111,7 +111,7 @@
 
 
 <div  class="d-flex justify-content-center justify-self-center mt-20 ">
-  <div *ngIf="(myForm.invalid && myForm.dirty && !password.errors?.['pattern']) || (!password.errors?.['pattern'] && myForm.touched && myForm.dirty && (account.expirationDate==null || account.subscriptionFrequency==null || account.plan==null || account.timeZone==null || account.selectedOption==null))" class="text-danger warning-margin">
+  <div *ngIf="(myForm.invalid && myForm.dirty && !password.errors?.['pattern']) || (!password.errors?.['pattern'] && myForm.touched && myForm.dirty && (account.expirationDate==null || account.subscriptionFrequency=='' || account.plan=='' || account.timeZone=='' || account.selectedOption== ''))" class="text-danger warning-margin">
     Please fill in all fields!
   </div>
   <div *ngIf="password.value != cpassword.value && cpassword.dirty && myForm.valid" class="text-danger warning-margin">
