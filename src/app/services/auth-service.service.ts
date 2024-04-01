@@ -11,7 +11,7 @@ const httpOptions = {
   }),
 };
 interface AuthResponse { 
-  
+  account: Account;
   authToken: string;
   
 }
@@ -52,7 +52,7 @@ export class AuthServiceService {
   
     if (authToken && refreshToken) {
       this.authSubject.next({
-        
+        account: {} as Account,
         authToken
         
       });
@@ -88,6 +88,67 @@ export class AuthServiceService {
     localStorage.setItem('AuthToken', authToken);
         
   }
+
+
+
+  get accountName(): string {
+    return this.authSubject.value?.account.name || '';
+  }
+
+  // Getter for the 'email' field
+  get accountEmail(): string {
+    return this.authSubject.value?.account.email || '';
+  }
+
+  
+
+  // Getter for the 'uname' field
+  get accountUname(): string {
+    return this.authSubject.value?.account.uname || '';
+  }
+
+  // Getter for the 'subscriptionFrequency' field
+  get accountSubscriptionFrequency(): string {
+    return this.authSubject.value?.account.subscriptionFrequency || '';
+  }
+
+  // Getter for the 'plan' field
+  get accountPlan(): string {
+    return this.authSubject.value?.account.plan || '';
+  }
+
+  // Getter for the 'timeZone' field
+  get accountTimeZone(): string {
+    return this.authSubject.value?.account.timeZone || '';
+  }
+
+  // Getter for the 'selectedOption' field
+  get accountSelectedOption(): string {
+    return this.authSubject.value?.account.selectedOption || '';
+  }
+
+  // Getter for the 'demoSelected' field
+  get accountDemoSelected(): boolean {
+    return this.authSubject.value?.account.demoSelected || false;
+  }
+
+  // Getter for the 'expirationDate' field
+  get accountExpirationDate(): Date | undefined {
+    return this.authSubject.value?.account.expirationDate;
+  }
+
+  // Getter for the 'language' field
+  get accountLanguage(): string {
+    return this.authSubject.value?.account.language || '';
+  }
+
+  // Getter for the 'role' field
+  get accountRole(): string {
+    return this.authSubject.value?.account.role || '';
+  }
+  
+
+  
   
 
 
