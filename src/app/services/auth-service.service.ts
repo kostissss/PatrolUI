@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../enviroment';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
@@ -20,16 +20,21 @@ interface AuthResponse {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthServiceService implements OnInit {
 
   private apiUrl = environment.apiUrl;
   private authSubject = new BehaviorSubject<AuthResponse | null>(null);
+  public authState$: Observable<AuthResponse | null> = this.authSubject.asObservable(); 
 
   
   constructor(private http: HttpClient,private router:Router) { 
-    this.loadTokenFromStorage(); // Try loading existing tokens
+    this.loadFromStorage(); // Try loading existing tokens
   }
 
+  ngOnInit(): void {
+    //this.loadFromStorage();
+    
+  }
 
   logIn(accountData :Account): Observable<any> {
     // this.loadTokenFromStorage();
@@ -46,19 +51,24 @@ export class AuthServiceService {
     
   }
 
-  private loadTokenFromStorage() {
-    const authToken = localStorage.getItem('authToken'); 
-    const refreshToken = localStorage.getItem('refreshToken');
+  private loadFromStorage() {
+    const authToken = localStorage.getItem('AuthToken'); 
+    
+    const userName = localStorage.getItem('userName');
+    const loadedAccount = {uname: userName} as Account;
   
-    if (authToken && refreshToken) {
+    if (authToken ) {
       this.authSubject.next({
-        account: {} as Account,
+        account: loadedAccount,
         authToken
         
       });
     }
+    console.log(this.authSubject);
+    console.log(userName);
+    console.log(authToken); 
   }
-
+  
 
   refreshToken(): Observable<any> {
     const header= new HttpHeaders().set('Content-Type', 'application/json');
@@ -81,6 +91,7 @@ export class AuthServiceService {
   private handleLoginSuccess(res: AuthResponse) {
     this.authSubject.next(res);
     this.storeTokens(res.authToken); 
+    this.storeAccountDetails(res.account);
     this.router.navigateByUrl('/home');
   }
 
@@ -88,66 +99,12 @@ export class AuthServiceService {
     localStorage.setItem('AuthToken', authToken);
         
   }
+  private storeAccountDetails(account: Account) {
+    localStorage.setItem('userName', account.uname);
 
 
-
-  get accountName(): string {
-    return this.authSubject.value?.account.name || '';
-  }
-
-  // Getter for the 'email' field
-  get accountEmail(): string {
-    return this.authSubject.value?.account.email || '';
-  }
-
-  
-
-  // Getter for the 'uname' field
-  get accountUname(): string {
-    return this.authSubject.value?.account.uname || '';
-  }
-
-  // Getter for the 'subscriptionFrequency' field
-  get accountSubscriptionFrequency(): string {
-    return this.authSubject.value?.account.subscriptionFrequency || '';
-  }
-
-  // Getter for the 'plan' field
-  get accountPlan(): string {
-    return this.authSubject.value?.account.plan || '';
-  }
-
-  // Getter for the 'timeZone' field
-  get accountTimeZone(): string {
-    return this.authSubject.value?.account.timeZone || '';
-  }
-
-  // Getter for the 'selectedOption' field
-  get accountSelectedOption(): string {
-    return this.authSubject.value?.account.selectedOption || '';
-  }
-
-  // Getter for the 'demoSelected' field
-  get accountDemoSelected(): boolean {
-    return this.authSubject.value?.account.demoSelected || false;
-  }
-
-  // Getter for the 'expirationDate' field
-  get accountExpirationDate(): Date | undefined {
-    return this.authSubject.value?.account.expirationDate;
-  }
-
-  // Getter for the 'language' field
-  get accountLanguage(): string {
-    return this.authSubject.value?.account.language || '';
-  }
-
-  // Getter for the 'role' field
-  get accountRole(): string {
-    return this.authSubject.value?.account.role || '';
   }
   
-
   
   
 

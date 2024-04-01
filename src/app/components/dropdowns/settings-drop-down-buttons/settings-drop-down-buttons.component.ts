@@ -34,13 +34,16 @@ export class SettingsDropDownButtonsComponent implements OnInit{
   ];
 
   ngOnInit(): void {
-    const accountUserName = this.authService.accountUname;
-    console.log(accountUserName);
-    if (accountUserName!= '') {
-      this.accountName = accountUserName;
-    }
-    
+    this.authService.authState$.subscribe(authResponse => {
+      if (authResponse && authResponse.account) {
+        this.accountName = authResponse.account.uname;
+      } else {
+       
+      }
+    });
   }
+    
+  
   public select(args: MenuEventArgs) {
     if (args.item.text === 'Account Settings') {
       //const event: any = null; // Pass any relevant event object here
