@@ -18,4 +18,10 @@
     font-size: 0.8em;
 }
 
-
+.e-toolbar-left:disabled,
+.e-toolbar-center:disabled,
+.e-toolbar-right:disabled,
+.e-toolbar:disabled,
+.e-toolbar .e-toolbar-item .e-tbar-btn:disabled {
+    background-color: transparent;
+}
