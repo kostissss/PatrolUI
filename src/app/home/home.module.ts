@@ -39,7 +39,8 @@ import { ChangeLanguageDialogComponent } from '../components/dialogs/change-lang
     AccountChangeDropDownComponent,
     ChangeUsernameDialogComponent,
     ChangeLanguageDialogComponent,
-    CreatePartnerAccountModalComponent
+    CreatePartnerAccountModalComponent,
+
   ],
   imports: [
     CommonModule,

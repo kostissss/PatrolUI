@@ -19,7 +19,7 @@ export class DataTableComponent implements OnInit {
   public data?: MyNotification[];
   public editSettings?: EditSettingsModel;
   @ViewChild('grid')
-  public grid: GridComponent;
+  public grid!: GridComponent;
   public notificationCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
