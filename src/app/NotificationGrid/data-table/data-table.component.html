@@ -1,7 +1,10 @@
 <div class="container">
     <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowSorting]='true' 
-     (toolbarClick)='clickHandler($event)'>
-        <e-columns>
+     (toolbarClick)='clickHandler($event)' (recordClick)="onItemClick()" (recordDoubleClick)="createNewNotificationDialog.onOpenDialog()" >
+    
+        
+ 
+        <e-columns >
                 <e-column field='DateCreated' headerText='Date Created' width=120></e-column>
                 <e-column field='UserID' headerText='User ID' width=120></e-column>
                 <e-column field='Username' headerText='Username' width=120></e-column>

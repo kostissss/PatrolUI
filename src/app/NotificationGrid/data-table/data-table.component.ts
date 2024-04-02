@@ -33,13 +33,13 @@ export class DataTableComponent implements OnInit {
     this.data = data;
     this.notificationCount = this.data.length;
     this.selectionOptions = { mode: 'Row',  type: 'Single' };
-    this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog', template: '#dialogtemplate' };
+    //this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog', template: `` };
     this.toolbar = [
       { prefixIcon: 'e-refresh'},
-      { text: 'Add new Notification', tooltipText: 'Add', id: 'Add'},
-      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit' }, 
-      { text: 'Delete Notification', tooltipText: 'Delete', id: 'Delete'}, 
-      { text: 'Assign To Partners', tooltipText: 'Assign', id: 'Assign'},
+      { text: 'Add new Notification', tooltipText: 'Add', id: 'Add',},
+      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit',disabled: true}, 
+      { text: 'Delete Notification', tooltipText: 'Delete', id: 'Delete',disabled: true}, 
+      { text: 'Assign To Partners', tooltipText: 'Assign', id: 'Assign',disabled: true},
       'Search',
     ];
   }
@@ -93,5 +93,8 @@ export class DataTableComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-  
+  onItemClick(){
+    var selectedRecord = this.grid.getSelectedRecords()[0];
+    (this.grid as GridComponent).toolbarModule.enableItems(['Edit','Delete','Assign' ], true); // Disable toolbar items.
+  }
 }
