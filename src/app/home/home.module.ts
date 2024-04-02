@@ -18,10 +18,10 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { CreateNewAccountComponent } from '../components/dialogs/create-new-account/create-new-account.component';
 import { CreatePartnerAccountModalComponent } from '../components/dialogs/create-partner-account-modal/create-partner-account-modal.component';
 import { ManagePartnerAccountModalComponent } from '../components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
-import { AccountsDropDownButtonComponent } from '../dropdowns/accounts-drop-down-button/accounts-drop-down-button.component';
-import { SettingsDropDownButtonsComponent } from '../dropdowns/settings-drop-down-buttons/settings-drop-down-buttons.component';
-import { HelpDropDownButtonComponent } from '../dropdowns/help-drop-down-button/help-drop-down-button.component';
-import { AccountChangeDropDownComponent } from '../dropdowns/account-change-drop-down/account-change-drop-down.component';
+import { AccountsDropDownButtonComponent } from '../components/dropdowns/accounts-drop-down-button/accounts-drop-down-button.component';
+import { SettingsDropDownButtonsComponent } from '../components/dropdowns/settings-drop-down-buttons/settings-drop-down-buttons.component';
+import { HelpDropDownButtonComponent } from '../components/dropdowns/help-drop-down-button/help-drop-down-button.component';
+import { AccountChangeDropDownComponent } from '../components/dropdowns/account-change-drop-down/account-change-drop-down.component';
 import { ChangeUsernameDialogComponent } from '../components/dialogs/change-username-dialog/change-username-dialog.component';
 import { ChangeLanguageDialogComponent } from '../components/dialogs/change-language-dialog/change-language-dialog.component';
 

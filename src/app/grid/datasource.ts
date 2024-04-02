@@ -12,5 +12,5 @@ export let data: Object[] = [
     {
         CompanyID: 5677, CompanyName: 'marotest500', UserName: 'marotest500', Email: 'maro.grdg@gr.rr',
         PatrolLicences: '9', License: '102-F6234785275A1517', Demo: '\u2713',
-        Parent: 'intership2024-46907', selected: false
+        Parent: 'intership2024-46907', selected: true
     }];

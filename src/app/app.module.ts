@@ -9,15 +9,11 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { AccountsDropDownButtonComponent } from './dropdowns/accounts-drop-down-button/accounts-drop-down-button.component';
 import { Menu, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { HeaderComponent } from './components/header/header.component';
-import { SettingsDropDownButtonsComponent } from './dropdowns/settings-drop-down-buttons/settings-drop-down-buttons.component';
-import { HelpDropDownButtonComponent } from './dropdowns/help-drop-down-button/help-drop-down-button.component';
 
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigations';
-import { AccountChangeDropDownComponent } from './dropdowns/account-change-drop-down/account-change-drop-down.component';
 import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
 import { ChangeLanguageDialogComponent } from './components/dialogs/change-language-dialog/change-language-dialog.component';
 import { HomeModule } from './home/home.module';
