@@ -1,6 +1,6 @@
 <div class="container">
     <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowSorting]='true' 
-     (toolbarClick)='clickHandler($event)' (recordClick)="onItemClick()" >
+     (toolbarClick)='clickHandler($event)' (recordClick)="onItemClick()" (recordDoubleClick)="createNewNotificationDialog.onOpenDialog()" >
     
         
  
