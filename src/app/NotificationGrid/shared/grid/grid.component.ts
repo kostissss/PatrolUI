@@ -92,7 +92,7 @@ export class GridComponent implements OnInit {
   selectedCompanies = 0;
   selectAllCompanies = false;
   showSelectedCompanies = false;
-  searchValue: string="" ; // Fix: Change the type to string
+  searchValue: string=" " ; // Fix: Change the type to string
 
 
   public data!: object[];
@@ -112,7 +112,7 @@ export class GridComponent implements OnInit {
     this.data = data.map((company, index) => ({ ...company, isSelected: false }));
     this.totalCompanies = this.data.length;
     
-    this.onGridSearch(""); // Perform search using grid instance
+    
     this.toolbarOptions = [
       { prefixIcon: 'e-refresh'},
       { text: 'Add new Notification', tooltipText: 'Add', id: 'Add',},

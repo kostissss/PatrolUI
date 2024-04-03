@@ -5,7 +5,7 @@ import { AuthServiceService } from '../services/auth-service.service';
 
 @Injectable()
 export class AuthTokenInterceptor implements HttpInterceptor {
-
+   authToken: string = '';
   constructor(private authService: AuthServiceService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -13,12 +13,19 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     if (request.url.includes('/login') || request.url.includes('/signup')) {
       return next.handle(request); 
     }
-
-    const authToken = this.authService.authToken;
-    if (authToken) {
+         
+     this.authService.authState$.subscribe(authResponse => {
+      if (authResponse && authResponse.authToken) {
+        this.authToken = authResponse.authToken;
+      } else {
+        console.log('No auth token found');
+       
+      }
+    });
+    if (this.authToken ) {
       request = request.clone({
         setHeaders: { 
-          Authorization: `Bearer ${authToken}`
+          Authorization: `Bearer ${this.authToken}`
         }
       });
     }
