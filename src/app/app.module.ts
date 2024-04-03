@@ -31,8 +31,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
-import { NotifHeaderComponent } from './NotificationGrid/header/header.component';
-import { DataTableComponent } from './NotificationGrid/data-table/data-table.component';
+// import { NotifHeaderComponent } from './NotificationGrid/header/header.component';
+// import { DataTableComponent } from './NotificationGrid/data-table/data-table.component';
+// import { AddNotificationDialogComponent } from './NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
+import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
+import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+// import { GridComponent } from './NotificationGrid/shared/grid/grid.component';
 
 import { GridModule, SearchService, ToolbarService, SortService, PageService, EditService, PagerModule } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -43,10 +47,6 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
-import { AddNotificationDialogComponent } from './NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
-import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
-import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
-import { GridComponent } from './NotificationGrid/shared/grid/grid.component';
 import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
@@ -58,12 +58,12 @@ import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewe
 @NgModule({
   declarations: [
     AppComponent,
-    NotifHeaderComponent,
-    DataTableComponent,
-    AddNotificationDialogComponent,
+    // NotifHeaderComponent,
+    // DataTableComponent,
+    // AddNotificationDialogComponent,
     EditNotificationDialogComponent,
     AssignToPartnersDialogComponent,
-    GridComponent,
+    // GridComponent,
     FormsDirectiveDirective,
     HtmlPreviewerDialogComponent,
   ],
