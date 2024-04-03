@@ -1,1 +1,58 @@
-<div> <app-main></app-main></div>
+<!-- <button class="e-control e-btn" style="position: absolute;margin-top: 25px;margin-left: 15px;" -->
+
+<!-- (click)="onOpenDialog($event)">add notification -->
+
+<!-- </button> -->
+
+
+
+<div id="container " > 
+  
+
+  <ejs-dialog  class="dialog rounded-dialog" #dialogcomponent height="90%" width="900px" content="" 
+
+    [buttons]="dialogButton" 
+  
+  [visible]="dialogVisibility" [position]="dialogPosition"  [resizeHandles]="dialogResizeDirections" 
+  
+  [animationSettings]="dialogAnimationSettings" isModal='true'>
+
+
+  <label>Notification Title</label>
+
+<!--Dimiourgw tin mpara gia to notification title-->  
+  <input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="notificationTitle">
+    <br>
+    
+    <br>
+    
+
+    <div class="d-flex  nowrap">
+      <span class="mr-auto">Notification Title </span>
+      
+      <button class="previewBtn" style="margin-left: 620px;">Preview as HTML</button>
+    </div>
+
+
+    
+    <div class=" mb-4">
+    <textarea class="form-control no-resize" rows="10"  [(ngModel)]="notificationMessage"></textarea>
+  </div><!--Testing-->
+    
+  <br>
+    <app-grid></app-grid>
+
+    
+
+
+  </ejs-dialog>
+
+
+</div>
+
+
+
+

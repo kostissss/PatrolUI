@@ -1,24 +1,6 @@
-/* @import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';  
-@import '../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
-@import '../../../node_modules/@syncfusion/ej2-calendars/styles/material.css';  
-@import '../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
-@import '../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
-@import '../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
-@import '../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
-@import '../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
-@import '../../../node_modules/@syncfusion/ej2-notifications/styles/material.css';
-@import '../../../node_modules/@syncfusion/ej2-angular-grids/styles/material.css'; */
-
-@import '../../../node_modules/@syncfusion/ej2-angular-grids/styles/material.css';
-@import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';
-
-@import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';
-@import '../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
-
-
 
 .e-search-wrapper {
-  float: right; /* Αλλαγή θέσης στο search bar */
+  float: right; 
 }
 
 
@@ -29,15 +11,15 @@
 }
 
 .left {
-  order: -1; /* Θέτει το πρώτο span αριστερά */
+  order: -1; 
 }
 
 .right-group {
-  display: flex; /* Κάνει τα spans να είναι σειρά */
+  display: flex; 
 }
 
 .right {
-  margin-left: 10px; /* Προσθέτει κάποιο διάστημα μεταξύ των spans */
+  margin-left: 10px; 
 }
 
 
@@ -62,7 +44,7 @@
 
 
 
-/* Reduce the size of the pager container */
+
 .e-pager {
   font-size: 12px; /* Optionally reduce font size */
   width: 70px;
@@ -87,9 +69,6 @@
   }
 
 }
-
-
-
 
 /* Increase specificity to override default styles */
 :host ::ng-deep .e-checkbox-wrapper .e-frame, 
