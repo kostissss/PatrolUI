@@ -46,21 +46,12 @@
 
 
 .e-pager {
-<<<<<<< HEAD
   font-size: 12px; /* Optionally reduce font size */
   width: 70px;
   height: 50px;
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margin */
   padding: 3px 6px; /* Adjust padding as needed */
-=======
-  font-size: 12px; 
-  width: 70px;
-  height: 50px;
-  padding: 0; 
-  margin: 0; 
-  padding: 3px 6px; 
->>>>>>> cfee7ad78a1ef8734c585f5de0c1aa1b5d684e30
   .e-pager .e-firstpage,
   .e-pager .e-prevpage,
   .e-pager .e-pagenumber,
@@ -70,26 +61,16 @@
     display: none;  
   } 
 
-<<<<<<< HEAD
   /* Adjust the size of the next and back buttons */
   .e-pager .e-prevpagedisabled,
   .e-pager .e-nextpagedisabled {
     width: 20px; /* Set width */
     padding: 3px 6px; /* Adjust padding as needed */
-=======
-  .e-pager .e-prevpagedisabled,
-  .e-pager .e-nextpagedisabled {
-    width: 20px;
-    padding: 3px 6px; 
->>>>>>> cfee7ad78a1ef8734c585f5de0c1aa1b5d684e30
   }
 
 }
 
-<<<<<<< HEAD
 /* Increase specificity to override default styles */
-=======
->>>>>>> cfee7ad78a1ef8734c585f5de0c1aa1b5d684e30
 :host ::ng-deep .e-checkbox-wrapper .e-frame, 
 :host ::ng-deep .e-checkbox-wrapper .e-icons::before {
     border-color: grey !important; 
@@ -97,7 +78,6 @@
     height: 16px !important; 
 }
 
-<<<<<<< HEAD
 
 /* Change background color of the checkbox when checked */
 .e-checkbox-wrapper .e-frame.e-check {
@@ -105,12 +85,6 @@
 }
 
 
-=======
-.e-checkbox-wrapper .e-frame.e-check {
-  background-color: #328bd4 !important; 
-}
-
->>>>>>> cfee7ad78a1ef8734c585f5de0c1aa1b5d684e30
 .checkbox-container {
   display: left;
   align-items: center;

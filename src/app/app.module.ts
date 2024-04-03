@@ -47,14 +47,9 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
-import { AddNotificationDialogComponent } from './NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
-import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
-import { AssignToPartnersDialogComponent } from './NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
-import { GridComponent } from './grid/grid.component';
 import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { ToolbarItem } from '@syncfusion/ej2-grids';
-import { MainComponent } from './main/main.component';
+import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 
 
 
@@ -68,8 +63,7 @@ import { MainComponent } from './main/main.component';
     // AddNotificationDialogComponent,
     EditNotificationDialogComponent,
     AssignToPartnersDialogComponent,
-    GridComponent,
-    MainComponent,
+    // GridComponent,
     FormsDirectiveDirective,
     HtmlPreviewerDialogComponent,
   ],
