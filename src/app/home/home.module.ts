@@ -82,7 +82,8 @@ import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
     MultiSelectModule,
     AutoCompleteModule,
     FontAwesomeModule,
-    PagerModule
+    PagerModule,
+    
   ]
 })
 export class HomeModule { }
