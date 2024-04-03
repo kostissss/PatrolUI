@@ -9,6 +9,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
   }),
+  withCredentials: true  // Include cookies in requests
 };
 interface AuthResponse { 
   account: Account;
@@ -47,7 +48,7 @@ export class AuthServiceService implements OnInit {
   logOut(): Observable<any> {
     
     //this.clearTokensFromStorage();
-    return this.http.delete(`${this.apiUrl}accounts/logout`,httpOptions);
+    return this.http.delete(`${this.apiUrl}accounts/logout`,httpOptions).pipe(tap(res => this.handleLogoutSuccess()));;
     
   }
 
@@ -82,8 +83,8 @@ export class AuthServiceService implements OnInit {
 
 
   private clearTokensFromStorage() {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('AuthToken');
+    //localStorage.removeItem('refreshToken');
   }
 
 
@@ -94,6 +95,17 @@ export class AuthServiceService implements OnInit {
     this.storeAccountDetails(res.account);
     this.router.navigateByUrl('/home');
   }
+  private handleLogoutSuccess() {
+    //debugger
+    
+    
+    
+    this.clearTokensFromStorage();
+    //debugger
+    this.authSubject.next(null);
+    this.router.navigateByUrl('/login');
+    //debugger
+  }
 
   private storeTokens(authToken: string) {
     localStorage.setItem('AuthToken', authToken);
@@ -102,7 +114,13 @@ export class AuthServiceService implements OnInit {
   private storeAccountDetails(account: Account) {
     localStorage.setItem('userName', account.uname);
 
+  
+    
 
+
+  }
+  isLoggedIn(): boolean {
+    return !!this.authSubject.value;
   }
   
   
