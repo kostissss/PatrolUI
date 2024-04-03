@@ -55,7 +55,7 @@ export class ChangeUsernameDialogComponent {
         alert('UserName changed successfully');
       },
       (error) => {
-        alert('An error occurred');
+        alert(error.message);
       }
     )
 

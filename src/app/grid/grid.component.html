@@ -51,7 +51,7 @@
 </div>
 
 <div class="grid">
-  <ejs-grid #grid [dataSource]='data' height='200px' [allowSorting]="true" [pageSettings]="pageSettings" [searchSettings]="searchSettings">
+  <ejs-grid #grid [dataSource]='data' height='200px' [allowSorting]="true" [pageSettings]="pageSettings" [searchSettings]="searchSettings" [toolbar]="toolbarOptions">
     <ng-template #toolbarTemplate let-data>
       <div id='toolbar'>
         <ejs-checkbox label="Select All Companies" (change)="onSelectAllChange($event)"></ejs-checkbox>
@@ -63,7 +63,7 @@
           <option value="60">60</option>
         </select>
         <ejs-checkbox label="Show Demo"></ejs-checkbox>
-        <input type="text" [(ngModel)]="searchValue" (keyup)="onGridSearch(searchValue)"> 
+        <input type="text" [(ngModel)]="searchValue" (click)="onGridSearch(searchValue) "  > 
       </div>
     </ng-template>
 

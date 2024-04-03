@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType} from '@syncfusion/ej2-base';
 
@@ -8,10 +9,33 @@ import { EmitType} from '@syncfusion/ej2-base';
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-    //title = 'angular-dialog';
-    public dialogAnimationSettings: Object = { effect: 'FlipXUp', duration: 600};
+  notificationTitle = '';
+  notificationMessage = '';
+  
+
+
+  ngOnInit(): void {
+    this.toolbar = [
+      { prefixIcon: 'e-refresh'},
+      { text: 'Add new Notification', tooltipText: 'Add', id: 'Add',},
+      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit',disabled: true}, 
+      { text: 'Delete Notification', tooltipText: 'Delete', id: 'Delete',disabled: true}, 
+      { text: 'Assign To Partners', tooltipText: 'Assign', id: 'Assign',disabled: true},
+      'Search',
+    ];
+  }
+
+
+  
+  public toolbar?: ToolbarItems[] | object;
+
+  
+    
+
+  // DIALOG CONFIG
+    public dialogAnimationSettings: Object = { effect: 'SlideTop', duration: 600};
     public dialogResizeDirections: ResizeDirections[] = [
       'All'
     ];
@@ -19,7 +43,7 @@ export class MainComponent {
       X: 'center', Y: 'center'
     };
   
-    //public closeIcon: Boolean = true;
+    
     @ViewChild('dialogcomponent') dialogObject! : DialogComponent
     public dialogVisibility : Boolean = false;
     public onOpenDialog = (): void => {
@@ -30,6 +54,8 @@ export class MainComponent {
        this.dialogObject.hide();
     }
   
+
+    // DIALOG BUTTONS
     public dialogButton: Object = [
       {
         'click': this.hideDialog.bind(this),
@@ -50,26 +76,21 @@ export class MainComponent {
         'click': this.onSaveTemplate.bind(this), // Call onSaveTemplate when clicked
         buttonModel : {
           content: 'Save template',
-          cssClass: 'Save-template-button'
+          cssClass: 'previewBtn'
         }
       },
       {buttonModel : {
         content: 'send',
-        cssClass: 'send-button'
+        cssClass: 'BtnBlue pt-2 '
       }
       }
   
     ];
   
     
-    notificationTitle = '';
-    notificationMessage = '';
-    apiService: any;
+    
   
-    onUpdateServerName(event : any){
-      //this.notificationTitle = (<HTMLInputElement>event.target).value;
-    }
-  
+    
   
     onSaveTemplate() {
       this.notificationMessage = "the users notificarion"

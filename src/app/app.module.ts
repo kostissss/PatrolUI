@@ -51,6 +51,7 @@ import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarItem } from '@syncfusion/ej2-grids';
 import { MainComponent } from './main/main.component';
+import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 
 
 
@@ -67,6 +68,7 @@ import { MainComponent } from './main/main.component';
     GridComponent,
     MainComponent,
     FormsDirectiveDirective,
+    HtmlPreviewerDialogComponent,
   ],
 
   imports: [

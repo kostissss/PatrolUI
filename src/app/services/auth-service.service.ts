@@ -41,13 +41,13 @@ export class AuthServiceService implements OnInit {
     // debugger
     // console.log(this.authSubject);
     // debugger
-    return this.http.post<AuthResponse>(`${this.apiUrl}accounts/login/`, accountData,httpOptions).pipe(tap(res => this.handleLoginSuccess(res)));;
+    return this.http.post<AuthResponse>(`${this.apiUrl}accounts/login`, accountData,httpOptions).pipe(tap(res => this.handleLoginSuccess(res)));;
   }
 
   logOut(): Observable<any> {
     
-    this.clearTokensFromStorage();
-    return this.http.delete(`${this.apiUrl}accounts/logout/`,httpOptions);
+    //this.clearTokensFromStorage();
+    return this.http.delete(`${this.apiUrl}accounts/logout`,httpOptions);
     
   }
 

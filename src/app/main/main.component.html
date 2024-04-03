@@ -6,10 +6,10 @@
 
 
 
-<div id="container" > 
+<div id="container " > 
   
 
-  <ejs-dialog  class="dialog" #dialogcomponent height="90%" width="900px" content="" 
+  <ejs-dialog  class="dialog rounded-dialog" #dialogcomponent height="90%" width="900px" content="" 
 
     [buttons]="dialogButton" 
   
@@ -26,24 +26,23 @@
     class="form-control"
     [(ngModel)]="notificationTitle">
     <br>
-    <!--Testing-->
-    <p>{{notificationTitle}}</p>
+    
     <br>
-    <label>Notification Title</label>
+    
 
-    <div style="display: flex; align-items: center;">
-      <span>Notification </span>
-      <span>Title</span>
-      <button class="e-control e-btn" style="margin-left: 620px;">Preview as HTML</button>
+    <div class="d-flex  nowrap">
+      <span class="mr-auto">Notification Title </span>
+      
+      <button class="previewBtn" style="margin-left: 620px;">Preview as HTML</button>
     </div>
 
 
-    <br>
     
-    <textarea class="form-control no-resize" rows="10" [(ngModel)]="notificationMessage"></textarea>
-    <!--Testing-->
-    <p>{{notificationMessage}}</p>  
-
+    <div class=" mb-4">
+    <textarea class="form-control no-resize" rows="10"  [(ngModel)]="notificationMessage"></textarea>
+  </div><!--Testing-->
+    
+  <br>
     <app-grid></app-grid>
 
     

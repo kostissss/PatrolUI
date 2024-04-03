@@ -76,6 +76,7 @@ import {
 
 export class GridComponent implements OnInit {
   @ViewChild('grid') grid!: GridComponent;
+  public toolbarOptions?: ToolbarItems[] | object;
 
   public pageSettings: PageSettingsModel = {
     pageSize: 20, // Set your desired page size
@@ -91,7 +92,7 @@ export class GridComponent implements OnInit {
   selectedCompanies = 0;
   selectAllCompanies = false;
   showSelectedCompanies = false;
-  searchValue: string = '';
+  searchValue: string="" ; // Fix: Change the type to string
 
 
   public data!: object[];
@@ -110,6 +111,16 @@ export class GridComponent implements OnInit {
 
     this.data = data.map((company, index) => ({ ...company, isSelected: false }));
     this.totalCompanies = this.data.length;
+    
+    this.onGridSearch(""); // Perform search using grid instance
+    this.toolbarOptions = [
+      { prefixIcon: 'e-refresh'},
+      { text: 'Add new Notification', tooltipText: 'Add', id: 'Add',},
+      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit',disabled: true}, 
+      { text: 'Delete Notification', tooltipText: 'Delete', id: 'Delete',disabled: true}, 
+      { text: 'Assign To Partners', tooltipText: 'Assign', id: 'Assign',disabled: true},
+      'Search',
+    ];
   }
 
   // onCheckboxChange(event: any, index: number): void {
