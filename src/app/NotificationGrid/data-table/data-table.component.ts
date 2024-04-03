@@ -6,7 +6,6 @@ import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent 
 import { AddNotificationDialogComponent } from './add-notification-dialog/add-notification-dialog.component';
 import { EditNotificationDialogComponent } from './edit-notification-dialog/edit-notification-dialog.component';
 import { AssignToPartnersDialogComponent } from './assign-to-partners-dialog/assign-to-partners-dialog.component';
-import { MainComponent } from '../../main/main.component';
 
 
 
@@ -17,7 +16,7 @@ import { MainComponent } from '../../main/main.component';
 })
 export class DataTableComponent implements OnInit {
   @ViewChild('createNewNotificationDialog') 
-  public createNewNotificationDialog!: MainComponent;
+  public createNewNotificationDialog!: AddNotificationDialogComponent;
 
   public data?: MyNotification[];
   public editSettings?: EditSettingsModel;
@@ -33,7 +32,7 @@ export class DataTableComponent implements OnInit {
     this.data = data;
     this.notificationCount = this.data.length;
     this.selectionOptions = { mode: 'Row',  type: 'Single' };
-    //this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog', template: `` };
+    this.editSettings = {allowAdding: true, allowDeleting: true, mode: 'Dialog', template: '' };
     this.toolbar = [
       { prefixIcon: 'e-refresh'},
       { text: 'Add new Notification', tooltipText: 'Add', id: 'Add',},
@@ -46,7 +45,7 @@ export class DataTableComponent implements OnInit {
 
   clickHandler(args: ClickEventArgs): void {
     if (args.item.prefixIcon === 'e-refresh') {
-      this.reloadPage();
+      this.refreshPage();
     }
     if (args.item.id === 'Add') {
       this.createNewNotificationDialog.onOpenDialog();
@@ -54,16 +53,16 @@ export class DataTableComponent implements OnInit {
     if (args.item.id === 'Edit') { 
       this.openEditNotificationDialog();
     }
-    if (args.item.id === 'Assign') {
-      this.openAssignToPartnersDialog();
-    }
     if (args.item.id === 'Delete') { 
       var selectedRecord = this.grid.getSelectedRecords()[0];
       this.grid.deleteRecord(selectedRecord as string);
     }
+    if (args.item.id === 'Assign') {
+      this.openAssignToPartnersDialog();
+    }
   }
 
-  reloadPage() {
+  refreshPage() {
     window.location.reload();
   }
 
@@ -95,6 +94,6 @@ export class DataTableComponent implements OnInit {
   }
   onItemClick(){
     var selectedRecord = this.grid.getSelectedRecords()[0];
-    (this.grid as GridComponent).toolbarModule.enableItems(['Edit','Delete','Assign' ], true); // Disable toolbar items.
+    (this.grid as GridComponent).toolbarModule.enableItems(['Edit','Delete','Assign' ], true);
   }
 }
