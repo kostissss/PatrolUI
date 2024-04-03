@@ -89,6 +89,22 @@ export let data: MyNotification[] = [
         LastModifiedDate: 41414,
     },
     {
+        DateCreated: 123, 
+        UserID: 1111, 
+        Username: 'lilkugm',
+        NotificationTitle: 'testadsa', 
+        NotificationMessage: 'testasd', 
+        LastModifiedDate: 123234,
+    },
+    {
+        DateCreated: 123, 
+        UserID: 1111, 
+        Username: 'lilkugm',
+        NotificationTitle: 'testadsa', 
+        NotificationMessage: 'testasd', 
+        LastModifiedDate: 123234,
+    },
+    {
         DateCreated: 4567, 
         UserID: 9876, 
         Username: 'nfrb',
