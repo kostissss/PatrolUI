@@ -47,10 +47,9 @@ import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
-import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
+import { FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
-
 
 
 

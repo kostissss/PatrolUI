@@ -1,57 +1,25 @@
-<!-- <button class="e-control e-btn" style="position: absolute;margin-top: 25px;margin-left: 15px;" -->
-
-<!-- (click)="onOpenDialog($event)">add notification -->
-
-<!-- </button> -->
-
-
-
 <div id="container " > 
-  
-
-    <ejs-dialog  class="dialog rounded-dialog" #dialogcomponent height="90%" width="900px" content="" 
-  
-      [buttons]="dialogButton" 
-    
+  <ejs-dialog   #dialogcomponent class="notifdialog" height="90%" width="900px" [buttons]="dialogButton" 
     [visible]="dialogVisibility" [position]="dialogPosition"  [resizeHandles]="dialogResizeDirections" 
-    
     [animationSettings]="dialogAnimationSettings" isModal='true'>
-  
-  
-    <label>Notification Title</label>
-  
-  <!--Dimiourgw tin mpara gia to notification title-->  
-    <input 
-      type="text" 
-      class="form-control"
-      [(ngModel)]="notificationTitle">
-      <br>
-      
-      <br>
-      
-  
-      <div class="d-flex  nowrap">
-        <span class="mr-auto">Notification Title </span>
-        
-        <button class="previewBtn" style="margin-left: 620px;">Preview as HTML</button>
-      </div>
-  
-  
-      
-      <div class=" mb-4">
-      <textarea class="form-control no-resize" rows="10"  [(ngModel)]="notificationMessage"></textarea>
-    </div><!--Testing-->
-      
-    <br>
+      <ng-template #content>
+        <form>
+            <div class='form-group'><label for='email'>Title</label>
+                <input type='title' class='form-control' id='title'>
+            </div>
+            <div class='form-group'></div>
+            <div class='form-group'>
+                <label for='comment'>Notification Message</label>
+                                <div class="d-flex  nowrap">
+                  <button class="previewBtn">Preview as HTML</button>
+                </div>
+                <textarea style='resize: none;' class='form-control' rows='6' id='comment'></textarea>
+            </div>
+        </form>
+      </ng-template>
       <app-grid></app-grid>
-  
-      
-  
-  
-    </ejs-dialog>
-  
-  
-  </div>
+  </ejs-dialog>
+</div>
   
   
   

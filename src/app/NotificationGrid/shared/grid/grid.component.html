@@ -1,56 +1,11 @@
-<!-- <div class="header">
-    <span class="left">Select Companies</span>
-    <div class="right-group">
-        <span class="right">Total Companies {{totalCompanies}}</span>
-        <span class="right">Selected Companies {{selectedCompanies}}</span>
-    </div>
-</div>
 
-
-
-<div class="grid">
-    <ejs-grid #grid [dataSource]='data' height='200px' [allowSorting]="true" [pageSettings]="pageSettings">
-        <ng-template #toolbarTemplate let-data>
-            <div id='toolbar'>
-                <ejs-checkbox label = "select All Companies"></ejs-checkbox>
-                <ejs-checkbox label = "Show selected companies"></ejs-checkbox>
-                <ejs-pager (pageChange)="onPageChange($event)" [pageCount]="1" [currentPage]="1"></ejs-pager>
-                <select [(ngModel)]="pageSize" (change)="onPageSizeChange($event)">
-                    <option value="20">20</option>
-                    <option value="40">40</option>
-                    <option value="60">60</option>
-                </select>
-                <ejs-checkbox label="Show Demo"></ejs-checkbox>
-            </div>
-        </ng-template>
-
-        <e-columns>
-            <e-column type="checkbox" width="50"></e-column> 
-            <e-column field='CompanyID' headerText='Company ID' textAlign='Left' width=80></e-column>
-            <e-column field='CompanyName' headerText='Company Name' width=140></e-column>
-            <e-column field='UserName' headerText='User Name' textAlign='Right' format='C2' width=120></e-column>
-            <e-column field='Email' headerText='Email' textAlign='Left' format='yMd' width=190></e-column>
-            <e-column field='PatrolLicences' headerText='Patrol Licences:' textAlign='Left' format='yMd' width=70></e-column>
-            <e-column field='License' headerText='License' textAlign='Right' format='yMd' width=170></e-column>
-            <e-column field='Demo' headerText='Demo' textAlign='Right' format='yMd' width=70></e-column>
-            <e-column field='Parent' headerText='Parent' textAlign='Right' format='yMd' width=120></e-column>
-        </e-columns>
-        </ejs-grid>
-
-</div>
-
- -->
-
-
- <div class="header">
+<div class="container">
   <span class="left">Select Companies</span>
   <div class="right-group">
     <span class="right">Total Companies {{ totalCompanies }}</span>
     <span class="right">Selected Companies {{ selectedCompanies }}</span>
   </div>
-</div>
 
-<div class="grid">
   <ejs-grid #grid [dataSource]='data' height='200px' [allowSorting]="true" [pageSettings]="pageSettings" [searchSettings]="searchSettings" [toolbar]="toolbarOptions">
     <ng-template #toolbarTemplate let-data>
       <div id='toolbar'>
@@ -67,6 +22,7 @@
       </div>
     </ng-template>
 
+
     <e-columns>
       <e-column type="checkbox" width="50"></e-column> 
       <e-column field='CompanyID' headerText='Company ID' textAlign='Left' width=80></e-column>
@@ -77,4 +33,6 @@
       <e-column field='License' headerText='License' textAlign='Right' format='yMd' width=170></e-column>
       <e-column field='Demo' headerText='Demo' textAlign='Right' format='yMd' width=70></e-column>
       <e-column field='Parent' headerText='Parent' textAlign='Right' format='yMd' width=120></e-column>
-  </e-columns>
+    </e-columns>
+  </ejs-grid>
+</div>
