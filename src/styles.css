@@ -41,15 +41,12 @@
 /* @import './material3.css'; */
 @import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
-
 @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
 
-
 /* menu */
-
 @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
 
@@ -70,7 +67,6 @@
 
 .ddb-icons {
   font-family: 'e-db-icons' !important;
-  speak: none;
   font-size: 55px;
   font-style: normal;
   font-weight: normal;
@@ -138,6 +134,14 @@ body {
   .e-toolbar .e-toolbar-item .e-tbar-btn{
       background-color: rgb(184, 196, 206);
   }
+  .e-toolbar .e-toolbar-item .e-tbar-btn .e-tbar-btn-text{
+    font-size: 13px;
+  }
+
+  .e-grid .e-headercell{
+    height: 33px;
+  }
+
   .e-search{
       background-color: white;
   }

@@ -26,6 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@syncfusion/ej2-angular-buttons": "^24.2.7",
     "@syncfusion/ej2-angular-calendars": "^24.2.9",
+    "@syncfusion/ej2-angular-diagrams": "^25.1.38",
     "@syncfusion/ej2-angular-dropdowns": "^24.2.9",
     "@syncfusion/ej2-angular-grids": "^24.2.9",
     "@syncfusion/ej2-angular-inputs": "^24.2.9",
