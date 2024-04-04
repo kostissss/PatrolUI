@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ApiServiceService {
+export class AccountsService {
   
   private apiUrl = environment.apiUrl;
 

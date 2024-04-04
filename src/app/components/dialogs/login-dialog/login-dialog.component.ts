@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ApiServiceService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { NgForm } from '@angular/forms';
 import { EmitType } from '@syncfusion/ej2-base';
@@ -25,9 +25,10 @@ export class LoginDialogComponent  {
     account.uname = this.unameInput;
     account.password = this.passwordInput;
     console.log(account);
+    
     this.authService.logIn(account).subscribe(
       (response ) => {
-        console.log(response);
+        //console.log(response);
         alert('Logged In successfully');
         
 

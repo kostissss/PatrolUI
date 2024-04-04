@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { Account } from '../../../interfaces/account';
-import { ApiServiceService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-create-partner-account-modal',
@@ -13,7 +13,7 @@ import { ApiServiceService } from '../../../services/api-service.service';
   styleUrl: './create-partner-account-modal.component.css'
 })
 export class CreatePartnerAccountModalComponent implements OnInit {
-  constructor(private apiService :ApiServiceService) { }
+  constructor(private apiService :AccountsService) { }
   dialogWidth: string="";
   dialogHeight: string="";
 
