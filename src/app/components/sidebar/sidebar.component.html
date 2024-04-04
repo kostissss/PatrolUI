@@ -1,0 +1,18 @@
+<ejs-sidebar id="default-sidebar" #sidebar (created)="onCreated($event)" style="visibility: hidden" [enableGestures]="enableGestures" [closeOnDocumentClick]="true" >
+    
+    
+    <div class="center-align d-flex flex-column  ">
+       
+    
+        <div class="mt-3 p-2 fs-11 text-dark border blueBorder m-3 d-flex justify-content-center align-items-center">
+            <app-accounts-drop-down-button class=""></app-accounts-drop-down-button>
+        </div>
+<a href="" class="text-dark fs-11 p-2  border blueBorder m-3 text-center ">Companies</a>
+<a href="" class="text-dark fs-11 p-2 border blueBorder m-3  text-center">Notifications</a>
+<a href="" class="text-dark fs-11 p-2  border blueBorder m-3 text-center ">Check Points</a>
+<a href="" class="text-dark fs-11 p-2  border blueBorder m-3 text-center ">Guards</a>
+<a href="" class="text-dark fs-11 p-2 border blueBorder m-3  text-center">Action Log</a>
+<a href="" class="text-dark fs-11 p-2 border blueBorder m-3  text-center">Check Guard Action</a>
+<button ejs-button id="close" (click)="closeClick()" class=" close-btn p-2 m-3 border border-secondary ">Close </button>
+</div>
+</ejs-sidebar>

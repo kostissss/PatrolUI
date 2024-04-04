@@ -8,7 +8,8 @@
 <!-- <ng-template #desktopHeader> -->
 <div  class="MainToolbarStyle d-flex  align-items-center ">
    <a href="/"><img src="../../../assets/shield.png" class="m-3" width="32" height="32" alt="" ondragstart="return false;"></a> 
-<app-accounts-drop-down-button class="m-3"></app-accounts-drop-down-button>
+<app-accounts-drop-down-button class="m-3 d-none d-md-block " ></app-accounts-drop-down-button>
+<img src="../../../assets/whiteMenuIcon.png" width="32" height="32" alt="" (click)="toggleSidebar()" class="text-white fs-12 d-block d-md-none m-3 "> 
 <a href="" class="text-white fs-11 p-4 d-none d-md-block   ">Companies</a>
 <a href="" class="text-white fs-11 p-4 d-none d-md-block ">Check Points</a>
 <a href="" class="text-white fs-11 p-4 d-none d-md-block ">Guards</a>
@@ -16,6 +17,7 @@
 <a href="" class="text-white fs-11 p-4 d-none d-md-block">Check Guard Action</a>
 <a href="" class="text-white fs-11 p-4 d-none d-md-block">Notifications</a>
 <a class="d-flex flex-column fs-11 align-items-center m-3 "  (click)="refreshClicked()"><img src="../../../assets/refresh.png" width="32" height="32" alt=""> <div class="text-white fs-12">Refresh</div> </a>
+<app-sidebar class=""></app-sidebar>
 <app-help-drop-down-button class="ml-auto m-3"></app-help-drop-down-button>
 <app-settings-drop-down-buttons class="m-3 "></app-settings-drop-down-buttons>
 

@@ -32,6 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { RouterModule } from '@angular/router';
 import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
+import { SidebarMobileComponent } from '../components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,8 @@ import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
     NotifHeaderComponent,
     AddNotificationDialogComponent,
     GridComponent,
+    SidebarMobileComponent
+    
 
 
   ],
@@ -82,7 +85,8 @@ import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
     MultiSelectModule,
     AutoCompleteModule,
     FontAwesomeModule,
-    PagerModule
+    PagerModule,
+    SidebarModule,
   ]
 })
 export class HomeModule { }

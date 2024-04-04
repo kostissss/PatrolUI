@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { environment } from '../../../../../enviroment';
-import { AccountsService } from '../../../services/accounts.service';
+import { AccountsService } from '../../../services/api-service.service';
 
 import { Account } from '../../../interfaces/account';
 @Component({

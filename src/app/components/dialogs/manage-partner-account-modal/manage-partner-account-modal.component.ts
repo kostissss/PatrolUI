@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
-import { AccountsService } from '../../../services/accounts.service';
+import { AccountsService } from '../../../services/api-service.service';
 
 @Component({
   selector: 'app-manage-partner-account-modal',

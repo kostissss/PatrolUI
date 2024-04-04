@@ -55,6 +55,8 @@ import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewe
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +68,8 @@ import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewe
     // GridComponent,
     FormsDirectiveDirective,
     HtmlPreviewerDialogComponent,
+    
+    
   ],
 
   imports: [
