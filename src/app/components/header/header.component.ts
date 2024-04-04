@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountsService } from '../../services/accounts.service';
+import { AccountsService } from '../../services/api-service.service';
 import { AuthServiceService } from '../../services/auth-service.service';
+import { SidebarMobileComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,8 @@ import { AuthServiceService } from '../../services/auth-service.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  @ViewChild(SidebarMobileComponent) 
+  public sidebar!: SidebarMobileComponent;
   constructor(private router:  Router,private authService: AuthServiceService) { }
   screenWidth: number = window.innerWidth;
 
@@ -20,5 +23,8 @@ export class HeaderComponent {
     this.authService.refreshToken().subscribe((response) => {
       console.log(response);
     });
+  }
+  public toggleSidebar(){
+    this.sidebar.toggleClick();
   }
 }

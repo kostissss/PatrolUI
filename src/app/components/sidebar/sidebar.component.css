@@ -1,0 +1,9 @@
+.e-sidebar {
+    border-width: 2px;
+    border-color: rgb(23, 92, 126) !important;;
+}
+.blueBorder {
+    border-radius: 3px;
+    border-width: 2px !important;
+    border-color: rgb(23, 92, 126) !important;
+}

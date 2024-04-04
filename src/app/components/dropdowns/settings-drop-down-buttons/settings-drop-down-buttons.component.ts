@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { AccountChangeDropDownComponent } from '../account-change-drop-down/account-change-drop-down.component';
-import { AccountsService } from '../../../services/accounts.service';
+import { AccountsService } from '../../../services/api-service.service';
 import { AuthServiceService } from '../../../services/auth-service.service';
 
 @Component({

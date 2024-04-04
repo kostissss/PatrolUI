@@ -5,12 +5,8 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Account } from '../interfaces/account';
 import { Router } from '@angular/router';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-  withCredentials: true  // Include cookies in requests
-};
+
+
 interface AuthResponse { 
   account: Account;
   authToken: string;
@@ -23,6 +19,13 @@ interface AuthResponse {
 })
 export class AuthServiceService implements OnInit {
 
+
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+    withCredentials: true  // Include cookies in requests
+  };
   private apiUrl = environment.apiUrl;
   private authSubject = new BehaviorSubject<AuthResponse | null>(null);
   public authState$: Observable<AuthResponse | null> = this.authSubject.asObservable(); 
@@ -42,13 +45,13 @@ export class AuthServiceService implements OnInit {
     // debugger
     // console.log(this.authSubject);
     // debugger
-    return this.http.post<AuthResponse>(`${this.apiUrl}accounts/login`, accountData,httpOptions).pipe(tap(res => this.handleLoginSuccess(res)));;
+    return this.http.post<AuthResponse>(`${this.apiUrl}accounts/login`, accountData,this.httpOptions).pipe(tap(res => this.handleLoginSuccess(res)));;
   }
 
   logOut(): Observable<any> {
-    
+    debugger
     //this.clearTokensFromStorage();
-    return this.http.delete<AuthResponse>(`${this.apiUrl}accounts/logout`,httpOptions).pipe(tap(res => this.handleLogoutSuccess()));;
+    return this.http.delete<AuthResponse>(`${this.apiUrl}accounts/logout`,this.httpOptions).pipe(tap(res => this.handleLogoutSuccess()));;
     
   }
 
@@ -73,7 +76,7 @@ export class AuthServiceService implements OnInit {
 
   refreshToken(): Observable<any> {
     console.log(document.cookie)
-    return this.http.put<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
+    return this.http.put<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,this.httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
   }
 
   get authToken(): string {

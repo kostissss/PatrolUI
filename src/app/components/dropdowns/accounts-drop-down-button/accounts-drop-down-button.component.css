@@ -32,3 +32,15 @@
     
 
 }
+
+.responsive-text {
+    color: white; /* Default white for large screens */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* Targetting screens up-to 600px wide */
+    .responsive-text {
+      text-align: center;  
+      color: black; /* Dark text for small screens */
+    }
+  }
