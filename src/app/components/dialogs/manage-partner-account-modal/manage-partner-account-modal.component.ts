@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
-import { ApiServiceService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-manage-partner-account-modal',
@@ -11,7 +11,7 @@ import { ApiServiceService } from '../../../services/api-service.service';
 })
 export class ManagePartnerAccountModalComponent {
 
-  constructor(private apiService : ApiServiceService) { }
+  constructor(private apiService : AccountsService) { }
 
   public passwordInput='';
   public enabledSelected :boolean = false;

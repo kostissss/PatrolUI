@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { environment } from '../../../../../enviroment';
-import { ApiServiceService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 import { Account } from '../../../interfaces/account';
 @Component({
@@ -54,7 +54,7 @@ setDialogSize(): void {
 
   
   
-  constructor(private apiService: ApiServiceService) { 
+  constructor(private apiService: AccountsService) { 
     this.account.demoSelected=false;
    }
 

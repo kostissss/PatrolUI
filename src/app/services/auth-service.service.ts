@@ -48,7 +48,7 @@ export class AuthServiceService implements OnInit {
   logOut(): Observable<any> {
     
     //this.clearTokensFromStorage();
-    return this.http.delete(`${this.apiUrl}accounts/logout`,httpOptions).pipe(tap(res => this.handleLogoutSuccess()));;
+    return this.http.delete<AuthResponse>(`${this.apiUrl}accounts/logout`,httpOptions).pipe(tap(res => this.handleLogoutSuccess()));;
     
   }
 
@@ -72,8 +72,8 @@ export class AuthServiceService implements OnInit {
   
 
   refreshToken(): Observable<any> {
-    const header= new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get(`${this.apiUrl}accounts/refresh/`, { headers: header ,withCredentials: true})
+    console.log(document.cookie)
+    return this.http.put<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
   }
 
   get authToken(): string {
@@ -119,8 +119,16 @@ export class AuthServiceService implements OnInit {
 
 
   }
+  
+
+
   isLoggedIn(): boolean {
     return !!this.authSubject.value;
+  }
+  handleRefreshSuccess(res: AuthResponse) {
+    //this.authSubject.next(res);
+    //this.storeTokens(res.authToken);
+  
   }
   
   
