@@ -76,7 +76,7 @@ export class AuthServiceService implements OnInit {
 
   refreshToken(): Observable<any> {
     console.log(document.cookie)
-    return this.http.put<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,this.httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
+    return this.http.get<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,this.httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
   }
 
   get authToken(): string {
@@ -94,8 +94,11 @@ export class AuthServiceService implements OnInit {
 
   private handleLoginSuccess(res: AuthResponse) {
     this.authSubject.next(res);
+    
     this.storeTokens(res.authToken); 
+    
     this.storeAccountDetails(res.account);
+    
     this.router.navigateByUrl('/home');
   }
   private handleLogoutSuccess() {
@@ -115,22 +118,19 @@ export class AuthServiceService implements OnInit {
         
   }
   private storeAccountDetails(account: Account) {
-    localStorage.setItem('userName', account.uname);
-
-  
     
-
-
+    localStorage.setItem('userName', account.uname);
+    
+    localStorage.setItem('userId', String(account.id));
   }
-  
-
 
   isLoggedIn(): boolean {
     return !!this.authSubject.value;
   }
   handleRefreshSuccess(res: AuthResponse) {
-    //this.authSubject.next(res);
-    //this.storeTokens(res.authToken);
+    this.authSubject.next(res);
+    
+    this.storeTokens(res.authToken);
   
   }
   
