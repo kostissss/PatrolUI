@@ -50,6 +50,7 @@ import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
+import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.interceptor';
 
 
 
@@ -107,7 +108,16 @@ import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewe
     PageService,
     FilterService,
     GroupService,
-    {provide:HTTP_INTERCEPTORS,useClass:AuthTokenInterceptor,multi:true}
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RefreshTokenInterceptor,
+      multi: true
+    }
   
   ],
 

@@ -23,11 +23,15 @@ export class AuthTokenInterceptor implements HttpInterceptor {
       }
     });
     if (this.authToken ) {
+      console.log(' headers',request.headers.get('Authorization'));
       request = request.clone({
         setHeaders: { 
+
           Authorization: `Bearer ${this.authToken}`
         }
+       
       });
+      console.log('changed with token',this.authToken);
     }
 
     return next.handle(request); 
