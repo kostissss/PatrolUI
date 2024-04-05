@@ -1,27 +1,22 @@
-<div id="container " > 
-  <ejs-dialog   #dialogcomponent class="notifdialog" height="90%" width="900px" [buttons]="dialogButton" 
+<div id="addnotif" > 
+  <ejs-dialog  class="dialog" #dialogcomponent height="80%" width="900px" content="" [buttons]="dialogButton" 
     [visible]="dialogVisibility" [position]="dialogPosition"  [resizeHandles]="dialogResizeDirections" 
     [animationSettings]="dialogAnimationSettings" isModal='true'>
-      <ng-template #content>
-        <form>
-            <div class='form-group'><label for='email'>Title</label>
-                <input type='title' class='form-control' id='title'>
-            </div>
-            <div class='form-group'></div>
-            <div class='form-group'>
-                <label for='comment'>Notification Message</label>
-                                <div class="d-flex  nowrap">
-                  <button class="previewBtn">Preview as HTML</button>
-                </div>
-                <textarea style='resize: none;' class='form-control' rows='6' id='comment'></textarea>
-            </div>
-        </form>
-      </ng-template>
-      <app-grid></app-grid>
+  <label>Notification Title</label>
+  <input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="notificationTitle">
+    <br>
+    <div style="display: flex; align-items: center;">
+      <label>Notification Title</label>
+      <button class="e-control e-btn" style="margin-left: 620px;">Preview as HTML</button>
+    </div>
+    <br>
+    <textarea class="form-control no-resize" rows="10" [(ngModel)]="notificationMessage"></textarea>
+    <br>
+    <app-notifgrid></app-notifgrid>
   </ejs-dialog>
+
+
 </div>
-  
-  
-  
-  
-  

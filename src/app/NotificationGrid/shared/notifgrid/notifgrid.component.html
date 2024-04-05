@@ -1,0 +1,21 @@
+<div class="notifgrid">
+    <span class="left">Select Companies</span>
+    <div class="right-group">
+        <span class="right">Total Companies {{ totalCompanies }}</span>
+        <span class="right">Selected Companies {{ selectedCompanies }}</span>
+    </div>
+    <ejs-grid #grid [dataSource]='data' height='300px' [toolbar]='toolbar' [allowSorting]='true' allowPaging='true'>
+        <ejs-pager id="grid_1225598167_2_pager" [pageSize]='10'></ejs-pager>
+        <e-columns>
+            <e-column type="checkbox" width="50"></e-column>
+            <e-column field="CompanyID" headerText="Company ID" width="80"></e-column>
+            <e-column field="CompanyName" headerText="Company Name" width="80"></e-column>
+            <e-column field="UserName" headerText="User Name" width="80"></e-column>
+            <e-column field="Email" headerText="Email" width="80"></e-column>
+            <e-column field="PatrolLicences" headerText="Patrol Licences:" width="80"></e-column>
+            <e-column field="License" headerText="License" width="80"></e-column>
+            <e-column field="Demo" headerText="Demo" width="80"></e-column>
+            <e-column field="Parent" headerText="Parent" width="80"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>

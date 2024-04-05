@@ -31,7 +31,8 @@ import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { RouterModule } from '@angular/router';
-import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
+import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgrid.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
     DataTableComponent,
     NotifHeaderComponent,
     AddNotificationDialogComponent,
-    GridComponent,
+    NotifGridComponent
     
 
 
