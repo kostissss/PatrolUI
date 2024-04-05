@@ -49,7 +49,7 @@ export class AuthServiceService implements OnInit {
   }
 
   logOut(): Observable<any> {
-    debugger
+    //debugger
     //this.clearTokensFromStorage();
     return this.http.delete<AuthResponse>(`${this.apiUrl}accounts/logout`,this.httpOptions).pipe(tap(res => this.handleLogoutSuccess()));;
     
@@ -105,15 +105,15 @@ export class AuthServiceService implements OnInit {
     //debugger
     
     
-    
+    this.router.navigateByUrl('/login');
     this.clearTokensFromStorage();
     //debugger
     this.authSubject.next(null);
-    this.router.navigateByUrl('/login');
+    
     //debugger
   }
 
-  private storeTokens(authToken: string) {
+   storeTokens(authToken: string) {
     localStorage.setItem('AuthToken', authToken);
         
   }
