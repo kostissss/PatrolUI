@@ -66,6 +66,7 @@ import {
   ToolbarItems,
   //GridComponent,
 } from '@syncfusion/ej2-angular-grids';
+import { HtmlPreviewerDialogComponent } from '../../../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 
 @Component({
   selector: 'app-grid',
@@ -77,6 +78,7 @@ import {
 export class GridComponent implements OnInit {
   @ViewChild('grid') grid!: GridComponent;
   public toolbarOptions?: ToolbarItems[] | object;
+
 
   public pageSettings: PageSettingsModel = {
     pageSize: 20, // Set your desired page size
@@ -165,6 +167,7 @@ export class GridComponent implements OnInit {
     this.grid.search(searchValue); // Perform search using grid instance
   }
 
+  
 
   // updateSelectedCompaniesCount(): void {
   //   this.selectedCompanies = this.data.filter((company: any) => company.isSelected).length;
