@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType} from '@syncfusion/ej2-base';
+import { HtmlPreviewerDialogComponent } from '../../../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 
 
 @Component({
@@ -13,6 +14,9 @@ export class AddNotificationDialogComponent {
 
   notificationTitle = '';
   notificationMessage = '';
+
+  @ViewChild(HtmlPreviewerDialogComponent) 
+  previewDialog!: HtmlPreviewerDialogComponent;
   
 
 
@@ -95,6 +99,11 @@ export class AddNotificationDialogComponent {
     onSaveTemplate() {
       this.notificationMessage = "the users notificarion"
     }
+
+    onPreviewClick() {
+      this.previewDialog.onOpenDialog();
+    }
+  
 
 
 }

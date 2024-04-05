@@ -33,6 +33,7 @@ import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { RouterModule } from '@angular/router';
 import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
 import { SidebarMobileComponent } from '../components/sidebar/sidebar.component';
+import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { SidebarMobileComponent } from '../components/sidebar/sidebar.component'
     NotifHeaderComponent,
     AddNotificationDialogComponent,
     GridComponent,
-    SidebarMobileComponent
+    SidebarMobileComponent,
+    HtmlPreviewerDialogComponent,
     
 
 

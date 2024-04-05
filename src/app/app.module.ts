@@ -49,7 +49,6 @@ import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 import {  FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { HtmlPreviewerDialogComponent } from './components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.interceptor';
 
 
@@ -68,7 +67,7 @@ import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.intercepto
     AssignToPartnersDialogComponent,
     // GridComponent,
     FormsDirectiveDirective,
-    HtmlPreviewerDialogComponent,
+    
     
     
   ],

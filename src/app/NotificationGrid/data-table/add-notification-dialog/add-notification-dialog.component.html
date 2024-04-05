@@ -33,7 +33,7 @@
     <div class="d-flex  nowrap">
       <span class="mr-auto">Notification Title </span>
       
-      <button class="previewBtn" style="margin-left: 620px;">Preview as HTML</button>
+      <button class="previewBtn" style="margin-left: 620px;" (click)="onPreviewClick()">Preview as HTML</button>
     </div>
 
 
@@ -50,6 +50,8 @@
 
   </ejs-dialog>
 
+
+  <app-html-previewer-dialog></app-html-previewer-dialog>
 
 </div>
 
