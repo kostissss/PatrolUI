@@ -101,7 +101,7 @@ export class AddNotificationDialogComponent {
     }
 
     onPreviewClick() {
-      this.previewDialog.onOpenDialog();
+      this.previewDialog.onOpenDialog(this.notificationMessage);
     }
   
 
