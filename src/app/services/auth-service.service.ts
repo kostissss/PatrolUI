@@ -133,6 +133,18 @@ export class AuthServiceService implements OnInit {
     this.storeTokens(res.authToken);
   
   }
+  handleUpdateSuccess(res: AuthResponse) {
+    
+    this.authSubject.next({
+      account: res.account,
+      authToken: this.authToken
+      
+    });
+    console.log(this.authSubject+"update success");
+    this.storeAccountDetails(res.account);
+    this.storeTokens(res.authToken);
+  
+  }
   
   
   

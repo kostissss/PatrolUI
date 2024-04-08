@@ -35,9 +35,12 @@ export class SettingsDropDownButtonsComponent implements OnInit{
 
   ngOnInit(): void {
     this.authService.authState$.subscribe(authResponse => {
+      //debugger
       if (authResponse && authResponse.account) {
+       
         this.accountName = authResponse.account.uname;
       } else {
+        
        
       }
     });
