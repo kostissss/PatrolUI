@@ -40,12 +40,12 @@ export class AddNotificationDialogComponent {
     'click': this.onSaveTemplate.bind(this), // Call onSaveTemplate when clicked
     buttonModel : {
       content: 'Save template',
-      cssClass: 'previewBtn'
+      cssClass: 'save-button'
     }
   },
   {buttonModel : {
     content: 'send',
-    cssClass: 'BtnBlue pt-2 '
+    cssClass: 'send-button '
   }
   }];
 
