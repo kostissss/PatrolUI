@@ -3,7 +3,7 @@
 <ejs-dialog #dialogcomponent id="dialogcomponent" height={{dialogHeight}} [visible]="false" width={{dialogWidth}} header="Notification Details" showCloseIcon='true'  [position]="dialogPosition" [animationSettings]="dialogAnimationSettings" isModal='true'>
   
     
-  
+  <div [innerHTML]="sanitizedMessage"></div>
   
   </ejs-dialog>
   

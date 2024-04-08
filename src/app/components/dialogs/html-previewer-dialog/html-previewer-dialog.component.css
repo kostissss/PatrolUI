@@ -33,13 +33,25 @@
 
 
 
-.e-dialog .e-btn .e-btn-icon.e-icon-dlg-close {
-    font-size: 12px;
-    color: white !important;
-    background-color: transparent;
+
+
+.e-dialog .e-btn.e-dlg-closeicon-btn:hover {
+    background-color: #eee !important;
+    color: #000 !important;
+    
 }
 
-.e-dialog .e-btn.e-dlg-closeicon-btn:hover, .e-dialog .e-btn.e-dlg-closeicon-btn:focus, .e-dialog .e-btn.e-dlg-closeicon-btn:active {
-    background-color: transparent;
-    
+.e-dialog .e-btn.e-dlg-closeicon-btn {
+    color: #eee !important;
+}
+
+.e-dialog .e-btn.e-dlg-closeicon-btn:hover span {
+    color: #eee !important;
+}
+
+.e-icon-dlg-close:hover {
+    color: #eee !important;
+}
+.e-icon-dlg-close {
+    color: #eee !important;
 }

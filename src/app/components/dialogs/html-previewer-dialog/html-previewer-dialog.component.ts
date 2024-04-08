@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, SecurityContext, ViewChild } from '@angular/core';
 import { Account } from '../../../interfaces/account';
 import { AccountsService } from '../../../services/api-service.service';
 import { ResizeDirections } from '@syncfusion/ej2-popups';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class HtmlPreviewerDialogComponent  implements OnInit {
 
   dialogWidth: string="";
   dialogHeight: string="";
+  sanitizedMessage: any;
 
   public account: Account = {
     name: "",
@@ -51,7 +53,7 @@ setDialogSize(): void {
 
   
   
-  constructor(private apiService: AccountsService) { 
+  constructor(private apiService: AccountsService,private sanitizer:DomSanitizer) { 
     this.account.demoSelected=false;
    }
 
@@ -74,8 +76,12 @@ setDialogSize(): void {
 
 
 
-  public onOpenDialog = (): void => {
+  public onOpenDialog = (message:String): void => {
+    if(message != ''){
+    this.sanitizedMessage= this.sanitizer.sanitize(SecurityContext.HTML, message);
     this.dialogObject.show();
+    }
+    
   };
 
   
