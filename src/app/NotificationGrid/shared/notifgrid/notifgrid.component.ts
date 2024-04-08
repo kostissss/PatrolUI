@@ -7,19 +7,15 @@ import {
   EditSettingsModel,
 } from '@syncfusion/ej2-angular-grids';
 
-
 @Component({
   selector: 'app-notifgrid',
   templateUrl: './notifgrid.component.html',
   styleUrls: ['./notifgrid.component.css'],
 })
 
-
 export class NotifGridComponent implements OnInit {
-  // ViewChild for the grid component
   @ViewChild('grid') grid!: NotifGridComponent;
 
-  // Define properties for grid configuration
   public toolbarOptions?: ToolbarItems[] | object;
   public toolbar?: ToolbarItems[] | object;
   public editSettings?: EditSettingsModel;
@@ -35,7 +31,7 @@ export class NotifGridComponent implements OnInit {
   selectedCompanies = 0;
   selectAllCompanies = false;
   showSelectedCompanies = false;
-  searchValue: string="" ; 
+  searchValue: string = ""; 
   public data!: object[];
   selectAll = false;
   pageSize: number = 20;
@@ -57,14 +53,13 @@ export class NotifGridComponent implements OnInit {
 
   onSelectAllChange(event: any): void {
     this.selectAllCompanies = event.target.checked;
-    
-    if (this.checkboxes) { 
-      this.checkboxes.fill(this.selectAllCompanies, 0, this.data.length);
-    }
 
+    // Loop through data and set isSelected property accordingly
     this.data.forEach((company: any, index) => {
       company['isSelected'] = this.selectAllCompanies;
     });
+    
+    // Update selected companies count
     this.updateSelectedCompaniesCount();
   }
 

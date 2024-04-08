@@ -7,12 +7,11 @@
 </div>
 
 <div class="grid">
-  <ejs-grid #grid [dataSource]="data" [editSettings]="editSettings" [allowSorting]="true" height="150" width="100%">
+  <ejs-grid #grid [dataSource]="data" [editSettings]="editSettings" [allowSorting]="true" [allowPaging]="true" height="150" width="100%">
     <ng-template #toolbarTemplate let-data>
       <div id='toolbar'>
         <ejs-checkbox label="Select All Companies" cssClass="e-small" (change)="onSelectAllChange($event)"></ejs-checkbox>
         <ejs-checkbox label="Show selected companies" cssClass="e-small" [(ngModel)]="showSelectedCompanies"></ejs-checkbox>
-        <ejs-pager [pageCount]="1" [currentPage]="1"></ejs-pager>
         <select [(ngModel)]="pageSize">
           <option value="20">20</option>
           <option value="40">40</option>
