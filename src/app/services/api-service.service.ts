@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../enviroment';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Account } from '../interfaces/account';
+import { AuthServiceService } from './auth-service.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -10,6 +11,13 @@ const httpOptions = {
   }),
   withCredentials: true  // Include cookies in requests
 };
+
+interface AuthResponse { 
+  account: Account;
+  authToken: string;
+  
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +27,7 @@ export class AccountsService {
   private apiUrl = environment.apiUrl;
   public id: number = 1;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private authService: AuthServiceService) {
     const storedId = localStorage.getItem('userId');
     console.log("storedId="+storedId);
     this.id =   Number(storedId) ;
@@ -39,7 +47,13 @@ export class AccountsService {
   
 
   changeUserName(username :String): Observable<any> {
-    return this.http.put<Account>(`${this.apiUrl}accounts/${this.id}`, {
-      "uname":username},httpOptions);
+    //debugger
+    return this.http.put<AuthResponse>(`${this.apiUrl}accounts/${this.id}`, {
+      
+      "uname":username},httpOptions).pipe(tap((res) => {
+       /// debugger
+        this.authService.handleUpdateSuccess(res);
+        ///debugger
+      }));
   }
 }
