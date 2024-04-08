@@ -31,7 +31,8 @@ import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { RouterModule } from '@angular/router';
-import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgrid.component';
+import { NotifGridComponent } from '../NotificationGrid/data-table/add-notification-dialog/notifgrid/notifgrid.component';
+import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 
 
 @NgModule({
@@ -41,7 +42,6 @@ import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgr
     CreateNewAccountComponent,
     ManagePartnerAccountModalComponent,
     AccountsDropDownButtonComponent,
-    //HeaderComponent,
     SettingsDropDownButtonsComponent,
     HelpDropDownButtonComponent,
     AccountChangeDropDownComponent,
@@ -51,7 +51,8 @@ import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgr
     DataTableComponent,
     NotifHeaderComponent,
     AddNotificationDialogComponent,
-    NotifGridComponent
+    NotifGridComponent,
+    HtmlPreviewerDialogComponent
     
 
 
@@ -59,8 +60,6 @@ import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgr
   imports: [
     CommonModule,
     HomeRoutingModule,
-    //BrowserModule,
-    //AppRoutingModule,
     DialogModule,
     FormsModule,
     CheckBoxModule,
