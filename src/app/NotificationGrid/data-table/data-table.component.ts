@@ -8,23 +8,25 @@ import { EditNotificationDialogComponent } from './edit-notification-dialog/edit
 import { AssignToPartnersDialogComponent } from './assign-to-partners-dialog/assign-to-partners-dialog.component';
 
 
-
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
+  
 })
 export class DataTableComponent implements OnInit {
   @ViewChild('createNewNotificationDialog') 
-  public createNewNotificationDialog!: AddNotificationDialogComponent;
 
+  public createNewNotificationDialog!: AddNotificationDialogComponent;
   public data?: MyNotification[];
   public editSettings?: EditSettingsModel;
-  @ViewChild('grid')
-  public grid!: GridComponent;
   public notificationCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
+
+  @ViewChild('grid')
+  public grid!: GridComponent;
+
 
   constructor(private dialog: MatDialog) { }
 

@@ -31,10 +31,10 @@ import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { RouterModule } from '@angular/router';
-import { GridComponent } from '../NotificationGrid/shared/grid/grid.component';
+
 import { SidebarMobileComponent } from '../components/sidebar/sidebar.component';
 import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
-
+import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgrid.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -52,7 +52,7 @@ import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-preview
     DataTableComponent,
     NotifHeaderComponent,
     AddNotificationDialogComponent,
-    GridComponent,
+    NotifGridComponent,
     SidebarMobileComponent,
     HtmlPreviewerDialogComponent,
     

@@ -1,16 +1,9 @@
-<div class="container" style="margin-top: 20px;">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="header">
-                <span class="image">
-                    <img src="/assets/images/bell.png" width="20" height="20">
-                </span>
-                <h4>Notifications History</h4>
-                <ejs-dropdownlist class="dropdown" [dataSource]='data' [value]='data[0]'></ejs-dropdownlist>
-                <app-add-notification-dialog></app-add-notification-dialog>
-            </div>
-        </div>
-    </div>
+
+<div class="header" style="margin-top: 20px;">
+    <span class="image">
+        <img src="/assets/images/bell.png" width="20" height="20">
+    </span>
+    <h4>Notifications History</h4>
+    <ejs-dropdownlist class="dropdown" [dataSource]='data' [value]='data[0]'></ejs-dropdownlist>
+    <app-add-notification-dialog></app-add-notification-dialog>
 </div>
-
-

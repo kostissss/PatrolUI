@@ -1,14 +1,15 @@
 
-.container {
-    background-color: rgb(50, 50, 50);
-    color: white;
-    border-radius: 4px 4px 0 0;
-    height: 40px;
-}
 
 .header {
     display: flex;
     align-items: center;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border-radius: 4px 4px 0 0;
+    height: 40px;
+    padding: 0px 20px; 
+    margin-left: 20px; 
+    margin-right: 20px;; 
 }
 
 .image {
