@@ -35,6 +35,8 @@ import { RouterModule } from '@angular/router';
 import { SidebarMobileComponent } from '../components/sidebar/sidebar.component';
 import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgrid.component';
+import { NotificationsComponent } from '../components/notifications/notifications.component';
+import { GuardsComponent } from '../components/guards/guards.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -55,6 +57,8 @@ import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgr
     NotifGridComponent,
     SidebarMobileComponent,
     HtmlPreviewerDialogComponent,
+    NotificationsComponent,
+    GuardsComponent,
     
 
 
