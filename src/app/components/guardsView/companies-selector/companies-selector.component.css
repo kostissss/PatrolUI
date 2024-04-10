@@ -45,3 +45,15 @@
     border-left-width: 3px;
     border-left-color: #39c;
 }
+
+
+.e-grid.e-default:not(.e-rtl) tr td:first-child:not(.e-xlsel-left-border, .e-fixedfreeze.e-freezeleftborder), .e-grid.e-default:not(.e-rtl) tr th.e-headercell:first-child:not(.e-firstcell):not(.e-headercell.e-frozen-left-border), .e-grid.e-default:not(.e-rtl) tr th.e-filterbarcell:first-child:not(.e-filterbarcell.e-frozen-left-border) {
+    
+    padding-left: 10px;
+}
+
+.e-grid .e-gridheader {
+    
+    padding-right: 0px;
+   
+}
