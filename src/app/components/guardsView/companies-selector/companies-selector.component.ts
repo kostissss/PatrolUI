@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { EditSettingsModel, GridComponent, SelectionSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { MyNotification, data } from '../../../NotificationGrid/shared/datasource';
-import { AccountsService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 import { Account } from '../../../interfaces/account';
 
 @Component({

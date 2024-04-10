@@ -1,6 +1,6 @@
 import { Component, OnInit, SecurityContext, ViewChild } from '@angular/core';
 import { Account } from '../../../interfaces/account';
-import { AccountsService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 import { ResizeDirections } from '@syncfusion/ej2-popups';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { DomSanitizer } from '@angular/platform-browser';
