@@ -1,9 +1,9 @@
 
 <div class="header" style="margin-top: 20px;">
     <span class="image">
-        <img src="/assets/images/bell.png" width="20" height="20">
+        <img src="{{icon}}" width="20" height="20">
     </span>
-    <h4>Notifications History</h4>
-    <ejs-dropdownlist class="dropdown" [dataSource]='data' [value]='data[0]'></ejs-dropdownlist>
-    <app-add-notification-dialog></app-add-notification-dialog>
+    <h4>{{title}}</h4>
+    <ejs-dropdownlist *ngIf="showFilter" class="dropdown" [dataSource]='data' [value]='data[0]'></ejs-dropdownlist>
+    
 </div>
