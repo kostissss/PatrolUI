@@ -38,6 +38,7 @@ import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgr
 import { NotificationsComponent } from '../components/notifications/notifications.component';
 import { GuardsComponent } from '../components/guardsView/guards/guards.component';
 import { GuardsManagerComponent } from '../components/guardsView/guards-manager/guards-manager.component';
+import { CompaniesSelectorComponent } from '../components/guardsView/companies-selector/companies-selector.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -61,6 +62,7 @@ import { GuardsManagerComponent } from '../components/guardsView/guards-manager/
     NotificationsComponent,
     GuardsComponent,
     GuardsManagerComponent,
+    CompaniesSelectorComponent,
     
 
 
