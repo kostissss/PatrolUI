@@ -8,19 +8,14 @@ import { environment } from '../../../enviroment';
 })
 export class NotificationService {
 
-  private baseUrl = environment.apiUrl;; // Replace this with your backend API base URL
+  private baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
-  
-  createNotification(notificationData: any) {
-    const url = `${this.baseUrl}/api/notifications`; // Construct the complete URL
-    return this.http.post<any>(url, notificationData); // Send a POST request to create a new notification
+  constructor(private http: HttpClient) { 
+    this.baseUrl = environment.apiUrl
   }
   
-	saveNotification(notificationTitle: string, notificationMessage: string): Observable<any> {
-		return this.http.post<any>('http://localhost:3000/api/notifications', { 
-		  notificationTitle: notificationTitle, 
-		  notificationMessage: notificationMessage 
-		});
-	  }
+	saveNotification(notificationTitle: string, notificationMessage: string, payload: Object){
+		return this.http.post(`${this.baseUrl}notification/${notificationTitle}, ${notificationMessage}`, payload) 
+		
+	}
 }
