@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountsService } from '../../services/api-service.service';
+import { AccountsService } from '../../services/accounts.service';
 import { AuthServiceService } from '../../services/auth-service.service';
 import { SidebarMobileComponent } from '../sidebar/sidebar.component';
 

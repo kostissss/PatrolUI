@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { Account } from '../../../interfaces/account';
-import { AccountsService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-create-partner-account-modal',

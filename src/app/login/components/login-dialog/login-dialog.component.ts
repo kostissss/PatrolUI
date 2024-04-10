@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AccountsService } from '../../../services/api-service.service';
+import { AccountsService } from '../../../services/accounts.service';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { NgForm } from '@angular/forms';
 import { EmitType } from '@syncfusion/ej2-base';
