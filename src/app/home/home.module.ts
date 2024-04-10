@@ -36,7 +36,8 @@ import { SidebarMobileComponent } from '../components/sidebar/sidebar.component'
 import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgrid.component';
 import { NotificationsComponent } from '../components/notifications/notifications.component';
-import { GuardsComponent } from '../components/guards/guards.component';
+import { GuardsComponent } from '../components/guardsView/guards/guards.component';
+import { GuardsManagerComponent } from '../components/guardsView/guards-manager/guards-manager.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -59,6 +60,7 @@ import { GuardsComponent } from '../components/guards/guards.component';
     HtmlPreviewerDialogComponent,
     NotificationsComponent,
     GuardsComponent,
+    GuardsManagerComponent,
     
 
 
