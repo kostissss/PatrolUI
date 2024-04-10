@@ -56,4 +56,9 @@ export class AccountsService {
         ///debugger
       }));
   }
+
+  getFilteredAccounts(field: string,value:string): Observable<Account[]> {
+    return this.http.post<Account[]>(`${this.apiUrl}accounts/${field}`,{value: value},httpOptions);
+
+  }
 }
