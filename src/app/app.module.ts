@@ -17,8 +17,8 @@ import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigatio
 import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
 import { ChangeLanguageDialogComponent } from './components/dialogs/change-language-dialog/change-language-dialog.component';
 import { HomeModule } from './home/home.module';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
+import { FooterComponent } from './login/components/footer/footer.component';
+import { LoginDialogComponent } from './login/components/login-dialog/login-dialog.component';
 import { AuthTokenInterceptor } from './inrerceptors/auth-token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
