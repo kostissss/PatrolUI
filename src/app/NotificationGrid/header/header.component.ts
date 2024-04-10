@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-notifheader',
@@ -6,6 +6,10 @@ import { Component, ViewChild, OnInit } from '@angular/core';
   styleUrl: './header.component.css' 
 })
 export class NotifHeaderComponent implements OnInit {
+  @Input() public title: string = '';
+  @Input() public icon: string = '';
+
+  @Input() public showFilter: boolean = false;
 
   constructor() {
   }
