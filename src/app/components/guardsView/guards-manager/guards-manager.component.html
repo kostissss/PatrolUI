@@ -1,1 +1,37 @@
 <app-notifheader title="Guards" icon="fa fa-user"></app-notifheader>
+
+<div class="dbtable margins">
+    <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowSorting]='true' height=470 
+     (toolbarClick)='clickHandler($event)' (recordClick)="onItemClick()" 
+     (recordDoubleClick)="createNewNotificationDialog.onOpenDialog()" >
+        <e-columns >
+                <e-column field='guardId' headerText='Guard ID' width=70></e-column>
+                <e-column field='name' headerText='Guard Name' width=70></e-column>
+                <e-column field='arcGuardId' headerText='ARC GUARD ID' width=70></e-column>
+                <e-column field='pin' headerText='PIN' width=70></e-column>
+                <e-column field='isQrPatrol' headerText='Qr-Patrol' width=70>
+                    <ng-template #template let-data>
+                        <div *ngIf="data.Discontinued; else elseblock">
+                             <input type="checkbox" checked>
+                        </div>
+                      </ng-template>
+                      <ng-template #elseblock><input type="checkbox"></ng-template>
+                </e-column>
+                <e-column field='isPTT' headerText='PTT' width=70>
+                    <ng-template #template let-data>
+                    <div *ngIf="data.Discontinued; else elseblock">
+                         <input type="checkbox" checked>
+                    </div>
+                  </ng-template>
+                  <ng-template #elseblock><input type="checkbox"></ng-template></e-column>
+                <e-column field='lastLatitude' headerText='Last Latitude' width=70></e-column>
+                <e-column field='lastLongitude' headerText='Last Longgiitude' width=70></e-column>
+                <e-column field='lastAccuracy' headerText='Last Accuracy' width=70></e-column>
+                <e-column field='lastContact' headerText='Last Contact' width=70></e-column>
+        </e-columns>
+    </ejs-grid>
+    <div class="notification-count">
+        Total Notifications: {{ notificationCount }}
+    </div>
+    <app-add-notification-dialog #createNewNotificationDialog></app-add-notification-dialog>
+</div>  

@@ -3,6 +3,13 @@ import { EditSettingsModel, GridComponent, SelectionSettingsModel } from '@syncf
 
 import { AccountsService } from '../../../services/accounts.service';
 import { Account } from '../../../interfaces/account';
+import { GuardsService } from '../../../services/guards.service';
+
+interface gridRecord{
+  id: number,
+  uname: string,
+  email: string
+}
 
 @Component({
   selector: 'app-companies-selector',
@@ -13,15 +20,13 @@ export class CompaniesSelectorComponent {
 
   public data?: Account[];
   public editSettings?: EditSettingsModel;
-  
-
-  
+  public selectedCompanyId: number = 0;
+  public selectedRecords: gridRecord = {} as gridRecord;
 
   @ViewChild('grid')
   public grid!: GridComponent;
 
-
-  constructor(private accountsService:AccountsService) { }
+  constructor(private accountsService: AccountsService, private guardsService: GuardsService) { }
 
   ngOnInit(): void {
     this.fetchCompanyAccounts();
@@ -36,14 +41,17 @@ export class CompaniesSelectorComponent {
   
 
   
-
-  
-
-  
-  onItemClick(){
-    var selectedRecord = this.grid.getSelectedRecords()[0];
-    
+  rowSelected() {
+     this.selectedRecords = this.grid.getSelectedRecords()[0] as gridRecord;
+    console.log(this.selectedRecords);
+    this.selectedCompanyId = this.selectedRecords.id ;
+    console.log(this.selectedCompanyId);
+    this.fetchGuards();
   }
+  
+
+  
+ 
 
   fetchCompanyAccounts(){
     this.accountsService.getFilteredAccounts("role","admin").subscribe((response) => {
@@ -55,6 +63,11 @@ export class CompaniesSelectorComponent {
       let accounts : Account []=[]
       return accounts;
     });
+  }
+
+  fetchGuards(){
+    this.guardsService.getFilteredGuards("userId",this.selectedCompanyId);
+    
   }
 
 }

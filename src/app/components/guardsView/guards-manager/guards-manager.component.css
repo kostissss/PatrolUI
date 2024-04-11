@@ -1,0 +1,40 @@
+
+
+.dbtable {
+    position: relative;
+    padding: 0px 20px;
+}
+.e-headertext {
+    font-weight: normal;
+    color: rgb(159,159,159);
+}
+.e-rowcell {
+    background-color: rgb(245, 245, 245);
+    font-family: Arial,Helvetica;
+    font-size: 14px;
+}
+.notification-count {
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #000000; 
+    padding: 0px 0;
+    font-size: 0.8em;
+}
+
+.e-toolbar-left:disabled,
+.e-toolbar-center:disabled,
+.e-toolbar-right:disabled,
+.e-toolbar:disabled,
+.e-toolbar .e-toolbar-item .e-tbar-btn:disabled {
+    background-color: rgb(51, 139, 211)
+}
+
+
+.e-toolbar .e-toolbar-items {
+    background: transparent !important;
+}
+
+.e-grid.e-default:not(.e-rtl) tr td:first-child:not(.e-xlsel-left-border).e-active {
+    border-left-width: 3px;
+    border-left-color: #39c;
+}
