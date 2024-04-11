@@ -17,9 +17,10 @@ export class GuardsManagerComponent implements OnInit {
   
   public data: Guard[]=[];
   public editSettings?: EditSettingsModel;
-  public notificationCount: number = 0;
+  public guardsCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
+  wrapOption = { wrapMode: 'Header' };
 
   @ViewChild('grid')
   public grid!: GridComponent;
@@ -30,14 +31,16 @@ export class GuardsManagerComponent implements OnInit {
   ngOnInit(): void {
     this.guardsService.data$.subscribe(data => {
       this.data = data;
+      this.guardsCount = this.data.length;
+      (this.grid as GridComponent).toolbarModule.enableItems(['Generate' ], true);
     });
-    this.notificationCount = this.data.length;
+    
     this.selectionOptions = { mode: 'Row',  type: 'Single' };
     this.editSettings = {allowDeleting: true, mode: 'Dialog',};
     this.toolbar = [
       { prefixIcon: 'e-refresh'},
-      { text: 'Add new Notification', tooltipText: 'Add', id: 'Add',},
-      { text: 'View Notification Details', tooltipText: 'Edit', id: 'Edit',disabled: true}, 
+      { text: 'Generate Guards', tooltipText: 'Add', id: 'Generate', disabled: true},
+      { text: 'Export To Excel', tooltipText: 'Edit', id: 'Export',disabled: false}, 
       
       
     ];
@@ -77,12 +80,7 @@ export class GuardsManagerComponent implements OnInit {
   openAssignToPartnersDialog(): void {
    
   }
-  onItemClick(){
-    var selectedRecord = this.grid.getSelectedRecords()[0];
-    (this.grid as GridComponent).toolbarModule.enableItems(['Edit','Delete','Assign' ], true); // Disable toolbar items.
-
-
-  }
+  
 
 
   
