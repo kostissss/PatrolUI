@@ -4,6 +4,7 @@ import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popup
 import { EmitType } from '@syncfusion/ej2-base';
 import { HtmlPreviewerDialogComponent } from '../../../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 import { NotificationService } from '../../../services/notification.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-notification-dialog',
@@ -26,7 +27,7 @@ export class AddNotificationDialogComponent {
   public dialogPosition: Object = { X: 'center', Y: 'center' };
   public dialogVisibility: Boolean = false;
 
-  constructor(private notificationService: NotificationService) { }
+  constructor(private notificationService: NotificationService, private router: Router) { }
 
   onOpenDialog(): void {
     this.dialogObject.show();
@@ -45,7 +46,7 @@ export class AddNotificationDialogComponent {
       }
     },
     {
-      click: this.onSaveTemplate.bind(this),
+      click: this.SaveTemplate.bind(this),
       buttonModel: {
         content: 'Save template',
         cssClass: 'save-button'
@@ -59,28 +60,22 @@ export class AddNotificationDialogComponent {
     }
   ];
 
-  onSaveTemplate(): void {
-    // You can perform additional operations here if needed
-    this.addNewNotification();
+  createNotification() {
+    this.notificationService.createNotification(this.notificationTitle, this.notificationMessage)
+      .subscribe((notification: any) => {
+        console.log(notification);
+        // Now we navigate to /notification/account_id
+        this.router.navigate(['/notification', notification.account.id]); 
+      });
   }
 
-  onPreviewClick(): void {
+  SaveTemplate(){
+
+  }
+
+  onPreviewClick() {
     this.previewDialog.onOpenDialog(this.notificationMessage);
   }
 
-  addNewNotification(): void {
-    this.notificationService.createNotification({
-      notificationTitle: this.notificationTitle,
-      notificationMessage: this.notificationMessage
-    }).subscribe(
-      response => {
-        console.log('Notification saved successfully:', response);
-        // Handle success
-      },
-      error => {
-        console.error('Error saving notification:', error);
-        // Handle error
-      }
-    );
-  }
+
 }

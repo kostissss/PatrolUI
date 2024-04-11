@@ -1,21 +1,35 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from '../../../enviroment';
+import { NotificationRequestService } from './notification-request.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
 
-  private baseUrl = environment.apiUrl;
+  constructor(private notifReqService: NotificationRequestService) { }
 
-  constructor(private http: HttpClient) { 
-    this.baseUrl = environment.apiUrl
+  getNotification( ) {
+    return this.notifReqService.get('notification');
   }
+
+  createNotification(notificationTitle: string, notificationMessage: string) {
+    // Construct the payload object
+    const payload = {
+      notificationTitle: notificationTitle,
+      notificationMessage: notificationMessage
+    };
   
-	saveNotification(notificationTitle: string, notificationMessage: string, payload: Object){
-		return this.http.post(`${this.baseUrl}notification/${notificationTitle}, ${notificationMessage}`, payload) 
-		
-	}
+    // Send a POST request to create a notification
+    return this.notifReqService.post('notification', payload);
+  }
+
+  editNotification(notificationTitle: string, notificationMessage: string) {
+    // We want to send a web request to update a list
+    return this.notifReqService.patch('notification', `${ notificationTitle }, ${notificationMessage}`);
+  }
+
+  deleteNotification( ) {
+    return this.notifReqService.delete('notification');
+  }
+
 }

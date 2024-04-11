@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MyNotification, data } from '../shared/datasource';
+import { MyNotification, data } from '../shared/models/datasource';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { AddNotificationDialogComponent } from './add-notification-dialog/add-notification-dialog.component';
@@ -53,7 +53,7 @@ export class DataTableComponent implements OnInit {
       this.createNewNotificationDialog.onOpenDialog();
     }
     if (args.item.id === 'Edit') { 
-      this.openEditNotificationDialog();
+      this.createNewNotificationDialog.onOpenDialog();
     }
     if (args.item.id === 'Assign') {
       this.openAssignToPartnersDialog();
