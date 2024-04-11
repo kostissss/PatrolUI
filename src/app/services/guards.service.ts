@@ -30,16 +30,15 @@ export class GuardsService {
 
 
   getFilteredGuards(field: string,value:number) {
-    debugger
+    //debugger
    let guards= this.http.post<Guard[]>(`${this.apiUrl}guards/${field}`,{value: value},httpOptions).subscribe((response) => { 
-    console.log("my Data"+response);
-    console.log("my Data SUbject"+this.dataSubject.value);
-    debugger
+   
+   // debugger
       this.dataSubject.next(response);
 
 
   });
-  console.log(guards);
+  
 
   }
 

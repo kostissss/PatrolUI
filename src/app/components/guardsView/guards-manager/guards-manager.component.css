@@ -38,3 +38,17 @@
     border-left-width: 3px;
     border-left-color: #39c;
 }
+
+.e-grid.e-default .e-headercell, .e-grid.e-default .e-detailheadercell {
+    margin-left: auto;
+    padding-left: 2px;
+    padding-right: 0px;
+   
+}
+.e-grid.e-responsive .e-rowcell, .e-grid.e-responsive .e-headercelldiv {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 2px;
+    padding-right:2px ;
+    margin-left: 2px;
+}
