@@ -1,0 +1,38 @@
+<div class="header">
+    <span class="left">Select Companies</span>
+    <div class="right-group">
+      <span class="right">Total Companies {{ totalCompanies }}</span>
+      <span class="right">Selected Companies {{ selectedCompanies }}</span>
+    </div>
+  </div>
+  
+  <div class="grid">
+    <ejs-grid #grid [dataSource]="data" [editSettings]="editSettings" [allowSorting]="true" [allowPaging]="true" height="150" width="100%">
+      <ng-template #toolbarTemplate let-data>
+        <div id='toolbar'>
+          <ejs-checkbox label="Select All Companies" cssClass="e-small" (change)="onSelectAllChange($event)"></ejs-checkbox>
+          <ejs-checkbox label="Show selected companies" cssClass="e-small" [(ngModel)]="showSelectedCompanies"></ejs-checkbox>
+          <select [(ngModel)]="pageSize">
+            <option value="20">20</option>
+            <option value="40">40</option>
+            <option value="60">60</option>
+          </select>
+          <ejs-checkbox label="Show Demo" cssClass="e-small"></ejs-checkbox>
+          <input type="text" [(ngModel)]="searchValue" (input)="onGridSearch(searchValue)">
+        </div>
+      </ng-template> 
+      <e-columns>
+        <e-column type="checkbox" width="50"></e-column>
+        <e-column field="CompanyID" headerText="Company ID" width="80"></e-column>
+        <e-column field="CompanyName" headerText="Company Name" width="80"></e-column>
+        <e-column field="UserName" headerText="User Name" width="80"></e-column>
+        <e-column field="Email" headerText="Email" width="80"></e-column>
+        <e-column field="PatrolLicences" headerText="Patrol Licences:" width="80"></e-column>
+        <e-column field="License" headerText="License" width="80"></e-column>
+        <e-column field="Demo" headerText="Demo" width="80"></e-column>
+        <e-column field="Parent" headerText="Parent" width="80"></e-column>
+      </e-columns>
+    </ejs-grid>
+  </div>
+  <div id="pager"></div>
+  

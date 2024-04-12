@@ -2,29 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
-import { CreatePartnerAccountModalComponent } from './components/dialogs/create-partner-account-modal/create-partner-account-modal.component';
 import { FormsDirectiveDirective } from './forms-directive.directive';
-import { CreateNewAccountComponent } from './components/dialogs/create-new-account/create-new-account.component';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
-import { ManagePartnerAccountModalComponent } from './components/dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { Menu, MenuModule } from '@syncfusion/ej2-angular-navigations';
-import { HeaderComponent } from './components/header/header.component';
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
 
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigations';
-import { ChangeUsernameDialogComponent } from './components/dialogs/change-username-dialog/change-username-dialog.component';
-import { ChangeLanguageDialogComponent } from './components/dialogs/change-language-dialog/change-language-dialog.component';
 import { HomeModule } from './home/home.module';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
 import { AuthTokenInterceptor } from './inrerceptors/auth-token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
-
-
 
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -55,7 +43,6 @@ import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.intercepto
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,12 +50,10 @@ import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.intercepto
     // DataTableComponent,
     // AddNotificationDialogComponent,
     EditNotificationDialogComponent,
-    AssignToPartnersDialogComponent,
+    //AssignToPartnersDialogComponent,
     // GridComponent,
     FormsDirectiveDirective,
-    
-    
-    
+
   ],
 
   imports: [

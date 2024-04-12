@@ -35,6 +35,9 @@ import { RouterModule } from '@angular/router';
 import { SidebarMobileComponent } from '../components/sidebar/sidebar.component';
 import { HtmlPreviewerDialogComponent } from '../components/dialogs/html-previewer-dialog/html-previewer-dialog.component';
 import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgrid.component';
+import { AssignToPartnersDialogComponent } from '../NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assign-grid.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -55,6 +58,8 @@ import { NotifGridComponent } from '../NotificationGrid/shared/notifgrid/notifgr
     NotifGridComponent,
     SidebarMobileComponent,
     HtmlPreviewerDialogComponent,
+    AssignToPartnersDialogComponent,
+    AssignGridComponent
     
 
 

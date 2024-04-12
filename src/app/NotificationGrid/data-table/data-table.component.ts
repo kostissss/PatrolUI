@@ -16,14 +16,14 @@ import { AssignToPartnersDialogComponent } from './assign-to-partners-dialog/ass
 })
 export class DataTableComponent implements OnInit {
   @ViewChild('createNewNotificationDialog') 
-
   public createNewNotificationDialog!: AddNotificationDialogComponent;
+  @ViewChild('onAssignToPartnersDialog') 
+  public onAssignToPartnersDialog!: AssignToPartnersDialogComponent;
   public data?: MyNotification[];
   public editSettings?: EditSettingsModel;
   public notificationCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
-
   @ViewChild('grid')
   public grid!: GridComponent;
 
@@ -56,7 +56,7 @@ export class DataTableComponent implements OnInit {
       this.createNewNotificationDialog.onOpenDialog();
     }
     if (args.item.id === 'Assign') {
-      this.openAssignToPartnersDialog();
+      this.onAssignToPartnersDialog.onOpenDialog();
     }
     if (args.item.id === 'Delete') { 
       var selectedRecord = this.grid.getSelectedRecords()[0];
