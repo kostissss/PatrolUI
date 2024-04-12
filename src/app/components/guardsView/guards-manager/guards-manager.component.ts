@@ -14,13 +14,15 @@ import { Guard } from '../../../interfaces/guard';
   styleUrl: './guards-manager.component.css'
 })
 export class GuardsManagerComponent implements OnInit {
-  
+  public buttonStatus : boolean = true;
   public data: Guard[]=[];
   public editSettings?: EditSettingsModel;
   public guardsCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
   wrapOption = { wrapMode: 'Header' };
+  public selectedGuard: Guard = {} as Guard;
+  public originalData: Guard[] = [];
 
   @ViewChild('grid')
   public grid!: GridComponent;
@@ -31,8 +33,12 @@ export class GuardsManagerComponent implements OnInit {
   ngOnInit(): void {
     this.guardsService.data$.subscribe(data => {
       this.data = data;
+      this.originalData = data;
       this.guardsCount = this.data.length;
       (this.grid as GridComponent).toolbarModule.enableItems(['Generate' ], true);
+      console.log(data);
+      // this.buttonStatus = data.length === 0 ? true : false;
+      
     });
     
     this.selectionOptions = { mode: 'Row',  type: 'Single' };
@@ -46,42 +52,66 @@ export class GuardsManagerComponent implements OnInit {
     ];
   }
 
+  rowSelected() {
+    this.selectedGuard = this.grid.getSelectedRecords()[0] as Guard;
+   
+ }
+
   clickHandler(args: ClickEventArgs): void {
     if (args.item.prefixIcon === 'e-refresh') {
       this.reloadPage();
     }
-    if (args.item.id === 'Add') {
-     
-    }
-    if (args.item.id === 'Edit') { 
-      this.openEditNotificationDialog();
-    }
-    if (args.item.id === 'Assign') {
-      this.openAssignToPartnersDialog();
-    }
-    if (args.item.id === 'Delete') { 
-      var selectedRecord = this.grid.getSelectedRecords()[0];
-      this.grid.deleteRecord(selectedRecord as string);
-    }
+    
   }
 
   reloadPage() {
     window.location.reload();
   }
 
-  openAddNotificationDialog(): void {
+  onCancelClick(){
+    this.guardsService.getFilteredGuards("userId",this.data[0].userId).subscribe((response) => {
+     
+      console.log(response);
+      // this.buttonStatus = data.length === 0 ? true : false;
+      
+    }
+    ,(error) => {
+      console.log(error);
+      alert("Failed to fetch guards");
+    });
+
+  }
+  onPttCheckBoxChange(){
+    this.buttonStatus = false;
+    this.data.forEach((guard) => {
+      if (guard.GuardId === this.selectedGuard.GuardId) {
+        debugger
+        guard.isPTT = !guard.isPTT; // Update some property of the guard
+      }
+    });
+  }
+  onPatrolCheckBoxChange(){
+    this.buttonStatus = false;
+    this.data.forEach((guard) => {
+      if (guard.GuardId === this.selectedGuard.GuardId) {
+        guard.isQrPatrol = !guard.isQrPatrol; // Update some property of the guard
+      }
+    });
+  }
+
+  onSaveClick(){
+    
+      
+      this.guardsService.updateMultipleGuards(this.data).subscribe((response) => {
+        console.log(response);
+        alert('Guards updated successfully');
+        this.buttonStatus = true;
+
+      }
+      ,(error) => {
+        console.log(error);
+        alert("Failed to update guards");
+      });
     
   }
-
-  openEditNotificationDialog(): void {
-    
-  }
-
-  openAssignToPartnersDialog(): void {
-   
-  }
-  
-
-
-  
 }
