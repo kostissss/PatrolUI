@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MyNotification, data } from '../shared/datasource';
+import { MyNotification, data } from '../shared/models/datasource';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { AddNotificationDialogComponent } from './add-notification-dialog/add-notification-dialog.component';
@@ -16,14 +16,14 @@ import { AssignToPartnersDialogComponent } from './assign-to-partners-dialog/ass
 })
 export class DataTableComponent implements OnInit {
   @ViewChild('createNewNotificationDialog') 
-
   public createNewNotificationDialog!: AddNotificationDialogComponent;
+  @ViewChild('onAssignToPartnersDialog') 
+  public onAssignToPartnersDialog!: AssignToPartnersDialogComponent;
   public data?: MyNotification[];
   public editSettings?: EditSettingsModel;
   public notificationCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
   public toolbar?: ToolbarItems[] | object;
-
   @ViewChild('grid')
   public grid!: GridComponent;
 
@@ -53,10 +53,10 @@ export class DataTableComponent implements OnInit {
       this.createNewNotificationDialog.onOpenDialog();
     }
     if (args.item.id === 'Edit') { 
-      this.openEditNotificationDialog();
+      this.createNewNotificationDialog.onOpenDialog();
     }
     if (args.item.id === 'Assign') {
-      this.openAssignToPartnersDialog();
+      this.onAssignToPartnersDialog.onOpenDialog();
     }
     if (args.item.id === 'Delete') { 
       var selectedRecord = this.grid.getSelectedRecords()[0];

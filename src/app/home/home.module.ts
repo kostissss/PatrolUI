@@ -39,6 +39,9 @@ import { NotificationsComponent } from '../components/notifications/notification
 import { GuardsComponent } from '../components/guardsView/guards/guards.component';
 import { GuardsManagerComponent } from '../components/guardsView/guards-manager/guards-manager.component';
 import { CompaniesSelectorComponent } from '../components/guardsView/companies-selector/companies-selector.component';
+import { AssignToPartnersDialogComponent } from '../NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
+import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assign-grid.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -63,6 +66,8 @@ import { CompaniesSelectorComponent } from '../components/guardsView/companies-s
     GuardsComponent,
     GuardsManagerComponent,
     CompaniesSelectorComponent,
+    AssignToPartnersDialogComponent,
+    AssignGridComponent
     
 
 

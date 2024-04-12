@@ -1,0 +1,71 @@
+.notifgrid {
+    margin: 20px;
+  }
+  
+  #toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  #toolbar input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .e-pager {
+    font-size: 12px;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .e-checkbox-wrapper .e-frame.e-check {
+    background-color: #328bd4 !important; 
+  }
+    
+    .e-pager {
+    font-size: 12px;
+    height: auto; 
+  }
+  
+  .e-pager .e-prevpagedisabled,
+  .e-pager .e-nextpagedisabled {
+    width: auto; 
+    padding: 3px 6px; 
+  }
+
+  .notifgrid span,
+.notifgrid select,
+.notifgrid input[type="text"] {
+    font-size: 0.9em; /* Adjust the value as needed */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.right {
+  margin-right: 20px;
+  color: rgb(180, 180, 180)
+}
+
+.left-group {
+  display: flex;
+}
+
+.left {
+  margin-left: 20px;  
+}
+
+.e-pager .e-currentitem, .e-pager .e-currentitem:hover {
+  background: none !important;
+  color: #fff !important;
+  opacity: 1;
+}
