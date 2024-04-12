@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MyNotification, data } from '../../../NotificationGrid/shared/datasource';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { GuardsService } from '../../../services/guards.service';
