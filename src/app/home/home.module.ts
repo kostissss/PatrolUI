@@ -41,6 +41,8 @@ import { GuardsManagerComponent } from '../components/guardsView/guards-manager/
 import { CompaniesSelectorComponent } from '../components/guardsView/companies-selector/companies-selector.component';
 import { AssignToPartnersDialogComponent } from '../NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
 import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assign-grid.component';
+import { CompaniesComponent } from '../components/companies/companies.component';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assi
     GuardsManagerComponent,
     CompaniesSelectorComponent,
     AssignToPartnersDialogComponent,
-    AssignGridComponent
+    AssignGridComponent,
+    CompaniesComponent
+  
     
 
 
