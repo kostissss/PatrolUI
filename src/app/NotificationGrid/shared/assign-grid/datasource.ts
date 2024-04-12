@@ -1,16 +1,157 @@
 export let data: Object[] = [
     {
-        CompanyID: 8918, CompanyName: 'test', UserName: 'tested', Email: 'test@gmail.com',
-        PatrolLicences: '3', License: '112-C372B51749B6CF18', Demo: '\u2713',
-        Parent: 'intership2024-46907', selected: false
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
     },
     {
-        CompanyID: 5552, CompanyName: 'marwtest', UserName: 'marwtest', Email: 'mroussou@terracom.gr',
-        PatrolLicences: '3', License: '112-014007291DE104CF', Demo: '\u2713',
-        Parent: 'intership2024-46907', selected: false
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
     },
     {
-        CompanyID: 5677, CompanyName: 'marotest500', UserName: 'marotest500', Email: 'maro.grdg@gr.rr',
-        PatrolLicences: '9', License: '102-F6234785275A1517', Demo: '\u2713',
-        Parent: 'intership2024-46907', selected: true
-    }];
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },
+    {
+        ID: 8918, UserName: 'tested', Name: 'test', Email: 'test@gmail.com',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5552, UserName: 'marwtest', Name: 'marwtest', Email: 'mroussou@terracom.gr',
+        Companies: '3', Lastlogin: '', selected: false
+    },
+    {
+        ID: 5677, UserName: 'marotest500', Name: 'marotest500', Email: 'maro.grdg@gr.rr',
+        Companies: '9', Lastlogin: '', selected: true
+    },];

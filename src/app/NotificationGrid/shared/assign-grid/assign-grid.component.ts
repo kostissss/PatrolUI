@@ -22,7 +22,7 @@ export class AssignGridComponent implements OnInit{
     pageSize: 20, 
   };
   public searchSettings: SearchSettingsModel = {
-    fields: ['CompanyID', 'CompanyName', 'UserName', 'Email', 'PatrolLicences'], 
+    fields: ['ID', 'UserName', 'Name', 'Email', 'Companies'], 
     key: 'contains', 
   };
   checkboxes: boolean[] = [];
