@@ -29,17 +29,25 @@ export class GuardsService {
 
 
 
-  getFilteredGuards(field: string,value:number) {
+  getFilteredGuards(field: string,value:number):  Observable<Guard[]>  {
     //debugger
-   let guards= this.http.post<Guard[]>(`${this.apiUrl}guards/${field}`,{value: value},httpOptions).subscribe((response) => { 
+   return  this.http.post<Guard[]>(`${this.apiUrl}guards/${field}`,{value: value},httpOptions).pipe(tap(((response) => { 
    
    // debugger
       this.dataSubject.next(response);
+      console.log(response);
 
 
-  });
+  })));
   
 
+  }
+  updateMultipleGuards(guards: Guard[]):  Observable<Guard[]>   {
+    //debugger
+    return this.http.put <Guard[]>(`${this.apiUrl}guards/updateMultipleGuards`,guards,httpOptions).pipe(tap(((response) => { 
+      //debugger
+      this.dataSubject.next(response);
+    })));
   }
 
 

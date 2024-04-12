@@ -66,7 +66,17 @@ export class CompaniesSelectorComponent {
   }
 
   fetchGuards(){
-    this.guardsService.getFilteredGuards("userId",this.selectedCompanyId);
+    this.guardsService.getFilteredGuards("userId",this.selectedCompanyId).subscribe((response) => {
+      console.log(response);
+      
+
+    }
+    ,(error) => {
+      console.log(error);
+      alert("Failed to fetch guards");
+    });
+
+
     
   }
 

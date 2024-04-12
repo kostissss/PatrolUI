@@ -2,7 +2,7 @@
 
 <div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
     <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings'  [toolbar]='toolbar' [allowTextWrap]="true" [textWrapSettings]='wrapOption'  [allowSorting]='true' height='100%'
-     (toolbarClick)='clickHandler($event)' 
+     (toolbarClick)='clickHandler($event)'  (rowSelected)="rowSelected()"
       >
         <e-columns >
                 <e-column field='guardId' headerText='Guard ID' width=60></e-column>
@@ -10,20 +10,21 @@
                 <e-column field='arcGuardId' headerText='ARC GUARD ID' width=90></e-column>
                 <e-column field='pin' headerText='PIN' width=40></e-column>
                 <e-column field='isQrPatrol' headerText='Qr-Patrol' width=60>
-                    <ng-template #template let-data>
+                    <ng-template #template id="template1" let-data>
                         <div *ngIf="data.isQrPatrol; else elseblock">
-                             <input type="checkbox" checked>
+                             <input type="checkbox" checked   (change)="onPatrolCheckBoxChange()">
                         </div>
                       </ng-template>
-                      <ng-template #elseblock><input type="checkbox"></ng-template>
+                      <ng-template #elseblock><input type="checkbox" (change)="onPatrolCheckBoxChange()"></ng-template>
                 </e-column>
-                <e-column field='isPTT' headerText='PTT' width=40>
+                <e-column field='isPTT' headerText='PTT'  width=40>
                     <ng-template #template let-data>
                     <div *ngIf="data.isPTT; else elseblock">
-                         <input type="checkbox" checked>
+                         <input type="checkbox" checked  (change)="onPttCheckBoxChange()" >
                     </div>
                   </ng-template>
-                  <ng-template #elseblock><input type="checkbox"></ng-template></e-column>
+                  <ng-template #elseblock><input type="checkbox"  (change)="onPttCheckBoxChange()"></ng-template>
+                </e-column>
                 <e-column field='lastLatitude' headerText='Last Latitude' width=70></e-column>
                 <e-column field='lastLongitude' headerText='Last Longgiitude' width=70></e-column>
                 <e-column field='lastAccuracy' headerText='Last Accuracy' width=70></e-column>
@@ -38,7 +39,7 @@
 
     
     <div class="gray-line-divider mb-0 mt-0 flex-grow-1"></div>
-
-    <div class="d-flex"> <button class="ml-auto m-2 pt-0 pb-0 border border-secondary" disabled> Cancel</button> <button class="m-2 pt-0 pb-0 border border-secondary">Save</button></div>
+    
+    <div class="d-flex"> <button class="ml-auto m-2 pr-4 pl-4 pt-0 pb-0  border border-secondary rounded" [disabled]="buttonStatus" (click)="onCancelClick()"> Cancel</button> <button class="m-2 pt-0 pb-0 pr-4 pl-4 border border-secondary rounded" [disabled]="buttonStatus" (click)="onSaveClick()">Save</button></div>
   
 </div>  
