@@ -2,7 +2,8 @@
 
 .dbtable {
     position: relative;
-    padding: 0px 20px;
+    margin: 0px 20px;
+    height: 500px;
 }
 .e-headertext {
     font-weight: normal;
@@ -52,3 +53,11 @@
     padding-right:2px ;
     margin-left: 2px;
 }
+
+.gray-line-divider {
+    height: 1px; /* Height of the line */
+    background-color: #ccc; /* Gray color */
+    margin: 20px 0; /* Adjust margin as needed */
+  }
+
+

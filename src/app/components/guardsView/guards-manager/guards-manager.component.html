@@ -1,7 +1,7 @@
 <app-notifheader title="Guards" icon="fa fa-user"></app-notifheader>
 
-<div class="dbtable ">
-    <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowTextWrap]="true" [textWrapSettings]='wrapOption'  [allowSorting]='true' height=470 
+<div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
+    <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings'  [toolbar]='toolbar' [allowTextWrap]="true" [textWrapSettings]='wrapOption'  [allowSorting]='true' height='100%'
      (toolbarClick)='clickHandler($event)' 
       >
         <e-columns >
@@ -31,9 +31,14 @@
         </e-columns>
         
     </ejs-grid>
-    <div class="notification-count">
+    <div class="">
+    
         Total Guards: {{ guardsCount }}
     </div>
+
     
-    
+    <div class="gray-line-divider mb-0 mt-0 flex-grow-1"></div>
+
+    <div class="d-flex"> <button class="ml-auto m-2 pt-0 pb-0 border border-secondary" disabled> Cancel</button> <button class="m-2 pt-0 pb-0 border border-secondary">Save</button></div>
+  
 </div>  
