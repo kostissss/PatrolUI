@@ -4,12 +4,15 @@
 }
 .e-headertext {
     font-weight: normal;
+    font-family: '"Segoe UI", Tahoma, sans-serif';
+    font-size: 11px;
     color: rgb(159,159,159);
 }
 .e-rowcell {
     background-color: rgb(245, 245, 245);
     font-family: Arial,Helvetica;
     font-size: 14px;
+    font-family: 'Roboto,Arial,Helvetica';
 }
 .notification-count {
     bottom: 0;
