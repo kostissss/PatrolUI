@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { NotificationsComponent } from '../components/notifications/notifications.component';
 import { GuardsComponent } from '../components/guardsView/guards/guards.component';
+import { CompaniesComponent } from '../components/companies/companies.component';
 
 
 const routes: Routes = [{ path: '', component: HomeComponent, children: [
   { path: 'notifications', component: NotificationsComponent },
-  { path: 'guards', component: GuardsComponent },]},
+  { path: 'guards', component: GuardsComponent },
+  { path: 'companies', component: CompaniesComponent },]},
 ];
 
 @NgModule({

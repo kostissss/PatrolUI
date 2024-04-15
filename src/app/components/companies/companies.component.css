@@ -1,0 +1,38 @@
+.dbtable {
+    position: relative;
+    padding: 0px 20px;
+}
+.e-headertext {
+    font-weight: normal;
+    font-size: 0.85em;
+    color: rgb(159,159,159);
+}
+.e-rowcell {
+    background-color: rgb(245, 245, 245);
+    font-family: Arial,Helvetica;
+    font-size: 14px;
+}
+.companies-count {
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #000000; 
+    padding: 0px 0;
+    font-size: 0.8em;
+}
+
+.e-toolbar-left:disabled,
+.e-toolbar-center:disabled,
+.e-toolbar-right:disabled,
+.e-toolbar:disabled,
+.e-toolbar .e-toolbar-item .e-tbar-btn:disabled {
+    background-color: rgb(184, 196, 206)
+}
+
+.e-toolbar .e-search{
+    width: 150px;
+    height: 25px;
+    background-color: white ;
+    border-radius: 2px;
+    padding: 0px 2px;
+    align-items: center;
+}

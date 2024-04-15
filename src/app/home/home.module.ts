@@ -42,6 +42,11 @@ import { CompaniesSelectorComponent } from '../components/guardsView/companies-s
 import { AssignToPartnersDialogComponent } from '../NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
 import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assign-grid.component';
 import { CompaniesComponent } from '../components/companies/companies.component';
+import { ChangePlanComponent } from '../components/companies/change-plan/change-plan.component';
+import { DetailsComponent } from '../components/companies/details/details.component';
+import { ExportToExcelComponent } from '../components/companies/export-to-excel/export-to-excel.component';
+import { InspectCompanyComponent } from '../components/companies/inspect-company/inspect-company.component';
+import { ResetPasswordComponent } from '../components/companies/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -70,11 +75,13 @@ import { CompaniesComponent } from '../components/companies/companies.component'
     CompaniesSelectorComponent,
     AssignToPartnersDialogComponent,
     AssignGridComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    ChangePlanComponent,
+    DetailsComponent,
+    ExportToExcelComponent,
+    InspectCompanyComponent,
+    ResetPasswordComponent
   
-    
-
-
   ],
   imports: [
     CommonModule,
