@@ -33,8 +33,8 @@ export class GuardsManagerComponent implements OnInit {
     this.guardsService.data$.subscribe(data => {
       this.data = data;
       this.originalData = data;
-      this.guardsCount = this.data.length;
-      (this.grid as GridComponent).toolbarModule.enableItems(['Generate' ], true);
+      this.guardsCount =  this.data?.length;
+      (this.grid as GridComponent)?.toolbarModule.enableItems(['Generate' ], true);
       console.log(data);
       // this.buttonStatus = data.length === 0 ? true : false;
       
@@ -84,16 +84,18 @@ export class GuardsManagerComponent implements OnInit {
     this.buttonStatus = false;
     this.data.forEach((guard) => {
       if (guard.GuardId === this.selectedGuard.GuardId) {
-        debugger
-        guard.isPTT = !guard.isPTT; // Update some property of the guard
+        
+        guard.isPTT = !guard.isPTT; 
+        
       }
     });
   }
   onPatrolCheckBoxChange(){
     this.buttonStatus = false;
     this.data.forEach((guard) => {
+      
       if (guard.GuardId === this.selectedGuard.GuardId) {
-        guard.isQrPatrol = !guard.isQrPatrol; // Update some property of the guard
+        guard.isQrPatrol = !guard.isQrPatrol; 
       }
     });
   }
