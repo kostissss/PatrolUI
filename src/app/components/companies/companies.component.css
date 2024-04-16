@@ -10,7 +10,6 @@
     font-weight: normal;
     font-size: 0.9em;
     color: rgb(159,159,159);
-    font-family: '"Segoe UI", Tahoma, sans-serif';
 }
 .e-rowcell {
     background-color: rgb(245, 245, 245);
@@ -48,11 +47,12 @@
 }
 
 .e-grid .e-rowcell {
-    color: red;
     background-color: white;
 }
 .green-text {
     color: green;
 }
 
-
+.red-text {
+    color: red;
+}
