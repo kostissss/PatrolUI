@@ -49,5 +49,10 @@
 
 .e-grid .e-rowcell {
     color: red;
+    background-color: white;
 }
+.green-text {
+    color: green;
+}
+
 

@@ -39,7 +39,7 @@ export let data: Object[] = [
     {
         ID: 8918, username: 'test2', Name: 'tested2', Email: 'test2@gmail.com',Guards:'2',
         PatrolLinceses: '31',PTTLinceses: '11',Created:'12421', Linceses: '11112-C372B51749B6CF18',LincesesActive: '\u2717',
-        ExpirationDate:'65345',LastLogin:'46626',Unlocked:'\u2713', Demo: '\u2713',
+        ExpirationDate:'65345',LastLogin:'46626',Unlocked:'\u2713', Demo: '\u2717',
         Parent: '2intership2024-46907',
     },
     {

@@ -4,25 +4,81 @@
     [allowSorting]='true' height='100%' [textWrapSettings]='wrapOption' [allowTextWrap]="true"
     (toolbarClick)='clickHandler($event)' >
         <e-columns>
-            <e-column field='ID' headerText='ID' width=40></e-column>
-            <e-column field='username' headerText='Username' width=50></e-column>
-            <e-column field='name' headerText='Name' width=50></e-column>
-            <e-column field='email' headerText='Email' width=70></e-column>
-            <e-column field='guards' headerText='Guards' width=40></e-column>
-            <e-column field='PatrolLinceses' headerText='Patrol Linceses:' width=40></e-column>
-            <e-column field='PTTLinceses' headerText='PTT Linceses' width=40></e-column>
-            <e-column field='created' headerText='Created' width=50></e-column>
-            <e-column field='linceses' headerText='Linceses' width=50></e-column>
-            <e-column field='LincesesActive' headerText='Linceses Active' width=40>
+            <e-column field='ID' headerText='ID' width=40>
                 <ng-template #template let-data>
-                    <div [ngStyle]="{'color': data.LincesesActive === '\u2713' ? 'red' : 'green'}">{{ data.LincesesActive }}</div>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.ID}}</div>
                 </ng-template>
             </e-column>
-            <e-column field='expirationDate' headerText='Expiration Date' width=50></e-column>
-            <e-column field='lastLogin' headerText='Last Login' width=50></e-column>
-            <e-column field='unlocked' headerText='unlocked' width=30></e-column>
-            <e-column field='Demo' headerText='Demo' width=30></e-column>
-            <e-column field='Parent' headerText='Parent' width=50></e-column>
+            <e-column field='username' headerText='Username' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.username }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='name' headerText='Name' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Name}}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='email' headerText='Email' width=70>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Email}}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='guards' headerText='Guards' width=40>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Guards}}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='PatrolLinceses' headerText='Patrol Linceses:' width=40>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.PatrolLinceses }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='PTTLinceses' headerText='PTT Linceses' width=40>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.PTTLinceses }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='created' headerText='Created' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Created }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='linceses' headerText='Linceses' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Linceses }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='LincesesActive' headerText='Linceses Active' width=40>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.LincesesActive }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='expirationDate' headerText='Expiration Date' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.ExpirationDate }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='lastLogin' headerText='Last Login' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.LastLogin}}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='unlocked' headerText='unlocked' width=30>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Unlocked }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='Demo' headerText='Demo' width=30>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Demo}}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='Parent' headerText='Parent' width=50>
+                <ng-template #template let-data>
+                    <div [ngClass]="{'green-text': data.LincesesActive === '\u2717'}">{{ data.Parent }}</div>
+                </ng-template>
+            </e-column>
         </e-columns>
     </ejs-grid>
 
