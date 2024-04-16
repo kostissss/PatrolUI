@@ -19,9 +19,9 @@
     <div class="gray-line-divider mt-0 flex-grow-1"></div>
 
     <div class="form-group row  mt-1 mb-1">
-      <label for="password" class="align-self-center  col-sm font-weight-normal">Password</label>
+      <label for="resetPassword" class="align-self-center  col-sm font-weight-normal">Password</label>
       <div class="col-sm-9">
-        <input [(ngModel)]="passwordInput" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"   type="password" class="form-control" id="password" #password="ngModel" minlength="6" maxlength="20" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <input [(ngModel)]="passwordInput" name="resetPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"   type="password" class="form-control" id="resetPassword" #password="ngModel" minlength="6" maxlength="20" placeholder="e.g., 6+-i\nw63IYyC*E" />
         <div class="d-flex">
           <!-- <small *ngIf="password.errors?.['minlength']" class="flex-shrink-1">Password should be more than 12 characters</small> -->
           <!-- <small *ngIf="password.errors?.['required'] && password.touched" class="flex-shrink-1">Password is required</small> -->
@@ -31,9 +31,9 @@
     </div>
 
     <div class="form-group row  mt-1 mb-1">
-      <label for="cpassword" class="align-self-center  col-sm font-weight-normal">Password Confirm</label>
+      <label for="confirmResetPassword" class="align-self-center  col-sm font-weight-normal">Password Confirm</label>
       <div class="col-sm-9">
-        <input [ngModel]="" name="cpassword" required type="password"  class="form-control" id="cpassword" #cpassword="ngModel" placeholder="e.g., 6+-i\nw63IYyC*E" />
+        <input [ngModel]="" name="confirmResetPassword" required type="password"  class="form-control" id="confirmResetPassword" #cpassword="ngModel" placeholder="e.g., 6+-i\nw63IYyC*E" />
         <!-- <small *ngIf="cpassword.invalid && cpassword.touched">Password Confirmation is required</small> -->
         <!-- <small *ngIf="password.value!= cpassword.value && cpassword.dirty ">Passwords need to be matching!</small> -->
       </div>
