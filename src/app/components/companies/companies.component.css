@@ -1,10 +1,14 @@
-.dbtable {
+.header{
+    position: relative;
+    padding: 0px 20px;
+}
+.dbcompanies {
     position: relative;
     padding: 0px 20px;
 }
 .e-headertext {
     font-weight: normal;
-    font-size: 0.85em;
+    font-size: 0.9em;
     color: rgb(159,159,159);
     font-family: '"Segoe UI", Tahoma, sans-serif';
 }
@@ -30,3 +34,20 @@
     padding: 0px 2px;
     align-items: center;
 }
+
+.e-grid.e-default .e-headercell, .e-grid.e-default .e-detailheadercell {
+    padding-left: 0px;
+    padding-right: 0px;  
+    margin-right: 10px;
+}
+
+.e-grid .e-filterbarcell, .e-grid .e-filterbarcelldisabled{
+    padding-right: 20px;
+    padding-left: 0px;
+    margin-left: 10px;
+}
+
+.e-grid .e-rowcell {
+    color: red;
+}
+

@@ -1,28 +1,32 @@
 <app-notifheader title="Companies" icon="fa fa-users fa-lg "></app-notifheader>
-<div class="dbtable border border-secondary ">
-    <ejs-grid #grid [dataSource]="data" [editSettings]='editSettings'  [toolbar]='toolbar' [allowTextWrap]="true" [allowFiltering]="true" 
-    [allowSorting]='true' height='100%' [textWrapSettings]='wrapOption'  
-     (toolbarClick)='clickHandler($event)'  (rowSelected)="rowSelected()">
-        <e-columns >
-                <e-column field='ID' headerText='ID' width=30></e-column>
-                <e-column field='username' headerText='User Name' width=40></e-column>
-                <e-column field='name' headerText='Name' width=40></e-column>
-                <e-column field='email' headerText='Email' width=40></e-column>
-                <e-column field='guards' headerText='Guards' width=40></e-column>
-                <e-column field='PatrolLinceses' headerText='Patrol Linceses:' width=40></e-column>
-                <e-column field='PTTLinceses' headerText='PTT Linceses' width=40></e-column>
-                <e-column field='created' headerText='Created' width=40></e-column>
-                <e-column field='linceses' headerText='Linceses' width=40></e-column>
-                <e-column field='LincesesActive' headerText='Linceses Active' width=40></e-column>
-                <e-column field='expirationDate' headerText='Expiration Date' width=40></e-column>
-                <e-column field='lastLogin' headerText='Last Login' width=40></e-column>
-                <e-column field='unlocked' headerText='unlocked' width=40></e-column>
-                <e-column field='Demo' headerText='Demo' width=40></e-column>
-                <e-column field='Parent' headerText='Parent' width=40></e-column>
+<div class="dbcompanies " style="display: flex; flex-direction: column; box-sizing: border-box;">
+    <ejs-grid #grid [dataSource]="data" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]="true" 
+    [allowSorting]='true' height='100%' [textWrapSettings]='wrapOption' [allowTextWrap]="true"
+    (toolbarClick)='clickHandler($event)' >
+        <e-columns>
+            <e-column field='ID' headerText='ID' width=40></e-column>
+            <e-column field='username' headerText='Username' width=50></e-column>
+            <e-column field='name' headerText='Name' width=50></e-column>
+            <e-column field='email' headerText='Email' width=70></e-column>
+            <e-column field='guards' headerText='Guards' width=40></e-column>
+            <e-column field='PatrolLinceses' headerText='Patrol Linceses:' width=40></e-column>
+            <e-column field='PTTLinceses' headerText='PTT Linceses' width=40></e-column>
+            <e-column field='created' headerText='Created' width=50></e-column>
+            <e-column field='linceses' headerText='Linceses' width=50></e-column>
+            <e-column field='LincesesActive' headerText='Linceses Active' width=40>
+                <ng-template #template let-data>
+                    <div [ngStyle]="{'color': data.LincesesActive === '\u2713' ? 'red' : 'green'}">{{ data.LincesesActive }}</div>
+                </ng-template>
+            </e-column>
+            <e-column field='expirationDate' headerText='Expiration Date' width=50></e-column>
+            <e-column field='lastLogin' headerText='Last Login' width=50></e-column>
+            <e-column field='unlocked' headerText='unlocked' width=30></e-column>
+            <e-column field='Demo' headerText='Demo' width=30></e-column>
+            <e-column field='Parent' headerText='Parent' width=50></e-column>
         </e-columns>
     </ejs-grid>
 
     <div class="companies-count">
-      Total Companies: {{ companiesCount }}
-  </div>
-</div>  
+        Total Companies: {{ companiesCount }}
+    </div>
+</div>

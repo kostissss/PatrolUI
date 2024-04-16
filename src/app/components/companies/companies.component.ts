@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent, RowDataBoundEventArgs } from '@syncfusion/ej2-angular-grids';
 import {PageSettingsModel } from '@syncfusion/ej2-angular-grids';
-import { data } from './datasource';
+import {  data } from './datasource';
 
 @Component({
   selector: 'app-companies',
   templateUrl: './companies.component.html',
-  styleUrl: './companies.component.css'
+  styleUrls: ['./companies.component.css']
 })
 export class CompaniesComponent implements OnInit {
-  public data!: object[];
+  @ViewChild('grid') grid!: GridComponent;
+  public data!: Object[];
   public buttonStatus : boolean = true;
   public editSettings?: EditSettingsModel;
   public companiesCount: number = 0;
@@ -19,12 +20,6 @@ export class CompaniesComponent implements OnInit {
   public toolbar?: ToolbarItems[] | object;
   public pageSettings?: PageSettingsModel;
   wrapOption = { wrapMode: 'Header' };
-
-
-  @ViewChild('grid')
-  public grid!: GridComponent;
-  
-
 
   constructor(private dialog: MatDialog) { }
 
@@ -40,9 +35,7 @@ export class CompaniesComponent implements OnInit {
       { text: 'Export To Excel', tooltipText: 'Edit', id: 'Export',disabled: false}, 
       { text: 'Reset Password', tooltipText: 'Edit', id: 'Reset',disabled: false},
       { text: 'Change Plan', tooltipText: 'Edit', id: 'Edit', disabled: true},
-      'Search'
-
-    ];
+      'Search'];
   }
 
   rowSelected() {
@@ -62,7 +55,7 @@ export class CompaniesComponent implements OnInit {
 
   onCancelClick(){
 
-    }
+  }
     
   }
 

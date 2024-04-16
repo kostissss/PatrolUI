@@ -7,7 +7,8 @@
 </div>
 
 <div class="grid">
-  <ejs-grid #grid [dataSource]="data" [editSettings]="editSettings" [allowSorting]="true" [allowPaging]="true" height="150" width="100%">
+  <ejs-grid #grid [dataSource]="data" [editSettings]="editSettings" [allowSorting]="true" [allowPaging]="true" 
+  [textWrapSettings]='wrapOption' height="150" width="100%">
     <ng-template #toolbarTemplate let-data>
       <div id='toolbar'>
         <ejs-checkbox label="Select All Companies" cssClass="e-small" (change)="onSelectAllChange($event)"></ejs-checkbox>
