@@ -19,11 +19,12 @@
                 </e-column>
                 <e-column field='isPTT' headerText='PTT'  width=40>
                     <ng-template #template let-data>
-                    <div *ngIf="data.isPTT; else elseblock">
+                    <div *ngIf="data.isPTT; else elseblock2">
+                    
                          <input type="checkbox" checked  (change)="onPttCheckBoxChange()" >
                     </div>
                   </ng-template>
-                  <ng-template #elseblock><input type="checkbox"  (change)="onPttCheckBoxChange()"></ng-template>
+                  <ng-template #elseblock2><input type="checkbox"  (change)="onPttCheckBoxChange()"></ng-template>
                 </e-column>
                 <e-column field='lastLatitude' headerText='Last Latitude' width=70></e-column>
                 <e-column field='lastLongitude' headerText='Last Longgiitude' width=70></e-column>
