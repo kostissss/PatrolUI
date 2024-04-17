@@ -1,7 +1,7 @@
-<app-notifheader title="Companies" icon="fa fa-users fa-lg "></app-notifheader>
+<app-notifheader title="Companies" icon="fa fa-users fa-lg " (keyup)="search()" [showSearch]="true"></app-notifheader>
 
 <ejs-grid class=""  #grid [dataSource]='data' [editSettings]='editSettings'    [allowSorting]='true' height=100% 
-  (rowSelected)="rowSelected()" 
+  (rowSelected)="rowSelected() " allowSearching="true"  
 (recordDoubleClick)="true" >
    <e-columns >
            <e-column field='id' headerText='ID' width=20></e-column>
@@ -10,3 +10,4 @@
            
    </e-columns>
 </ejs-grid>
+

@@ -4,6 +4,7 @@ import { EditSettingsModel, GridComponent, SelectionSettingsModel } from '@syncf
 import { AccountsService } from '../../../services/accounts.service';
 import { Account } from '../../../interfaces/account';
 import { GuardsService } from '../../../services/guards.service';
+import { NotifHeaderComponent } from '../../../NotificationGrid/header/header.component';
 
 interface gridRecord{
   id: number,
@@ -25,6 +26,10 @@ export class CompaniesSelectorComponent {
 
   @ViewChild('grid')
   public grid!: GridComponent;
+
+  @ViewChild(NotifHeaderComponent)
+  public notifHeader!: NotifHeaderComponent;
+
 
   constructor(private accountsService: AccountsService, private guardsService: GuardsService) { }
 
@@ -79,5 +84,13 @@ export class CompaniesSelectorComponent {
 
     
   }
+
+
+  search(): void {
+     
+        (this.grid as GridComponent).search(this.notifHeader.searchInput.toString());
+      }
+    
+  
 
 }
