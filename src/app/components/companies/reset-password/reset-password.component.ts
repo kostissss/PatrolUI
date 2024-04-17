@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ToolbarItems } from '@syncfusion/ej2-angular-grids';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
+import { EmitType } from '@syncfusion/ej2-base';
 
 @Component({
   selector: 'app-reset-password',
@@ -8,6 +9,7 @@ import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popup
   styleUrl: './reset-password.component.css'
 })
 export class ResetPasswordComponent {
+  
   @ViewChild('dialogcomponent') dialogObject! : DialogComponent;
 
   public toolbar?: ToolbarItems[] | object;
@@ -19,6 +21,8 @@ export class ResetPasswordComponent {
   onOpenDialog(): void {
     this.dialogObject.show();
   }
-
+  hideDialog: EmitType<object> = () => {
+    this.dialogObject.hide();
+  };
 
 }

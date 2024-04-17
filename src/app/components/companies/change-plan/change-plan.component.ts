@@ -8,13 +8,13 @@ import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popup
   styleUrl: './change-plan.component.css'
 })
 export class ChangePlanComponent {
-  @ViewChild('dialogcomponent') dialogObject! : DialogComponent;
+  @ViewChild('dialogObject') dialogObject!: DialogComponent;
 
   public toolbar?: ToolbarItems[] | object;
   public dialogAnimationSettings: Object = { effect: 'SlideTop', duration: 600 };
   public dialogResizeDirections: ResizeDirections[] = ['All'];
   public dialogPosition: Object = { X: 'center', Y: 'center' };
-  public dialogVisibility: Boolean = false;
+  public dialogVisibility: boolean = false;
 
   onOpenDialog(): void {
     this.dialogObject.show();

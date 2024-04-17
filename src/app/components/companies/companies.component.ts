@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { data, MyCompanies } from './datasource';
 import { MatDialog } from '@angular/material/dialog';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
-import { data } from './datasource';
 import { DetailsComponent } from './details/details.component';
 import { InspectCompanyComponent } from './inspect-company/inspect-company.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
@@ -16,12 +16,11 @@ import { ChangePlanComponent } from './change-plan/change-plan.component';
 })
 export class CompaniesComponent implements OnInit {
   @ViewChild('grid') public grid!: GridComponent;
-  public data!: Object[];
-  @ViewChild('onDetails') public onDetails!: DetailsComponent;
-  @ViewChild('onViewCompanies') public onViewCompanies!: InspectCompanyComponent;
-  @ViewChild('onResetPass') public onResetPass!: ResetPasswordComponent;
-  @ViewChild('onChangePlan') public onChangePlan!: ChangePlanComponent;
-  public buttonStatus: boolean = true;
+  public data!: MyCompanies[];
+  @ViewChild('onDetailsDialog') public onDetailsDialog!: DetailsComponent;
+  @ViewChild('onViewCompaniesDialog') public onViewCompaniesDialog!: InspectCompanyComponent;
+  @ViewChild('onResetPassDialog') public onResetPassDialog!: ResetPasswordComponent;
+  @ViewChild('onChangePlanDialog') public onChangePlanDialog!: ChangePlanComponent;
   public editSettings?: EditSettingsModel;
   public companiesCount: number = 0;
   public selectionOptions?: SelectionSettingsModel;
@@ -35,21 +34,16 @@ export class CompaniesComponent implements OnInit {
     this.data = data;
     this.companiesCount = this.data.length;
     this.selectionOptions = { mode: 'Row',  type: 'Single' };
-    this.editSettings = { allowDeleting: true, mode: 'Dialog' };
+    this.editSettings = {mode: 'Dialog',};
     this.toolbar = [
       { prefixIcon: 'e-refresh' },
-      { text: 'Details', id: 'Info', disabled: true },
-      { text: 'Inspect Companies', id: 'View', disabled: true },
-      { text: 'Export To Excel', id: 'ExcelExport', disabled: false }, 
-      { text: 'Reset Password', id: 'Reset', disabled: false },
-      { text: 'Change Plan', id: 'Edit', disabled: true },
+      { text: 'Details',tooltipText: 'Info', id: 'Info', disabled: true },
+      { text: 'Inspect Companies',tooltipText: 'View', id: 'View', disabled: true },
+      { text: 'Export To Excel',tooltipText: 'ExcelExport', id: 'ExcelExport', disabled: false }, 
+      { text: 'Reset Password',tooltipText: 'Reset', id: 'Reset', disabled: true },
+      { text: 'Change Plan',tooltipText: 'Edit', id: 'Edit', disabled: true },
       'Search'
     ];
-  }
-
-  onItemClick(): void {
-    var selectedRecord = this.grid.getSelectedRecords()[0];
-    (this.grid as GridComponent).toolbarModule.enableItems(['Info','View','Edit'], true);
   }
 
   clickHandler(args: ClickEventArgs): void {
@@ -57,19 +51,19 @@ export class CompaniesComponent implements OnInit {
       this.reloadPage();
     }
     if (args.item.id === 'Info') {
-      this.onDetails.onOpenDialog();
+      this.onDetailsDialog.onOpenDialog();
     }
     if (args.item.id === 'View') { 
-      this.onViewCompanies.onOpenDialog();
+      this.onViewCompaniesDialog.onOpenDialog();
     }
     if (args.item.id === 'ExcelExport') {
       (this.grid as GridComponent).excelExport();
     }
     if (args.item.id === 'Reset') { 
-      this.onResetPass.onOpenDialog();
+      this.onResetPassDialog.onOpenDialog();
     }
     if (args.item.id === 'Edit') {
-      this.onChangePlan.onOpenDialog();
+      this.onChangePlanDialog.onOpenDialog();
     }
   }
 
@@ -77,7 +71,40 @@ export class CompaniesComponent implements OnInit {
     window.location.reload();
   }
 
-  onCancelClick(): void {
-    // Handle cancel click
+  openDetailsDialog(): void {
+    const dialogRef = this.dialog.open(DetailsComponent, {
+      data: {} 
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  openInspectCompanyDialog(): void {
+    const dialogRef = this.dialog.open(InspectCompanyComponent, {
+      data: {} 
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  openResetPasswordDialog(): void {
+    const dialogRef = this.dialog.open(ResetPasswordComponent, {
+      data: {} 
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  openChangePlanDialog(): void {
+    const dialogRef = this.dialog.open(ChangePlanComponent, {
+      data: {} 
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  onItemClick(){
+    var selectedRecord = this.grid.getSelectedRecords()[0];
+    (this.grid as GridComponent).toolbarModule.enableItems(['Info','View','Edit','Reset'], true);
   }
 }
