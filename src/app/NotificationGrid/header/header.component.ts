@@ -13,6 +13,7 @@ export class NotifHeaderComponent implements OnInit {
 
   @Input() public showSearch: boolean = false;
 
+  @Input( ) public filterValues: string[] = [];
   public searchInput: any;
 
   constructor() {

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NotificationsComponent {
 
+  public data: string[] = ['Show All', 'Show only templates', 'Show only notifications'];
+
 }
