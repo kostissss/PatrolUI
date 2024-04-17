@@ -44,7 +44,6 @@ import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assi
 import { CompaniesComponent } from '../components/companies/companies.component';
 import { ChangePlanComponent } from '../components/companies/change-plan/change-plan.component';
 import { DetailsComponent } from '../components/companies/details/details.component';
-import { ExportToExcelComponent } from '../components/companies/export-to-excel/export-to-excel.component';
 import { InspectCompanyComponent } from '../components/companies/inspect-company/inspect-company.component';
 import { ResetPasswordComponent } from '../components/companies/reset-password/reset-password.component';
 
@@ -78,7 +77,6 @@ import { ResetPasswordComponent } from '../components/companies/reset-password/r
     CompaniesComponent,
     ChangePlanComponent,
     DetailsComponent,
-    ExportToExcelComponent,
     InspectCompanyComponent,
     ResetPasswordComponent
   

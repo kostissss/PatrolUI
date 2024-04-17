@@ -1,8 +1,8 @@
 <app-notifheader title="Companies" icon="fa fa-users fa-lg "></app-notifheader>
-<div class="dbcompanies " style="display: flex; flex-direction: column; box-sizing: border-box;">
+<div class="dbcompanies " style="display: flex; flex-direction: column; box-sizing: border-box; height: 75vh;" >
     <ejs-grid #grid [dataSource]="data" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]="true" 
-    [allowSorting]='true' height='100%' [textWrapSettings]='wrapOption' [allowTextWrap]="true"
-    (toolbarClick)='clickHandler($event)' >
+    [allowSorting]='true' height='100%' width="100%" [textWrapSettings]='wrapOption' [allowTextWrap]="true"
+    (toolbarClick)='clickHandler($event)' [allowExcelExport]='true' >
         <e-columns>
             <e-column field='ID' headerText='ID' width=40>
                 <ng-template #template let-data>
@@ -82,7 +82,7 @@
         </e-columns>
     </ejs-grid>
 
-    <div class="companies-count">
+    <div class="companies-count" style="height: 70vh;">
         Total Companies: {{ companiesCount }}
     </div>
 </div>
