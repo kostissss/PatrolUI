@@ -18,7 +18,8 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { AccordionModule,SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { EditNotificationDialogComponent } from './NotificationGrid/data-table/edit-notification-dialog/edit-notification-dialog.component';
-import { GridModule, SearchService, ToolbarService, SortService, PageService, EditService, PagerModule } from '@syncfusion/ej2-angular-grids';
+import { GridModule, SearchService, ToolbarService, SortService,
+   PageService, EditService, PagerModule, ExcelExportService } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
@@ -74,6 +75,7 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
     PageService,
     FilterService,
     GroupService,
+    ExcelExportService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,
