@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountsService } from '../../services/accounts.service';
-import { AuthServiceService } from '../../services/auth-service.service';
-import { SidebarMobileComponent } from '../sidebar/sidebar.component';
+import { AccountsService } from '../../../services/accounts.service';
+import { AuthServiceService } from '../../../services/auth-service.service';
+import { SidebarMobileComponent } from '../../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-header',

@@ -61,4 +61,7 @@ export class AccountsService {
     return this.http.post<Account[]>(`${this.apiUrl}accounts/${field}`,{value: value},httpOptions);
 
   }
+  getUserInfo(): Observable<Account> {
+    return this.http.get<Account>(`${this.apiUrl}accounts/${this.id}`,httpOptions);
+  }
 }

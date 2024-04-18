@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { AccountChangeDropDownComponent } from '../account-change-drop-down/account-change-drop-down.component';
 import { AccountsService } from '../../../services/accounts.service';
@@ -9,7 +9,8 @@ import { AuthServiceService } from '../../../services/auth-service.service';
   templateUrl: './settings-drop-down-buttons.component.html',
   styleUrl: './settings-drop-down-buttons.component.css'
 })
-export class SettingsDropDownButtonsComponent implements OnInit{
+export class SettingsDropDownButtonsComponent implements OnInit,OnDestroy{
+  authSubscription: any;
 
   constructor(private authService: AuthServiceService) { }
   @ViewChild(AccountChangeDropDownComponent)
@@ -34,7 +35,7 @@ export class SettingsDropDownButtonsComponent implements OnInit{
   ];
 
   ngOnInit(): void {
-    this.authService.authState$.subscribe(authResponse => {
+    this.authSubscription=this.authService.authState$.subscribe(authResponse => {
       //debugger
       if (authResponse && authResponse.account) {
        
@@ -44,6 +45,12 @@ export class SettingsDropDownButtonsComponent implements OnInit{
        
       }
     });
+  }
+
+
+  ngOnDestroy(): void {
+    
+    this.authSubscription.unsubscribe();
   }
     
   

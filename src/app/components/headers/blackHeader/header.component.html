@@ -1,0 +1,12 @@
+
+<div class="header" style="margin-top: 20px;">
+    <span class="image">
+        <i class="{{icon}}" style="float: left; padding: 0px 5px; line-height: 20px; color: inherit;"></i>
+    </span>
+    <h4>{{title}}</h4>
+    <ejs-dropdownlist *ngIf="showFilter" class="dropdown" [dataSource]='filterValues' [value]='filterValues[0]'></ejs-dropdownlist>
+    
+    <input *ngIf="showSearch" [(ngModel)]="searchInput" class="ml-auto text-dark" placeholder="Search" type="search" #mySearch="ngModel">
+    
+   
+</div>

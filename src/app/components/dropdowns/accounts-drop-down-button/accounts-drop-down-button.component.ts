@@ -1,16 +1,48 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ItemModel,MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
 import { CreateNewAccountComponent } from '../../dialogs/create-new-account/create-new-account.component';
 import { CreatePartnerAccountModalComponent } from '../../dialogs/create-partner-account-modal/create-partner-account-modal.component';
 import { ManagePartnerAccountModalComponent } from '../../dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
+import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-accounts-drop-down-button',
   templateUrl: './accounts-drop-down-button.component.html',
   styleUrl: './accounts-drop-down-button.component.css'
 })
-export class AccountsDropDownButtonComponent {
+export class AccountsDropDownButtonComponent implements OnInit{
+  constructor(private accountService: AccountsService) { }
+  userRole: string = '';
+
+  ngOnInit(): void {
+    this.accountService.getUserInfo().subscribe((response) => {
+      this.userRole = response.role;
+      
+      if (this.isAdmin()){
+        console.log('adminsdsds');
+        this.items=   [
+    
+          {
+              text: 'Create Account',
+              
+              
+          },
+          {
+              text: 'Create Partner Account'
+          },
+          {
+        text: 'Manage Partner'
+      },
+          
+          
+          
+        ];
+      }
+    });
+    
+    
+  }
   @ViewChild(CreateNewAccountComponent)
   public accountDialog!: CreateNewAccountComponent;
 
@@ -30,9 +62,9 @@ export class AccountsDropDownButtonComponent {
     {
         text: 'Create Partner Account'
     },
-    {
-      text: 'Manage Partner'
-    }
+    
+    
+    
   ];
 
     public select(args: MenuEventArgs) {
@@ -48,6 +80,11 @@ export class AccountsDropDownButtonComponent {
         const event: any = null; // Pass any relevant event object here
         this.managePartnerDialog.onOpenDialog(event);
       }
+    }
+
+
+    public isAdmin(): boolean {
+      return this.userRole === 'admin';
     }
     
   }
