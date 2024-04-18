@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { HeaderComponent } from '../components/header/header.component';
+import { HeaderComponent } from '../components/headers/Mainheader/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
@@ -25,7 +25,7 @@ import { AccountChangeDropDownComponent } from '../components/dropdowns/account-
 import { ChangeUsernameDialogComponent } from '../components/dialogs/change-username-dialog/change-username-dialog.component';
 import { ChangeLanguageDialogComponent } from '../components/dialogs/change-language-dialog/change-language-dialog.component';
 import { DataTableComponent } from '../NotificationGrid/data-table/data-table.component';
-import { NotifHeaderComponent } from '../NotificationGrid/header/header.component';
+import { NotifHeaderComponent } from '../components/headers/blackHeader/header.component';
 import { AddNotificationDialogComponent } from '../NotificationGrid/data-table/add-notification-dialog/add-notification-dialog.component';
 import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';

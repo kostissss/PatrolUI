@@ -4,7 +4,7 @@ import { EditSettingsModel, GridComponent, SelectionSettingsModel } from '@syncf
 import { AccountsService } from '../../../services/accounts.service';
 import { Account } from '../../../interfaces/account';
 import { GuardsService } from '../../../services/guards.service';
-import { NotifHeaderComponent } from '../../../NotificationGrid/header/header.component';
+import { NotifHeaderComponent } from '../../headers/blackHeader/header.component';
 
 interface gridRecord{
   id: number,
