@@ -38,7 +38,7 @@ export class ChangePlanComponent {
     {
       buttonModel: {
         content: 'Apply',
-        cssClass: 'Apply-button'
+        cssClass: 'apply-button'
       }
     }
   ];

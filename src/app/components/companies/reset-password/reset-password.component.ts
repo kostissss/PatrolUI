@@ -38,7 +38,7 @@ export class ResetPasswordComponent {
     {
       buttonModel: {
         content: 'Apply',
-        cssClass: 'Apply-button'
+        cssClass: 'apply-button'
       }
     }
   ];
