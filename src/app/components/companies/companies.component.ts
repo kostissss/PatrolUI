@@ -18,7 +18,7 @@ export class CompaniesComponent implements OnInit {
   @ViewChild('grid') public grid!: GridComponent;
   public data!: MyCompanies[];
   @ViewChild('onDetailsDialog') public onDetailsDialog!: DetailsComponent;
-  @ViewChild('onViewCompaniesDialog') public onViewCompaniesDialog!: InspectCompanyComponent;
+  @ViewChild('onInspectCompaniesDialog') public onInspectCompaniesDialog!: InspectCompanyComponent;
   @ViewChild('onResetPassDialog') public onResetPassDialog!: ResetPasswordComponent;
   @ViewChild('onChangePlanDialog') public onChangePlanDialog!: ChangePlanComponent;
   public editSettings?: EditSettingsModel;
@@ -45,7 +45,7 @@ export class CompaniesComponent implements OnInit {
       'Search'
     ];
   }
-
+  
   clickHandler(args: ClickEventArgs): void {
     if (args.item.prefixIcon === 'e-refresh') {
       this.reloadPage();
@@ -54,7 +54,7 @@ export class CompaniesComponent implements OnInit {
       this.onDetailsDialog.onOpenDialog();
     }
     if (args.item.id === 'View') { 
-      this.onViewCompaniesDialog.onOpenDialog();
+      this.onInspectCompaniesDialog.onOpenDialog();
     }
     if (args.item.id === 'ExcelExport') {
       (this.grid as GridComponent).excelExport();

@@ -81,8 +81,11 @@
             </e-column>
         </e-columns>
     </ejs-grid>
-
     <div class="companies-count" style="height: 70vh;">
         Total Companies: {{ companiesCount }}
     </div>
+    <app-change-plan #onChangePlanDialog></app-change-plan>
+    <app-details #onDetailsDialog></app-details>
+    <app-inspect-company #onInspectCompaniesDialog></app-inspect-company>
+    <app-reset-password #onResetPassDialog></app-reset-password>
 </div>
