@@ -17,7 +17,10 @@ export class ChangePlanComponent {
   public dialogPosition: Object = { X: 'center', Y: 'center' };
   public dialogVisibility: Boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
+  public data1: string[] = ['Basic (1-3 IDs)', 'Starter (4-9 IDs)', 'Professional (10-24 IDs)'];
+  public data2: string[] = ['BASE', 'PRO', 'GOLD'];
 
   onOpenDialog(): void {
     this.dialogObject.show();

@@ -39,7 +39,7 @@ export class InspectCompanyComponent {
       click: this.hideDialog.bind(this),
       buttonModel: {
         content: 'Confirm',
-        cssClass: 'Confirm-button'
+        cssClass: 'confirm-button'
       }
     }
   ];
