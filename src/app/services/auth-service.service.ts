@@ -72,7 +72,7 @@ export class AuthServiceService  {
   
 
   refreshToken(): Observable<any> {
-    debugger
+    //debugger
     console.log(document.cookie)
     return this.http.get<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,this.httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
   }
@@ -127,7 +127,7 @@ export class AuthServiceService  {
     return !!this.authSubject.value;
   }
   handleRefreshSuccess(res: AuthResponse) {
-    debugger
+    //debugger
     console.log("refresh success");
     this.authSubject.next(res);
     
