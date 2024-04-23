@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { EditSettingsModel, GridComponent, SelectionSettingsModel } from '@syncfusion/ej2-angular-grids';
+import { DataStateChangeEventArgs, EditSettingsModel, GridComponent, PageSettingsModel, SelectionSettingsModel } from '@syncfusion/ej2-angular-grids';
 
 import { AccountsService } from '../../../services/accounts.service';
 import { Account } from '../../../interfaces/account';
 import { GuardsService } from '../../../services/guards.service';
 import { NotifHeaderComponent } from '../../headers/blackHeader/header.component';
+import { Observable } from 'rxjs';
 
 interface gridRecord{
   id: number,
@@ -19,10 +20,16 @@ interface gridRecord{
 })
 export class CompaniesSelectorComponent {
 
-  public data?: Account[];
-  public editSettings?: EditSettingsModel;
+  public data: Observable<DataStateChangeEventArgs>;
+    public pageOptions: Object={ pageSize: 3 };
+    public state: DataStateChangeEventArgs | undefined;
   public selectedCompanyId: number = 0;
   public selectedRecords: gridRecord = {} as gridRecord;
+  private currentIndex: number = 0;
+
+  public pageSettings: PageSettingsModel = {
+    pageSize: 3, 
+  };
 
   @ViewChild('grid')
   public grid!: GridComponent;
@@ -31,16 +38,23 @@ export class CompaniesSelectorComponent {
   public notifHeader!: NotifHeaderComponent;
 
 
-  constructor(private accountsService: AccountsService, private guardsService: GuardsService) { }
+  constructor(  private guardsService: GuardsService, private accountsService: AccountsService) {
+        
+    this.data = accountsService;
+}
 
-  ngOnInit(): void {
-    this.fetchCompanyAccounts();
-    
-   
-    this.editSettings = {allowDeleting: true, mode: 'Dialog',};
-    
-  }
+  public dataStateChange(state: DataStateChangeEventArgs): void {
+    //debugger
+    console.log("dataStateChange",state);
+    this.accountsService.execute(state, this.grid);
+}
 
+public ngOnInit(): void {
+    
+    let state = { skip: 0, take: 3 };
+    this.accountsService.execute(state, this.grid);
+}
+  
  
 
   
@@ -59,15 +73,20 @@ export class CompaniesSelectorComponent {
  
 
   fetchCompanyAccounts(){
-    this.accountsService.getFilteredAccounts("role","admin").subscribe((response) => {
-      this.data = response;
-      
+    
+    this.accountsService.getFilteredAccounts("role","admin",2,this.currentIndex*2 ).subscribe((response) => {
+      if(response){
+       // this.data = [...this.data, ...response];
+      }
+      this.currentIndex++;
+      console.log("fetching company accounts",this.data);
     },
     (error) =>{
       console.log(error);
       let accounts : Account []=[]
       return accounts;
     });
+    
   }
 
   fetchGuards(){
