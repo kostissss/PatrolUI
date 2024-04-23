@@ -97,10 +97,23 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
     else{
       sortArray = "id ASC";
     }
+    let  Searchfields = ['id', 'uname', 'email'],Searchkey="@";
+    if (state.search) {
+      if (state.search && state.search.length > 0) {
+        // Extract the search key and fields from the search array
+        const { fields, key } = state.search[0];
+        Searchfields = fields || ['id', 'uname', 'email'];
+        Searchkey = key || ""; // Assign a default value if key is undefined
+        // perform search operation using the field and key on the query
+        console.log("search",fields,key)
+      }
+      
+    };
+    console.log("search",Searchfields,Searchkey);
     
     
 
-  return this.http.post(`${this.apiUrl}accounts/role`,{value: "admin",limit:state.take,offset: state.skip,order: sortArray},httpOptions).pipe(
+  return this.http.post(`${this.apiUrl}accounts/role`,{value: "admin",limit:state.take,offset: state.skip,order: sortArray,searchFields:Searchfields,searchKey:Searchkey},httpOptions).pipe(
     map((response: any) => {
 
       console.log(response);
