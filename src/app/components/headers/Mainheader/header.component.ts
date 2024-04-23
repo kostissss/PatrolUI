@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, SkipSelf, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountsService } from '../../../services/accounts.service';
 import { AuthServiceService } from '../../../services/auth-service.service';
@@ -12,7 +12,7 @@ import { SidebarMobileComponent } from '../../sidebar/sidebar.component';
 export class HeaderComponent implements OnInit {
   @ViewChild(SidebarMobileComponent) 
   public sidebar!: SidebarMobileComponent;
-  constructor(private router:  Router,private authService: AuthServiceService) { }
+  constructor(private router:  Router, private authService: AuthServiceService) { }
   screenWidth: number = window.innerWidth;
   isMobile: boolean = false;
 
@@ -40,8 +40,13 @@ export class HeaderComponent implements OnInit {
   }
     
       ngOnInit() {
+
+        console.log('Header Component');
           
           
           this.setDialogSize();
+          this.authService.refreshToken().subscribe((response) => {
+            console.log(response);
+          });
       }
 }
