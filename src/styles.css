@@ -208,3 +208,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .e-toolbar .e-toolbar-items {
   background: transparent !important;
 } 
+.e-pager .e-currentitem, .e-pager .e-currentitem:hover {
+  background: #000000 !important;
+  color: #fff;
+  opacity: 1;
+}

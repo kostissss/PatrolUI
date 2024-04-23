@@ -97,12 +97,12 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
     else{
       sortArray = "id ASC";
     }
-    let  Searchfields = ['id', 'uname', 'email'],Searchkey="@";
+    let  Searchfields = ['id', 'uname', 'email'],Searchkey="";
     if (state.search) {
       if (state.search && state.search.length > 0) {
         // Extract the search key and fields from the search array
         const { fields, key } = state.search[0];
-        Searchfields = fields || ['id', 'uname', 'email'];
+        //Searchfields = fields || ['id', 'uname', 'email'];
         Searchkey = key || ""; // Assign a default value if key is undefined
         // perform search operation using the field and key on the query
         console.log("search",fields,key)
