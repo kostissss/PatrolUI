@@ -80,11 +80,27 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
 
 
     //const pageQuery = `$skip=${state.skip}&$top=${state.take}`;
-      
+    let sortArray: string = '';
 
+    if ((state.sorted || []).length) {
+      sortArray =
+       
+        (state.sorted ?? [])
+          .map((obj: Sorts) => {
+            return obj.direction === 'descending'
+              ? `${obj.name} DESC`
+              : `${obj.name} ASC`;
+          })
+          .reverse()
+          .join(',');
+    }
+    else{
+      sortArray = "id ASC";
+    }
+    
     
 
-  return this.http.post(`${this.apiUrl}accounts/role`,{value: "admin",limit:state.take,offset: state.skip},httpOptions).pipe(
+  return this.http.post(`${this.apiUrl}accounts/role`,{value: "admin",limit:state.take,offset: state.skip,order: sortArray},httpOptions).pipe(
     map((response: any) => {
 
       console.log(response);
