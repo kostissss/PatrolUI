@@ -1,7 +1,7 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../enviroment';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, delay, tap } from 'rxjs';
 import { Account } from '../interfaces/account';
 import { Router } from '@angular/router';
 
@@ -14,10 +14,8 @@ interface AuthResponse {
 }
 
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthServiceService implements OnInit {
+@Injectable()
+export class AuthServiceService  {
 
 
    httpOptions = {
@@ -32,13 +30,11 @@ export class AuthServiceService implements OnInit {
 
   
   constructor(private http: HttpClient,private router:Router) { 
-    this.loadFromStorage(); // Try loading existing tokens
-  }
-
-  ngOnInit(): void {
-    //this.loadFromStorage();
+   
     
   }
+
+  
 
   logIn(accountData :Account): Observable<any> {
     // this.loadTokenFromStorage();
@@ -71,10 +67,12 @@ export class AuthServiceService implements OnInit {
     console.log(this.authSubject);
     console.log(userName);
     console.log(authToken); 
+   
   }
   
 
   refreshToken(): Observable<any> {
+    debugger
     console.log(document.cookie)
     return this.http.get<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,this.httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
   }
@@ -94,12 +92,13 @@ export class AuthServiceService implements OnInit {
 
   private handleLoginSuccess(res: AuthResponse) {
     this.authSubject.next(res);
+    console.log(this.authSubject,"login success");
     
     this.storeTokens(res.authToken); 
     
     this.storeAccountDetails(res.account);
     
-    this.router.navigateByUrl('/home');
+    this.router.navigate(['/home']);
   }
   private handleLogoutSuccess() {
     //debugger
@@ -128,6 +127,8 @@ export class AuthServiceService implements OnInit {
     return !!this.authSubject.value;
   }
   handleRefreshSuccess(res: AuthResponse) {
+    debugger
+    console.log("refresh success");
     this.authSubject.next(res);
     
     this.storeTokens(res.authToken);

@@ -11,4 +11,9 @@ export class LoginComponent {
   faUser = faUser;
   faGlobe=faGlobeAmericas;
 
+
+  constructor() {
+    console.log('Login Component');
+   }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, SkipSelf, ViewChild } from '@angular/core';
 import { AccountsService } from '../../../services/accounts.service';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { NgForm } from '@angular/forms';
@@ -18,7 +18,10 @@ export class LoginDialogComponent  {
   passwordInput :string = '';
   invalidLogin :boolean = false;
   faUser = faUser;
-  constructor(private authService: AuthServiceService,private router:Router) { }
+  constructor( private authService: AuthServiceService,private router:Router) {
+
+    console.log('Login Dialog Component');
+   }
 
   onLoginSubmit() {
     let account : Account = {} as Account;

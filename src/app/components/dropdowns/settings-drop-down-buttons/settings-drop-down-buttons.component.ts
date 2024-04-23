@@ -36,11 +36,13 @@ export class SettingsDropDownButtonsComponent implements OnInit,OnDestroy{
 
   ngOnInit(): void {
     this.authSubscription=this.authService.authState$.subscribe(authResponse => {
-      //debugger
+      
       if (authResponse && authResponse.account) {
        
         this.accountName = authResponse.account.uname;
+        console.log("monka",authResponse);
       } else {
+        console.log("monka",authResponse);
         
        
       }
