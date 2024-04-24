@@ -30,6 +30,18 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
 
   constructor(private http: HttpClient,private authService: AuthServiceService)  {
     super();
+
+    
+      this.authService.authState$.subscribe((state) => {
+        if (state?.account.id != null) {
+          this.id = state.account.id;
+        }
+        else {
+          throw new Error("Account ID not found");
+        }
+        
+      });
+    
     
   }
 
@@ -49,15 +61,15 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
   changeUserName(username :String): Observable<any> {
     //debugger
 
-    this.authService.authState$.subscribe((state) => {
-      if (state?.account.id != null) {
-        this.id = state.account.id;
-      }
-      else {
-        throw new Error("Account ID not found");
-      }
+    // this.authService.authState$.subscribe((state) => {
+    //   if (state?.account.id != null) {
+    //     this.id = state.account.id;
+    //   }
+    //   else {
+    //     throw new Error("Account ID not found");
+    //   }
       
-    });
+    // });
     return this.http.put<AuthResponse>(`${this.apiUrl}accounts/${this.id}`, {
       
       "uname":username},httpOptions).pipe(tap((res) => {
@@ -68,15 +80,15 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
   }
 
   getUserInfo(): Observable<Account> {
-    this.authService.authState$.subscribe((state) => {
-      if (state?.account.id != null) {
-        this.id = state.account.id;
-      }
-      else {
-        throw new Error("Account ID not found");
-      }
+    // this.authService.authState$.subscribe((state) => {
+    //   if (state?.account.id != null) {
+    //     this.id = state.account.id;
+    //   }
+    //   else {
+    //     throw new Error("Account ID not found");
+    //   }
       
-    });
+    // });
     return this.http.get<Account>(`${this.apiUrl}accounts/${this.id}`,httpOptions);
   }
 
