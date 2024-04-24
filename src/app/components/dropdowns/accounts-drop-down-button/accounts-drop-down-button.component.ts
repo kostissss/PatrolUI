@@ -5,6 +5,7 @@ import { CreateNewAccountComponent } from '../../dialogs/create-new-account/crea
 import { CreatePartnerAccountModalComponent } from '../../dialogs/create-partner-account-modal/create-partner-account-modal.component';
 import { ManagePartnerAccountModalComponent } from '../../dialogs/manage-partner-account-modal/manage-partner-account-modal.component';
 import { AccountsService } from '../../../services/accounts.service';
+import { AuthServiceService } from '../../../services/auth-service.service';
 
 @Component({
   selector: 'app-accounts-drop-down-button',
@@ -12,37 +13,68 @@ import { AccountsService } from '../../../services/accounts.service';
   styleUrl: './accounts-drop-down-button.component.css'
 })
 export class AccountsDropDownButtonComponent implements OnInit{
-  constructor(private accountService: AccountsService) { }
+  constructor(private authService:AuthServiceService) { }
   userRole: string = '';
 
   ngOnInit(): void {
-    this.accountService.getUserInfo().subscribe((response) => {
-      this.userRole = response.role;
+    // this.accountService.getUserInfo().subscribe((response) => {
+    //   this.userRole = response.role;
       
-      if (this.isAdmin()){
-        console.log('adminsdsds');
-        this.items=   [
+    //   if (this.isAdmin()){
+    //     console.log('adminsdsds');
+    //     this.items=   [
     
-          {
-              text: 'Create Account',
+    //       {
+    //           text: 'Create Account',
               
               
-          },
-          {
-              text: 'Create Partner Account'
-          },
-          {
-        text: 'Manage Partner'
-      },
+    //       },
+    //       {
+    //           text: 'Create Partner Account'
+    //       },
+    //       {
+    //     text: 'Manage Partner'
+    //   },
           
           
           
-        ];
-      }
-    });
+    //     ];
+    //   }
+    // });
+    this.authService.authState$.subscribe(authResponse => {
+      if (authResponse && authResponse.account) {
+        this.userRole = authResponse.account.role;
+        console.log('role',this.userRole);
+
+        if (this.isAdmin()){
+          console.log('adminsdsds');
+          this.items=   [
+      
+            {
+                text: 'Create Account',
+                
+                
+            },
+            {
+                text: 'Create Partner Account'
+            },
+            {
+          text: 'Manage Partner'
+        },
+      ];
     
     
   }
+      } else {
+        console.log('role2',this.userRole);
+      }
+
+
+
+    });
+
+    
+}
   @ViewChild(CreateNewAccountComponent)
   public accountDialog!: CreateNewAccountComponent;
 

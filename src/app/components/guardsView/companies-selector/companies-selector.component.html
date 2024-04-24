@@ -1,8 +1,8 @@
 <app-notifheader title="Companies" icon="fa fa-users fa-lg " (keyup)="search()" [showSearch]="true"></app-notifheader>
 
-<ejs-grid class=""  #grid [dataSource]='data' [editSettings]='editSettings'    [allowSorting]='true' height=100% 
-  (rowSelected)="rowSelected() " allowSearching="true"  
-(recordDoubleClick)="true" >
+<ejs-grid class=""  #grid [dataSource]='data | async'    [allowSorting]='true' height=100% 
+  (rowSelected)="rowSelected() " allowSearching="true"   allowPaging="true" [pageSettings]='pageOptions '   (dataStateChange)= 'dataStateChange($event)'
+(recordDoubleClick)="true"  >
    <e-columns >
            <e-column field='id' headerText='ID' width=20></e-column>
            <e-column field='uname' headerText='Username' width=100></e-column>

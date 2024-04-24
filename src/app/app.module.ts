@@ -40,6 +40,7 @@ import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 import { FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.interceptor';
+import { AuthServiceService } from './services/auth-service.service';
 
 
 
@@ -92,6 +93,7 @@ import { RefreshTokenInterceptor } from './inrerceptors/refresh-token.intercepto
     PageService,
     FilterService,
     GroupService,
+    AuthServiceService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,

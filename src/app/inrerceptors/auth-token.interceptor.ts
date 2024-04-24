@@ -16,6 +16,7 @@ export class AuthTokenInterceptor implements HttpInterceptor {
          
      this.authService.authState$.subscribe(authResponse => {
       if (authResponse && authResponse.authToken) {
+        console.log('auth token found',authResponse.authToken);
         this.authToken = authResponse.authToken;
       } else {
         console.log('No auth token found');
