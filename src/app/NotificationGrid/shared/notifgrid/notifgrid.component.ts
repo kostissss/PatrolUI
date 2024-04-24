@@ -19,6 +19,7 @@ export class NotifGridComponent implements OnInit {
   public toolbarOptions?: ToolbarItems[] | object;
   public toolbar?: ToolbarItems[] | object;
   public editSettings?: EditSettingsModel;
+  wrapOption = { wrapMode: 'Header' };
   public pageSettings: PageSettingsModel = {
     pageSize: 20, 
   };

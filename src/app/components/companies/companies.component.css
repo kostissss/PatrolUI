@@ -1,10 +1,14 @@
-.dbtable {
+.header{
+    position: relative;
+    padding: 0px 20px;
+}
+.dbcompanies {
     position: relative;
     padding: 0px 20px;
 }
 .e-headertext {
     font-weight: normal;
-    font-size: 11px;
+    font-size: 0.9em;
     color: rgb(159,159,159);
 }
 .e-rowcell {
@@ -13,20 +17,12 @@
     font-size: 14px;
     font-family: 'Roboto,Arial,Helvetica';
 }
-.notification-count {
+.companies-count {
     bottom: 0;
     left: 0;
     border-top: 1px solid #000000; 
     padding: 0px 0;
     font-size: 0.8em;
-}
-
-.e-toolbar-left:disabled,
-.e-toolbar-center:disabled,
-.e-toolbar-right:disabled,
-.e-toolbar:disabled,
-.e-toolbar .e-toolbar-item .e-tbar-btn:disabled {
-    background-color: rgb(184, 196, 206)
 }
 
 .e-toolbar .e-search{
@@ -36,4 +32,26 @@
     border-radius: 2px;
     padding: 0px 2px;
     align-items: center;
+}
+
+.e-grid.e-default .e-headercell, .e-grid.e-default .e-detailheadercell {
+    padding-left: 0px;
+    padding-right: 0px;  
+    margin-right: 10px;
+}
+
+.e-grid .e-filterbarcell, .e-grid .e-filterbarcelldisabled{
+    padding-right: 20px;
+    padding-left: 0px;
+    margin-left: 10px;
+}
+
+.e-grid .e-rowcell {
+    background-color: white;
+}
+.green-text {
+    color: green;
+}
+.red-text {
+    color: red;
 }

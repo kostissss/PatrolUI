@@ -49,6 +49,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  font-family: '"Segoe UI", Tahoma, sans-serif';
+  font-size: 14px;
 }
 
 .right {
@@ -68,4 +70,10 @@
   background: none !important;
   color: #fff !important;
   opacity: 1;
+}
+.e-rowcell {
+  background-color: rgb(245, 245, 245);
+  font-family: Arial,Helvetica;
+  font-size: 14px;
+  font-family: 'Roboto,Arial,Helvetica';
 }

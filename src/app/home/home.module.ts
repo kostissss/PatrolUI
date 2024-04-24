@@ -41,6 +41,12 @@ import { GuardsManagerComponent } from '../components/guardsView/guards-manager/
 import { CompaniesSelectorComponent } from '../components/guardsView/companies-selector/companies-selector.component';
 import { AssignToPartnersDialogComponent } from '../NotificationGrid/data-table/assign-to-partners-dialog/assign-to-partners-dialog.component';
 import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assign-grid.component';
+import { CompaniesComponent } from '../components/companies/companies.component';
+import { ChangePlanComponent } from '../components/companies/change-plan/change-plan.component';
+import { DetailsComponent } from '../components/companies/details/details.component';
+import { InspectCompanyComponent } from '../components/companies/inspect-company/inspect-company.component';
+import { ResetPasswordComponent } from '../components/companies/reset-password/reset-password.component';
+
 
 @NgModule({
   declarations: [
@@ -67,10 +73,13 @@ import { AssignGridComponent } from '../NotificationGrid/shared/assign-grid/assi
     GuardsManagerComponent,
     CompaniesSelectorComponent,
     AssignToPartnersDialogComponent,
-    AssignGridComponent
-    
-
-
+    AssignGridComponent,
+    CompaniesComponent,
+    ChangePlanComponent,
+    DetailsComponent,
+    InspectCompanyComponent,
+    ResetPasswordComponent
+  
   ],
   imports: [
     CommonModule,

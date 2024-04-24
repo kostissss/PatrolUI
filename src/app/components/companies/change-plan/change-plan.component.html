@@ -1,0 +1,13 @@
+<div id="changeplan" > 
+    <ejs-dialog  class="dialog" #dialogcomponent height="300" width="250" content="" [buttons]="dialogButton" 
+      [visible]="dialogVisibility" [position]="dialogPosition"  [resizeHandles]="dialogResizeDirections" 
+      [animationSettings]="dialogAnimationSettings" isModal='true' showCloseIcon='true' header="Change Plan">
+      <br>
+      <P>Plan:</P>
+      <ejs-dropdownlist id='ddlelement1' [dataSource]='data1' placeholder='plan' [value]='data1[0]' ></ejs-dropdownlist>
+      <br>
+      <br>
+      <p>Version:</p>
+      <ejs-dropdownlist id='ddlelement2' [dataSource]='data2' placeholder='version' [value]='data2[0]'></ejs-dropdownlist>
+    </ejs-dialog>
+</div>
