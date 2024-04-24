@@ -9,8 +9,7 @@ import { CompaniesComponent } from '../components/companies/companies.component'
 const routes: Routes = [{ path: '', component: HomeComponent, children: [
   { path: 'notifications', component: NotificationsComponent },
   { path: 'guards', component: GuardsComponent },
-  { path: 'companies', component: CompaniesComponent },
-  { path: '', component: CompaniesComponent }]},
+  { path: 'comapnies', component: CompaniesComponent },]},
 ];
 
 @NgModule({
