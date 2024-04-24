@@ -26,13 +26,11 @@ interface AuthResponse {
 export class AccountsService extends Subject<DataStateChangeEventArgs>  {
   
   private apiUrl = environment.apiUrl;
-  public id: number = 1;
+  public id: number = 0;
 
   constructor(private http: HttpClient,private authService: AuthServiceService)  {
     super();
-    const storedId = localStorage.getItem('userId');
-    console.log("storedId="+storedId);
-    this.id =   Number(storedId) ;
+    
   }
 
   createAccount(accountData: Account): Observable<any> {
@@ -50,6 +48,16 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
 
   changeUserName(username :String): Observable<any> {
     //debugger
+
+    this.authService.authState$.subscribe((state) => {
+      if (state?.account.id != null) {
+        this.id = state.account.id;
+      }
+      else {
+        throw new Error("Account ID not found");
+      }
+      
+    });
     return this.http.put<AuthResponse>(`${this.apiUrl}accounts/${this.id}`, {
       
       "uname":username},httpOptions).pipe(tap((res) => {
@@ -59,11 +67,16 @@ export class AccountsService extends Subject<DataStateChangeEventArgs>  {
       }));
   }
 
-  getFilteredAccounts(field: string,value:string,recordsLimit:number,recordsOffset:number): Observable<Account[]> {
-    return this.http.post<Account[]>(`${this.apiUrl}accounts/${field}`,{value: value,limit:recordsLimit,offset: recordsOffset},httpOptions);
-
-  }
   getUserInfo(): Observable<Account> {
+    this.authService.authState$.subscribe((state) => {
+      if (state?.account.id != null) {
+        this.id = state.account.id;
+      }
+      else {
+        throw new Error("Account ID not found");
+      }
+      
+    });
     return this.http.get<Account>(`${this.apiUrl}accounts/${this.id}`,httpOptions);
   }
 

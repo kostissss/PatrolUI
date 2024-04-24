@@ -69,25 +69,6 @@ public ngOnInit(): void {
   }
   
 
-  
- 
-
-  fetchCompanyAccounts(){
-    
-    this.accountsService.getFilteredAccounts("role","admin",2,this.currentIndex*2 ).subscribe((response) => {
-      if(response){
-       // this.data = [...this.data, ...response];
-      }
-      this.currentIndex++;
-      console.log("fetching company accounts",this.data);
-    },
-    (error) =>{
-      console.log(error);
-      let accounts : Account []=[]
-      return accounts;
-    });
-    
-  }
 
   fetchGuards(){
     this.guardsService.getFilteredGuards("userId",this.selectedCompanyId).subscribe((response) => {
