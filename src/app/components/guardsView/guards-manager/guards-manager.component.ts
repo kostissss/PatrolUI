@@ -46,6 +46,7 @@ export class GuardsManagerComponent implements OnInit {
       { prefixIcon: 'e-refresh'},
       { text: 'Generate Guards', tooltipText: 'Add', id: 'Generate', disabled: true},
       { text: 'Export To Excel', tooltipText: 'Edit', id: 'Export',disabled: false}, 
+      'Search'
       
       
     ];
