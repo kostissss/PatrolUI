@@ -210,3 +210,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: #fff;
   opacity: 1;
 }
+
+.e-spinner-pane .e-spinner-inner .e-spin-material {
+  stroke: black;
+}
