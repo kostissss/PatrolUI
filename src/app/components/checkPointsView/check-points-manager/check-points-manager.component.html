@@ -3,8 +3,8 @@
 <div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
     <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowTextWrap]="true"
         [textWrapSettings]='wrapOption' [allowSorting]='true' height='100%' (toolbarClick)='clickHandler($event)'
-        (rowSelected)="rowSelected($event)" (checkBoxChange)='onCheckBoxChange($event)'>
-        <e-columns>
+        (rowSelected)="rowSelected($event)" (checkBoxChange)='onCheckBoxChange($event)' (rowDataBound)='rowDataBound($event)'>
+        <e-columns >
             <e-column type="checkbox" width="20" ></e-column>
             <e-column field='checkPointId' headerText='ID' width=60></e-column>
             <e-column field='checkPointCode' headerText='Check Point Code' width=80></e-column>
@@ -27,9 +27,11 @@
                 </ng-template>
                 <ng-template #elseblock2><input type="checkbox" (change)="onDeletedCheckBoxChange()"></ng-template>
             </e-column>
-            <e-column field='deletedDate' headerText='Deleted Date' width=70></e-column>
+            <e-column field='deletedDate'  headerText='Deleted Date' width=70></e-column>
 
         </e-columns>
+       
+        
 
     </ejs-grid>
     <div class="">

@@ -71,3 +71,7 @@
   .e-checkbox-wrapper .e-frame.e-check {
     background-color: #328bd4 !important; 
   }
+
+  .deletedCheckPoint{
+    opacity: 50%!important;
+  }

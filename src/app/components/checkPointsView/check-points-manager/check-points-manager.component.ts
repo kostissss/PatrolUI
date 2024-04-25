@@ -5,6 +5,7 @@ import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent,
 import { CheckPointService } from '../../../services/check-point.service';
 import { CheckPoint } from '../../../interfaces/checkPoint';
 import { WarningDialogComponent } from '../../dialogs/warning-dialog/warning-dialog.component';
+import { checkBoxPosition } from '@syncfusion/ej2-angular-lists';
 
 
 @Component({
@@ -194,6 +195,15 @@ export class CheckPointsManagerComponent implements OnInit {
     if(event ){
       this.onSaveClick();
     }
+    
+  }
+
+  rowDataBound(args: any){
+    console.log(args);
+
+    if ((args.data as CheckPoint).isDeleted===true ) {
+      (args.row as Element).classList.add('deletedCheckPoint');
+  }
     
   }
 
