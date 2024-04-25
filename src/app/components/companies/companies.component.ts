@@ -71,9 +71,9 @@ export class CompaniesComponent implements OnInit {
     window.location.reload();
   }
 
-  openDetailsDialog(): void {
+  openDetailsDialog(companyData: MyCompanies): void {
     const dialogRef = this.dialog.open(DetailsComponent, {
-      data: {} 
+      data: { company: companyData }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
