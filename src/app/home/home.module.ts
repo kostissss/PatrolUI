@@ -46,6 +46,8 @@ import { ChangePlanComponent } from '../components/companies/change-plan/change-
 import { DetailsComponent } from '../components/companies/details/details.component';
 import { InspectCompanyComponent } from '../components/companies/inspect-company/inspect-company.component';
 import { ResetPasswordComponent } from '../components/companies/reset-password/reset-password.component';
+import { CheckPointsComponent } from '../components/checkPointsView/check-points/check-points.component';
+import { CheckPointsManagerComponent } from '../components/checkPointsView/check-points-manager/check-points-manager.component';
 
 
 @NgModule({
@@ -78,7 +80,9 @@ import { ResetPasswordComponent } from '../components/companies/reset-password/r
     ChangePlanComponent,
     DetailsComponent,
     InspectCompanyComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    CheckPointsComponent,
+    CheckPointsManagerComponent
   
   ],
   imports: [

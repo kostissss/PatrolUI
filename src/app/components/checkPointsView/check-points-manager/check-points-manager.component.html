@@ -1,0 +1,45 @@
+<app-notifheader title="Guards" icon="fa fa-user"></app-notifheader>
+
+<div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
+    <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings'  [toolbar]='toolbar' [allowTextWrap]="true" [textWrapSettings]='wrapOption'  [allowSorting]='true' height='100%'
+     (toolbarClick)='clickHandler($event)'  (rowSelected)="rowSelected()"
+      >
+        <e-columns >
+            <e-column type="checkbox" width="20"></e-column>
+                <e-column field='checkPointId' headerText='ID' width=60></e-column>
+                <e-column field='checkPointCode' headerText='Check Point Code' width=80></e-column>
+                <e-column field='clientSiteCode' headerText='Client Side Code' width=90></e-column>
+                <e-column field='checkPoint' headerText='Check Point' width=40></e-column>
+                <e-column field='isLocked' headerText='Locked' width=60>
+                    <ng-template #template id="template1" let-data>
+                        <div *ngIf="data.isLocked else elseblock">
+                             <input type="checkbox" checked   (change)="onLockedCheckBoxChange()">
+                        </div>
+                      </ng-template>
+                      <ng-template #elseblock><input type="checkbox" (change)="onLockedCheckBoxChange()"></ng-template>
+                </e-column>
+                <e-column field='isDeleted' headerText='Deleted'  width=40>
+                    <ng-template #template let-data>
+                    <div *ngIf="data.isDeleted else elseblock2">
+                    
+                         <input type="checkbox" checked  (change)="onDeletedCheckBoxChange()" >
+                    </div>
+                  </ng-template>
+                  <ng-template #elseblock2><input type="checkbox"  (change)="onDeletedCheckBoxChange()"></ng-template>
+                </e-column>
+                <e-column field='deletedDate' headerText='Deleted Date' width=70></e-column>
+               
+        </e-columns>
+        
+    </ejs-grid>
+    <div class="">
+    
+        Total Guards: {{ checkPointCount }}
+    </div>
+
+    
+    <div class="gray-line-divider mb-0 mt-0 flex-grow-1"></div>
+    
+    <div class="d-flex"> <button class="ml-auto m-2 pr-4 pl-4 pt-0 pb-0  border border-secondary rounded" [disabled]="buttonStatus" (click)="onCancelClick()"> Cancel</button> <button class="m-2 pt-0 pb-0 pr-4 pl-4 border border-secondary rounded" [disabled]="buttonStatus" (click)="onSaveClick()">Save</button></div>
+  
+</div>  

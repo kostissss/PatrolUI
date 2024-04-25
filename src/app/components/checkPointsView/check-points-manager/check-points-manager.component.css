@@ -1,0 +1,73 @@
+
+
+.dbtable {
+    position: relative;
+    margin: 0px 20px;
+    height: 500px;
+}
+.e-headertext {
+    font-weight: normal;
+    color: rgb(159,159,159);
+}
+.e-rowcell {
+    background-color: rgb(245, 245, 245);
+    font-family: Arial,Helvetica;
+    font-size: 14px;
+}
+.notification-count {
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #000000; 
+    padding: 0px 0;
+    font-size: 0.8em;
+}
+
+.e-toolbar-left:disabled,
+.e-toolbar-center:disabled,
+.e-toolbar-right:disabled,
+.e-toolbar:disabled,
+.e-toolbar .e-toolbar-item .e-tbar-btn:disabled {
+    background-color: rgb(51, 139, 211)
+}
+
+
+.e-toolbar .e-toolbar-items {
+    background: transparent !important;
+}
+
+.e-grid.e-default:not(.e-rtl) tr td:first-child:not(.e-xlsel-left-border).e-active {
+    border-left-width: 3px;
+    border-left-color: #39c;
+}
+
+.e-grid.e-default .e-headercell, .e-grid.e-default .e-detailheadercell {
+    margin-left: auto;
+    padding-left: 2px;
+    padding-right: 0px;
+   
+}
+.e-grid.e-responsive .e-rowcell, .e-grid.e-responsive .e-headercelldiv {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 2px;
+    padding-right:2px ;
+    margin-left: 2px;
+}
+
+.gray-line-divider {
+    height: 1px; /* Height of the line */
+    background-color: #ccc; /* Gray color */
+    margin: 20px 0; /* Adjust margin as needed */
+  }
+
+
+
+
+  button[disabled] {
+    opacity: 50%!important;
+  }
+
+  
+  .e-checkbox-wrapper .e-frame.e-check {
+    background-color: #328bd4 !important; 
+  }

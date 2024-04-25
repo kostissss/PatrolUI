@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { DataStateChangeEventArgs, EditSettingsModel, GridComponent, PageSettingsModel, SelectionSettingsModel } from '@syncfusion/ej2-angular-grids';
 
 import { AccountsService } from '../../../services/accounts.service';
@@ -6,6 +6,7 @@ import { Account } from '../../../interfaces/account';
 import { GuardsService } from '../../../services/guards.service';
 import { NotifHeaderComponent } from '../../headers/blackHeader/header.component';
 import { Observable } from 'rxjs';
+import { CheckPointService } from '../../../services/check-point.service';
 
 interface gridRecord{
   id: number,
@@ -36,9 +37,10 @@ export class CompaniesSelectorComponent {
 
   @ViewChild(NotifHeaderComponent)
   public notifHeader!: NotifHeaderComponent;
+  @Input() public fetchEntity: string = "";
 
 
-  constructor(  private guardsService: GuardsService, private accountsService: AccountsService) {
+  constructor(  private guardsService: GuardsService, private accountsService: AccountsService,private checkPointService: CheckPointService) {
         
     this.data = accountsService;
 }
@@ -65,7 +67,13 @@ public ngOnInit(): void {
     console.log(this.selectedRecords);
     this.selectedCompanyId = this.selectedRecords.id ;
     console.log(this.selectedCompanyId);
-    this.fetchGuards();
+    console.log(this.fetchEntity,"fefefefe");
+    if(this.fetchEntity === "guard"){
+      this.fetchGuards();
+    }
+    else if(this.fetchEntity === "checkPoint"){
+      this.fetchCheckPoints();
+    }
   }
   
 
@@ -83,6 +91,18 @@ public ngOnInit(): void {
 
 
     
+  }
+
+  fetchCheckPoints(){
+    this.checkPointService.getFilteredCheckPoints("userId",this.selectedCompanyId).subscribe((response) => {
+      console.log(response);
+      
+
+    }
+    ,(error) => {
+      console.log(error);
+      alert("Failed to fetch checkPoint");
+    });
   }
 
 
