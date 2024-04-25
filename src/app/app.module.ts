@@ -42,6 +42,7 @@ import { AuthServiceService } from './services/auth-service.service';
     AppComponent,
     EditNotificationDialogComponent,
     FormsDirectiveDirective,
+   
   ],
 
   imports: [

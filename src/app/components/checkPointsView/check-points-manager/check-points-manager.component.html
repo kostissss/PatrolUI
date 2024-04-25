@@ -3,7 +3,7 @@
 <div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
     <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowTextWrap]="true"
         [textWrapSettings]='wrapOption' [allowSorting]='true' height='100%' (toolbarClick)='clickHandler($event)'
-        (rowSelected)="rowSelected()" (checkBoxChange)='onCheckBoxChange($event)'>
+        (rowSelected)="rowSelected($event)" (checkBoxChange)='onCheckBoxChange($event)'>
         <e-columns>
             <e-column type="checkbox" width="20" ></e-column>
             <e-column field='checkPointId' headerText='ID' width=60></e-column>
@@ -11,7 +11,7 @@
             <e-column field='clientSiteCode' headerText='Client Side Code' width=90></e-column>
             <e-column field='checkPoint' headerText='Check Point' width=40></e-column>
             <e-column field='isLocked' headerText='Locked' width=60>
-                <ng-template #template id="template1" let-data>
+                <ng-template #template id="lockCheckBox" let-data>
                     <div *ngIf="data.isLocked else elseblock">
                         <input type="checkbox" checked (change)="onLockedCheckBoxChange()">
                     </div>
@@ -46,3 +46,4 @@
             (click)="onSaveClick()">Save</button></div>
 
 </div>
+<app-warning-dialog (confirmation)="onDialogClick($event)"></app-warning-dialog>

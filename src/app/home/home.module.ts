@@ -48,6 +48,7 @@ import { InspectCompanyComponent } from '../components/companies/inspect-company
 import { ResetPasswordComponent } from '../components/companies/reset-password/reset-password.component';
 import { CheckPointsComponent } from '../components/checkPointsView/check-points/check-points.component';
 import { CheckPointsManagerComponent } from '../components/checkPointsView/check-points-manager/check-points-manager.component';
+import { WarningDialogComponent } from '../components/dialogs/warning-dialog/warning-dialog.component';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { CheckPointsManagerComponent } from '../components/checkPointsView/check
     InspectCompanyComponent,
     ResetPasswordComponent,
     CheckPointsComponent,
-    CheckPointsManagerComponent
+    CheckPointsManagerComponent,
+    WarningDialogComponent
   
   ],
   imports: [

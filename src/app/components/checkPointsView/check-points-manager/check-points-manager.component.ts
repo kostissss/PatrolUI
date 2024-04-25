@@ -4,6 +4,7 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent, CheckBoxChangeEventArgs } from '@syncfusion/ej2-angular-grids';
 import { CheckPointService } from '../../../services/check-point.service';
 import { CheckPoint } from '../../../interfaces/checkPoint';
+import { WarningDialogComponent } from '../../dialogs/warning-dialog/warning-dialog.component';
 
 
 @Component({
@@ -24,6 +25,9 @@ export class CheckPointsManagerComponent implements OnInit {
 
   @ViewChild('grid')
   public grid!: GridComponent;
+
+  @ViewChild(WarningDialogComponent)
+  public warningDialog!: WarningDialogComponent;
 
 
   constructor(private dialog: MatDialog,private checkPointService: CheckPointService) { }
@@ -54,14 +58,28 @@ export class CheckPointsManagerComponent implements OnInit {
     ];
   }
 
-  rowSelected() {
-    this.selectedCheckPoint = this.grid.getSelectedRecords()[0] as CheckPoint;
+  rowSelected(args: any) {
+    console.log(args);
+    this.selectedCheckPoint = args.data as CheckPoint;
+    
    
  }
 
   clickHandler(args: ClickEventArgs): void {
     if (args.item.prefixIcon === 'e-refresh') {
       this.reloadPage();
+    }
+    if (args.item.id === 'Generate') {
+      this.onGenerateClick();
+    }
+    if (args.item.id === 'QR') { 
+      this.onQRClick();
+    }
+    if (args.item.id === 'Remove') { 
+      this.onRemoveClick();
+    }
+    if (args.item.id === 'Assign') { 
+      this.onAssignClick();
     }
     
   }
@@ -98,6 +116,7 @@ export class CheckPointsManagerComponent implements OnInit {
         
       }
     });
+    console.log(this.data,"check");
   }
   onLockedCheckBoxChange(){
     this.buttonStatus = false;
@@ -107,6 +126,7 @@ export class CheckPointsManagerComponent implements OnInit {
         CheckPoint.isLocked = !CheckPoint.isLocked; 
       }
     });
+    console.log(this.data,"check");
   }
 
   onSaveClick(){
@@ -141,4 +161,43 @@ export class CheckPointsManagerComponent implements OnInit {
       
     }
   }
+
+  onGenerateClick(){
+    alert('Generate Points');
+  }
+  onQRClick(){
+    alert('View QR-Code');
+  }
+  onRemoveClick(){
+    const selectedRecords = this.grid.getSelectedRecords() as CheckPoint[];
+    console.log(selectedRecords,"selectedRecords");
+    this.data.forEach((CheckPoint) => {
+      
+      if (selectedRecords.includes(CheckPoint)) {
+        CheckPoint.isDeleted = true;
+        CheckPoint.deletedDate = new Date(); 
+        console.log(CheckPoint, "changed");
+      }
+    });
+
+    this.warningDialog.onOpenDialog(event);
+
+    console.log(this.data,"this.data");
+  }
+  onAssignClick(){
+    alert('Assign');
+  }
+
+
+  onDialogClick(event: any){
+    console.log(event);
+    if(event ){
+      this.onSaveClick();
+    }
+    
+  }
+
+
+
+  
 }
