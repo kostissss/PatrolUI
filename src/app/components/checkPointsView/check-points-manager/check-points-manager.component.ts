@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent, CheckBoxChangeEventArgs } from '@syncfusion/ej2-angular-grids';
 import { CheckPointService } from '../../../services/check-point.service';
 import { CheckPoint } from '../../../interfaces/checkPoint';
 
@@ -122,5 +122,23 @@ export class CheckPointsManagerComponent implements OnInit {
          alert("Failed to update checkPoint");
        });
     
+  }
+
+  onCheckBoxChange(args :any): void {
+    if(args.selectedRowIndexes.length > 0){
+      (this.grid as GridComponent)?.toolbarModule.enableItems(['Remove' ,'Assign'], true);
+
+      if(args.selectedRowIndexes.length === 1){
+        (this.grid as GridComponent)?.toolbarModule.enableItems(['QR'], true);
+      }
+      else{
+        (this.grid as GridComponent)?.toolbarModule.enableItems(['QR'], false);
+      
+      }
+    }
+    else{
+      (this.grid as GridComponent)?.toolbarModule.enableItems(['Remove' ,'Assign','QR'], false);
+      
+    }
   }
 }

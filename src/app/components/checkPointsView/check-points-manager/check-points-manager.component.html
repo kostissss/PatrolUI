@@ -3,9 +3,9 @@
 <div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
     <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowTextWrap]="true"
         [textWrapSettings]='wrapOption' [allowSorting]='true' height='100%' (toolbarClick)='clickHandler($event)'
-        (rowSelected)="rowSelected()">
+        (rowSelected)="rowSelected()" (checkBoxChange)='onCheckBoxChange($event)'>
         <e-columns>
-            <e-column type="checkbox" width="20"></e-column>
+            <e-column type="checkbox" width="20" ></e-column>
             <e-column field='checkPointId' headerText='ID' width=60></e-column>
             <e-column field='checkPointCode' headerText='Check Point Code' width=80></e-column>
             <e-column field='clientSiteCode' headerText='Client Side Code' width=90></e-column>
