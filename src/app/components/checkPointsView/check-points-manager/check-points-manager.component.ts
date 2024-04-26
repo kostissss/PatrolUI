@@ -6,6 +6,7 @@ import { CheckPointService } from '../../../services/check-point.service';
 import { CheckPoint } from '../../../interfaces/checkPoint';
 import { WarningDialogComponent } from '../../dialogs/warning-dialog/warning-dialog.component';
 import { checkBoxPosition } from '@syncfusion/ej2-angular-lists';
+import { QRCodeDialogComponent } from '../../dialogs/qrcode-dialog/qrcode-dialog.component';
 
 
 @Component({
@@ -29,6 +30,9 @@ export class CheckPointsManagerComponent implements OnInit {
 
   @ViewChild(WarningDialogComponent)
   public warningDialog!: WarningDialogComponent;
+
+  @ViewChild(QRCodeDialogComponent)
+  public qrCodeDialog!: QRCodeDialogComponent;
 
 
   constructor(private dialog: MatDialog,private checkPointService: CheckPointService) { }
@@ -167,7 +171,8 @@ export class CheckPointsManagerComponent implements OnInit {
     alert('Generate Points');
   }
   onQRClick(){
-    alert('View QR-Code');
+    
+    this.qrCodeDialog.onOpenDialog(this.selectedCheckPoint.checkPointId.toString());
   }
   onRemoveClick(){
     const selectedRecords = this.grid.getSelectedRecords() as CheckPoint[];

@@ -1,0 +1,10 @@
+<ejs-dialog #QRCodeDialogComponent id="QRCodeDialogComponent" height={{dialogHeight}} [visible]="false"
+    width={{dialogWidth}} header="QR-CODE" showCloseIcon='true' [position]="dialogPosition"
+    [animationSettings]="dialogAnimationSettings" isModal='true' [buttons]="dialogButtons">
+
+    <div class="d-flex flex-column">
+        <!-- <div>{{qrCodeDownloadLink}}</div> -->
+        <p class="fs-1 fw-bold justify-self-center align-self-center ">ID: {{checkPoint.checkPointId}}</p>
+        <qrcode class="justify-self-center align-self-center"[qrdata]="qrData" (qrCodeURL)="onChangeURL($event)" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+</ejs-dialog>

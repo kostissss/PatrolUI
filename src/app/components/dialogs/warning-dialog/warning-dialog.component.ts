@@ -18,7 +18,7 @@ export class WarningDialogComponent {
     X: 'center', Y: 'center'
   };
   public closeIcon: Boolean = true;
-  @ViewChild('dialogcomponent') dialogObject! : DialogComponent
+  @ViewChild('warningDialog') dialogObject! : DialogComponent
 
 
   @Output() confirmation = new EventEmitter<boolean>();

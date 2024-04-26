@@ -49,6 +49,8 @@ import { ResetPasswordComponent } from '../components/companies/reset-password/r
 import { CheckPointsComponent } from '../components/checkPointsView/check-points/check-points.component';
 import { CheckPointsManagerComponent } from '../components/checkPointsView/check-points-manager/check-points-manager.component';
 import { WarningDialogComponent } from '../components/dialogs/warning-dialog/warning-dialog.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeDialogComponent } from '../components/dialogs/qrcode-dialog/qrcode-dialog.component';
 
 
 @NgModule({
@@ -84,7 +86,8 @@ import { WarningDialogComponent } from '../components/dialogs/warning-dialog/war
     ResetPasswordComponent,
     CheckPointsComponent,
     CheckPointsManagerComponent,
-    WarningDialogComponent
+    WarningDialogComponent,
+    QRCodeDialogComponent
   
   ],
   imports: [
@@ -117,6 +120,7 @@ import { WarningDialogComponent } from '../components/dialogs/warning-dialog/war
     FontAwesomeModule,
     PagerModule,
     SidebarModule,
+    QRCodeModule
   ]
 })
 export class HomeModule { }
