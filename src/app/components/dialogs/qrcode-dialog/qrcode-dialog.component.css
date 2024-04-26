@@ -1,0 +1,25 @@
+.e-dialog .e-dlg-header {
+    color: white;
+    font-size: small;
+    
+}
+
+.e-dialog .e-dlg-header-content {
+    color: white;
+    font-size: 10px;
+    font-weight: normal;
+    background-color: #363636;
+    margin-bottom: 10px;
+    padding: 0px;
+    padding-left: 2%;
+    
+}
+
+.e-model-header{
+    background-color: black;
+  }
+
+
+  .border-kinda-gray{
+    border: 1px solid rgb(204, 204, 204)
+  }

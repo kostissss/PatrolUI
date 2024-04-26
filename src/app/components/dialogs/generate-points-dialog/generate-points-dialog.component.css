@@ -1,0 +1,50 @@
+.e-dropdownbase .e-list-item.e-item-focus, .e-dropdownbase .e-list-item.e-active, .e-dropdownbase .e-list-item.e-active.e-hover, .e-dropdownbase .e-list-item.e-hover {
+   
+    color: black;
+}
+.e-ddl.e-input-group.e-control-wrapper .e-input {
+    font-size: 10px;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 2px black;
+    
+}
+
+
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::before, .e-ddl.e-input-group.e-control-wrapper.e-input-focus::after {
+    background: black;
+    color: black;
+    border-top: 2px black;
+    
+}
+.e-input-group:not(.e-float-icon-left){
+    border-width: 1px;
+}
+.form-control:focus {
+    border-color: black; /* Change to your desired color */
+    border-width: 2px;
+}   
+
+
+.GenerateBtn{
+        
+    font-family: "Open Sans", "Verdana", sans-serif !important;
+    font-size: 110% !important;
+    color: rgb(255, 255, 255) !important;
+    border: 1px solid rgba(93, 93, 93, 0.50) !important;
+    width: 30%;
+    height: 100%;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.09) !important;
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.10) !important;
+    border-radius: 3px;
+    background-color: rgba(63, 120, 174, 0.71) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(64, 121, 179, 0.66)), to(rgba(64, 121, 179, 0.66)), color-stop(14%, rgba(63, 119, 169, 0.76)), color-stop(83%, rgba(63, 119, 169, 0.76))) !important;
+    margin-top: auto;
+    
+}
+.GenerateBtn:hover{
+background-color: rgba(64, 121, 179, 0.82) !important;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(64, 121, 179, 0.66)), to(rgba(64, 121, 179, 0.66)), color-stop(14%, rgba(63, 119, 169, 0.76)), color-stop(83%, rgba(63, 119, 169, 0.76))) !important;
+
+}

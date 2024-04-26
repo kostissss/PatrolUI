@@ -44,10 +44,10 @@ export class AccountsDropDownButtonComponent implements OnInit{
     this.authService.authState$.subscribe(authResponse => {
       if (authResponse && authResponse.account) {
         this.userRole = authResponse.account.role;
-        console.log('role',this.userRole);
+        
 
         if (this.isAdmin()){
-          console.log('adminsdsds');
+          
           this.items=   [
       
             {
@@ -66,7 +66,7 @@ export class AccountsDropDownButtonComponent implements OnInit{
     
   }
       } else {
-        console.log('role2',this.userRole);
+        
       }
 
 

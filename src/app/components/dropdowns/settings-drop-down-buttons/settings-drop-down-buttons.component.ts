@@ -40,9 +40,9 @@ export class SettingsDropDownButtonsComponent implements OnInit,OnDestroy{
       if (authResponse && authResponse.account) {
        
         this.accountName = authResponse.account.uname;
-        console.log("monka",authResponse);
+        
       } else {
-        console.log("monka",authResponse);
+        
         
        
       }

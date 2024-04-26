@@ -36,6 +36,7 @@
     "@syncfusion/ej2-angular-splitbuttons": "^24.2.7",
     "@syncfusion/ej2-base": "^24.2.8",
     "@syncfusion/ej2-icons": "^24.2.3",
+    "angularx-qrcode": "^17.0.0",
     "bootstrap": "^3.4.1",
     "font-awesome": "^4.7.0",
     "material-icons": "^1.13.12",

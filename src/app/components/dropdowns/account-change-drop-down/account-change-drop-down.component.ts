@@ -26,7 +26,7 @@ export class AccountChangeDropDownComponent {
         
     },
     {
-      text: 'Username Change',
+      text: 'Username Change',  
       
       
   },
@@ -44,10 +44,10 @@ export class AccountChangeDropDownComponent {
 
   public onOpen(): void {
     try {
-      console.log("Dropdown opened");
+      
       this.myComp.toggle();
     } catch (error) {
-      console.log(error);
+      
     }
   }
 

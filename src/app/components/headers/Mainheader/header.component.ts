@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
   public refreshClicked(){
     this.authService.refreshToken().subscribe((response) => {
-      console.log(response);
+      
     });
   }
   public toggleSidebar(){
@@ -41,12 +41,12 @@ export class HeaderComponent implements OnInit {
     
       ngOnInit() {
 
-        console.log('Header Component');
+        
           
           
           this.setDialogSize();
           this.authService.refreshToken().subscribe((response) => {
-            console.log(response);
+            
           });
       }
 }

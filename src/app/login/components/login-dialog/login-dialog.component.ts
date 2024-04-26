@@ -27,7 +27,7 @@ export class LoginDialogComponent  {
     let account : Account = {} as Account;
     account.uname = this.unameInput;
     account.password = this.passwordInput;
-    console.log(account);
+    
     
     this.authService.logIn(account).subscribe(
       (response ) => {

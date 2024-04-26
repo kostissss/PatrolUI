@@ -42,6 +42,7 @@ import { AuthServiceService } from './services/auth-service.service';
     AppComponent,
     EditNotificationDialogComponent,
     FormsDirectiveDirective,
+   
   ],
 
   imports: [
@@ -79,6 +80,7 @@ import { AuthServiceService } from './services/auth-service.service';
     PageService,
     FilterService,
     GroupService,
+    ExcelExportService,
     AuthServiceService,
     {
       provide: HTTP_INTERCEPTORS,

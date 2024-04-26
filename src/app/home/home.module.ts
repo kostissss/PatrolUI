@@ -46,6 +46,12 @@ import { ChangePlanComponent } from '../components/companies/change-plan/change-
 import { DetailsComponent } from '../components/companies/details/details.component';
 import { InspectCompanyComponent } from '../components/companies/inspect-company/inspect-company.component';
 import { ResetPasswordComponent } from '../components/companies/reset-password/reset-password.component';
+import { CheckPointsComponent } from '../components/checkPointsView/check-points/check-points.component';
+import { CheckPointsManagerComponent } from '../components/checkPointsView/check-points-manager/check-points-manager.component';
+import { WarningDialogComponent } from '../components/dialogs/warning-dialog/warning-dialog.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeDialogComponent } from '../components/dialogs/qrcode-dialog/qrcode-dialog.component';
+import { GeneratePointsDialogComponent } from '../components/dialogs/generate-points-dialog/generate-points-dialog.component';
 
 
 @NgModule({
@@ -78,7 +84,12 @@ import { ResetPasswordComponent } from '../components/companies/reset-password/r
     ChangePlanComponent,
     DetailsComponent,
     InspectCompanyComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    CheckPointsComponent,
+    CheckPointsManagerComponent,
+    WarningDialogComponent,
+    QRCodeDialogComponent,
+    GeneratePointsDialogComponent
   
   ],
   imports: [
@@ -111,6 +122,7 @@ import { ResetPasswordComponent } from '../components/companies/reset-password/r
     FontAwesomeModule,
     PagerModule,
     SidebarModule,
+    QRCodeModule
   ]
 })
 export class HomeModule { }
