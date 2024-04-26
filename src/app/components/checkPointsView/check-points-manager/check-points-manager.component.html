@@ -50,3 +50,4 @@
 </div>
 <app-warning-dialog (confirmation)="onDialogClick($event)"></app-warning-dialog>
 <app-qrcode-dialog [checkPoint]="selectedCheckPoint"></app-qrcode-dialog>
+<app-generate-points-dialog (requestedQuantity)="bulkCreatePoints($event)"></app-generate-points-dialog>

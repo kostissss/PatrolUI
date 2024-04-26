@@ -1,0 +1,28 @@
+<ejs-dialog class="" #generateCheckPointsDialog id="generateCheckPointsDialog" height="24%" width="32%"  [buttons]="dialogButtons" [visible]="dialogVisibility" [position]="dialogPosition" [animationSettings]="dialogAnimationSettings" isModal='true' >
+    <ng-template class="mb-0 " #header>
+        <div class="pl-2 small-text font-weight-bold">Generate Points</div>
+        
+     </ng-template>
+  
+    <div class="d-flex flex-column">
+        <div class="row ">
+        <div class=" col-4 align-self-center">Branch Office </div>
+        <div class="col-8">
+            <ejs-dropdownlist id='branch' name="branch"  [(ngModel)]="branch" #paymentFrequency="ngModel" [dataSource]='branchValues' [fields]="dataFields" placeholder=''  popupHeight='220px'></ejs-dropdownlist>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-4 align-self-center">Quantity</div>
+        <div class="col-8">
+            <ejs-dropdownlist id='quantity' name="quantity"  [(ngModel)]="quantity" #paymentFrequency="ngModel" [dataSource]='quantityValues' [fields]="dataFields" placeholder=''  popupHeight='220px'></ejs-dropdownlist>
+        </div>
+    </div>
+
+
+
+    </div>
+  
+
+  
+</ejs-dialog>

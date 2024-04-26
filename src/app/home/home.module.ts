@@ -51,6 +51,7 @@ import { CheckPointsManagerComponent } from '../components/checkPointsView/check
 import { WarningDialogComponent } from '../components/dialogs/warning-dialog/warning-dialog.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { QRCodeDialogComponent } from '../components/dialogs/qrcode-dialog/qrcode-dialog.component';
+import { GeneratePointsDialogComponent } from '../components/dialogs/generate-points-dialog/generate-points-dialog.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { QRCodeDialogComponent } from '../components/dialogs/qrcode-dialog/qrcod
     CheckPointsComponent,
     CheckPointsManagerComponent,
     WarningDialogComponent,
-    QRCodeDialogComponent
+    QRCodeDialogComponent,
+    GeneratePointsDialogComponent
   
   ],
   imports: [

@@ -4,7 +4,7 @@
 
     <div class="d-flex flex-column">
         <!-- <div>{{qrCodeDownloadLink}}</div> -->
-        <p class="fs-1 fw-bold justify-self-center align-self-center ">ID: {{checkPoint.checkPointId}}</p>
-        <qrcode class="justify-self-center align-self-center"[qrdata]="qrData" (qrCodeURL)="onChangeURL($event)" [errorCorrectionLevel]="'M'"></qrcode>
+        <p class="fs-1 fw-bold justify-self-center align-self-center font-weight-bold   ">ID: {{checkPoint.checkPointId}}</p>
+        <qrcode class="justify-self-center align-self-center"[qrdata]="qrData" [allowEmptyString]="true" (qrCodeURL)="onChangeURL($event)" [errorCorrectionLevel]="'M'"></qrcode>
     </div>
 </ejs-dialog>

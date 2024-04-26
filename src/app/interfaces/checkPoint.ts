@@ -2,7 +2,7 @@ export interface CheckPoint {
     checkPointId: number;
     checkPointCode: string;
     clientSiteCode: number;
-    ckeckPoint: string;
+    checkPoint: string;
     isLocked: boolean;
     isDeleted: boolean;
     

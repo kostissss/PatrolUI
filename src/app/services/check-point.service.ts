@@ -58,4 +58,21 @@ export class CheckPointService {
         }),
       );
   }
+
+
+  bulkCreateCheckPoints(checkPoints: CheckPoint[]): Observable<CheckPoint[]> {
+    //debugger
+    return this.http
+      .post<CheckPoint[]>(
+        `${this.apiUrl}checkPoints/bulkCreateCheckPoints`,
+        checkPoints,
+        httpOptions,
+      )
+      .pipe(
+        tap((response) => {
+          //debugger
+          this.dataSubject.next(response);
+        }),
+      );
+  }
 }

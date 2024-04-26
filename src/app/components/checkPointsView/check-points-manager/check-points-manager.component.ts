@@ -7,6 +7,8 @@ import { CheckPoint } from '../../../interfaces/checkPoint';
 import { WarningDialogComponent } from '../../dialogs/warning-dialog/warning-dialog.component';
 import { checkBoxPosition } from '@syncfusion/ej2-angular-lists';
 import { QRCodeDialogComponent } from '../../dialogs/qrcode-dialog/qrcode-dialog.component';
+import { GeneratePointsDialogComponent } from '../../dialogs/generate-points-dialog/generate-points-dialog.component';
+import { AuthServiceService } from '../../../services/auth-service.service';
 
 
 @Component({
@@ -34,8 +36,12 @@ export class CheckPointsManagerComponent implements OnInit {
   @ViewChild(QRCodeDialogComponent)
   public qrCodeDialog!: QRCodeDialogComponent;
 
+  @ViewChild(GeneratePointsDialogComponent)
+  public generatePointsDialog!: GeneratePointsDialogComponent;
+  public loggedUserId: number = 0;
 
-  constructor(private dialog: MatDialog,private checkPointService: CheckPointService) { }
+
+  constructor(private checkPointService: CheckPointService,private authService:AuthServiceService) { }
 
   ngOnInit(): void {
     this.checkPointService.data$.subscribe(data => {
@@ -44,7 +50,17 @@ export class CheckPointsManagerComponent implements OnInit {
       this.checkPointCount =  this.data?.length;
       (this.grid as GridComponent)?.toolbarModule.enableItems(['Generate' ], true);
       console.log(data);
-      // this.buttonStatus = data.length === 0 ? true : false;
+      this.authService.authState$.subscribe(authResponse => {
+        if (authResponse && authResponse.account) {
+          this.loggedUserId = authResponse.account.id as number;
+          
+  
+        }
+  
+  
+  
+      });
+  
       
     });
     
@@ -171,7 +187,7 @@ export class CheckPointsManagerComponent implements OnInit {
   }
 
   onGenerateClick(){
-    alert('Generate Points');
+    this.generatePointsDialog.onOpenDialog(event);  
   }
   onQRClick(){
     
@@ -213,6 +229,34 @@ export class CheckPointsManagerComponent implements OnInit {
       (args.row as Element).classList.add('deletedCheckPoint');
   }
     
+  }
+
+  bulkCreatePoints(event:any){
+    
+    
+    let checkPointsToCreate: CheckPoint[] = [];
+    for(let i = 0; i < event; i++){
+      let checkPoint: CheckPoint = {} as CheckPoint;
+      
+      checkPoint.checkPoint = 'CheckPoint ' + (this.checkPointCount + i + 1);
+      checkPoint.clientSiteCode =  (this.checkPointCount + i + 1);
+      checkPoint.checkPointCode = 'CP' + (this.checkPointCount + i + 1);
+      checkPoint.isDeleted = false;
+      checkPoint.isLocked = false;
+      checkPoint.deletedDate = null;
+      checkPoint.userId=this.data[0].userId
+      checkPointsToCreate.push(checkPoint);
+
+    }
+    console.log(checkPointsToCreate);
+    this.checkPointService.bulkCreateCheckPoints(checkPointsToCreate).subscribe((response) => {
+      console.log(response);
+      alert('CheckPoints created successfully');
+    }
+    ,(error) => {
+      console.log(error);
+      alert("Failed to create CheckPoints");
+    });
   }
 
 
