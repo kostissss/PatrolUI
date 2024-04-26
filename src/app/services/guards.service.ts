@@ -35,7 +35,7 @@ export class GuardsService {
    
    // debugger
       this.dataSubject.next(response);
-      console.log(response);
+      
 
 
   })));

@@ -36,7 +36,7 @@ export class CheckPointService {
         tap((response) => {
           // debugger
           this.dataSubject.next(response);
-          console.log(response);
+          
         }),
       );
   }
