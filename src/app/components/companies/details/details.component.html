@@ -1,6 +1,162 @@
-<div id="details">
-  <ejs-dialog class="dialog rounded-dialog" #dialogcomponent height="fit-content" width="900px" content="" [buttons]="dialogButton" 
+<ejs-dialog class="dialog rounded-dialog" #dialogcomponent height="fit-content" width="700px" content="" [buttons]="dialogButton" 
       [visible]="dialogVisibility" [position]="dialogPosition" [resizeHandles]="dialogResizeDirections" 
       [animationSettings]="dialogAnimationSettings" isModal='true' showCloseIcon='true' header="Details">
-  </ejs-dialog>
-</div>
+  <form #myForm="ngForm" class="mb-1 mt-4"  >
+    <div class="form-group mt-1 mb-1 row">
+      <label for="name" class=" col-sm-3 font-weight-normal">Name</label>
+      <div class="col-sm-9">
+        <input name="name" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="address" class=" col-sm-3 font-weight-normal">Address</label>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <textarea id="ImWkRjUl_inner" name="TAAddress" readonly="readonly" class="textcontrol TxtField"></textarea>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="city" class=" col-sm-2 font-weight-normal">City</label>
+                <input name="city" required type="text" class="text small-input" readonly="readonly" 
+                autocomplete="on" autocorrect="on" autocapitalize="on">
+              </div>
+              <div class="col-sm-12">
+                <label for="zip" class=" col-sm-2 font-weight-normal">ZIP</label>
+                <input name="zip" required type="text" class="text small-input" readonly="readonly" 
+                autocomplete="on" autocorrect="on" autocapitalize="on">
+              </div>
+              <div class="col-sm-12">
+                <label for="state" class=" col-sm-2 font-weight-normal">State</label>
+                <input name="state" required type="text" class="text small-input" readonly="readonly" 
+                autocomplete="on" autocorrect="on" autocapitalize="on">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="country" class=" col-sm-3 font-weight-normal">Country</label>
+      <div class="col-sm-9">
+        <input name="country" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="timezone" class=" col-sm-3 font-weight-normal">Timezone</label>
+      <div class="col-sm-9">
+        <input name="timezone" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="phone" class=" col-sm-3 font-weight-normal">Phone</label>
+      <div class="col-sm-9">
+        <input name="phone" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="code" class=" col-sm-3 font-weight-normal">Code</label>
+      <div class="col-sm-9">
+        <input name="code" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="email" class=" col-sm-3 font-weight-normal">Email</label>
+      <div class="col-sm-9">
+        <input name="email" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="license" class=" col-sm-3 font-weight-normal">License</label>
+      <div class="col-sm-9">
+        <input name="license" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="patrolLinceses" class=" col-sm-3 font-weight-normal">Patrol Licenses:</label>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <input name="patrolLinceses" required type="text" class="text small-input" readonly="readonly" 
+            autocomplete="on" autocorrect="on" autocapitalize="on">
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="pttLinceses" class="col-sm-2 font-weight-normal">PTT Licenses:</label>
+                <input name="pttLinceses" required type="text" class="text small-input" readonly="readonly" 
+                autocomplete="on" autocorrect="on" autocapitalize="on">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="expirationDate" class=" col-sm-3 font-weight-normal">Expiration Date</label>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <input name="expirationDate" required type="text" class="text small-input" readonly="readonly" 
+            autocomplete="on" autocorrect="on" autocapitalize="on">
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="apiChannel" class="col-sm-2 font-weight-normal">API Channel</label>
+                <input name="apiChannel" required type="text" class="text small-input" readonly="readonly" 
+                autocomplete="on" autocorrect="on" autocapitalize="on">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="lastLogin" class=" col-sm-3 font-weight-normal">Last Login</label>
+      <div class="col-sm-9">
+        <input name="lastLogin" required type="text" class="text big-input" readonly="readonly" 
+        autocomplete="on" autocorrect="on" autocapitalize="on">
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="unlocked" class=" col-sm-3 font-weight-normal">Unlocked</label>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <input name="unlocked" required type="text" class="text small-input" readonly="readonly" 
+            autocomplete="on" autocorrect="on" autocapitalize="on">
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="active" class="col-sm-2 font-weight-normal">Active</label>
+                <input name="active" required type="text" class="text small-input" readonly="readonly" 
+                autocomplete="on" autocorrect="on" autocapitalize="on">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-1 mb-1 row">
+      <label for="demo" class=" col-sm-3 font-weight-normal">Demo</label>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <input name="demo" required type="text" class="text small-input" readonly="readonly" 
+            autocomplete="on" autocorrect="on" autocapitalize="on">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</ejs-dialog>

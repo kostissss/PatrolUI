@@ -45,4 +45,20 @@
 .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
     background-color: transparent;
 }
+.e-dialog .e-dlg-header {
+    color: white;
+    font-size: small;
+    
+}
+
+.e-dialog .e-dlg-header-content {
+    color: white;
+    font-size: 10px;
+    font-weight: normal;
+    background-color: #363636;
+    margin-bottom: 10px;
+    padding: 0px;
+    padding-left: 2%;
+    
+}
 

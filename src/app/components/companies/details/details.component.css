@@ -21,8 +21,65 @@
     border-bottom: 1px solid rgb(204, 204, 204);
     border-right: 1px solid rgb(204, 204, 204);
     text-shadow: 1px 0px 0px rgb(255,255,255);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(230, 230, 230))) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(230, 230, 230)))  ;
 }
 .e-dialog .e-dlg-header-content .e-btn.e-dlg-closeicon-btn {
     background-color: transparent;
 }
+.e-dialog .e-dlg-header {
+    color: white;
+    font-size: small;
+}
+.e-dialog .e-dlg-header-content {
+    color: white;
+    font-size: 10px;
+    font-weight: normal;
+    background-color: #363636;
+    margin-bottom: 10px;
+    padding: 0px;
+    padding-left: 2%;   
+}
+.big-input {
+    width: 470px;
+    font-family: "Open Sans", "Verdana", sans-serif  ;
+    font-weight: normal  ;
+    font-style: normal  ;
+    text-decoration: none  ;
+    font-size: 100%  ;
+    color: rgb(63, 63, 63)  ;
+    border-top: 1px solid rgba(182, 182, 182, 0.54)  ;
+    border-left: 1px solid rgba(182, 182, 182, 0.54)  ;
+    border-bottom: 1px solid rgba(182, 182, 182, 0.03)  ;
+    border-right: 1px solid rgba(182, 182, 182, 0.03)  ;
+    background-color: rgba(217, 217, 217, 0.10)  ;
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(rgba(224, 224, 224, 0.17)), to(rgba(210, 210, 210, 0.03)))  ;
+}
+.small-input{
+    color: rgb(63, 63, 63)  ;
+    border-top: 1px solid rgba(182, 182, 182, 0.54)  ;
+    border-left: 1px solid rgba(182, 182, 182, 0.54)  ;
+    border-bottom: 1px solid rgba(182, 182, 182, 0.03)  ;
+    border-right: 1px solid rgba(182, 182, 182, 0.03)  ;
+    background-color: rgba(217, 217, 217, 0.10)  ;
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(rgba(224, 224, 224, 0.17)), to(rgba(210, 210, 210, 0.03)))  ;
+}
+textarea[name="TAAddress"] {
+    height: auto; 
+    min-height: 60px;
+    max-height: 110px; 
+    resize: none; 
+    width: 200px;
+    font-family: "Open Sans", "Verdana", sans-serif  ;
+    font-weight: normal  ;
+    font-style: normal  ;
+    text-decoration: none  ;
+    font-size: 100%  ;
+    color: rgb(63, 63, 63)  ;
+    border-top: 1px solid rgba(182, 182, 182, 0.54)  ;
+    border-left: 1px solid rgba(182, 182, 182, 0.54)  ;
+    border-bottom: 1px solid rgba(182, 182, 182, 0.03)  ;
+    border-right: 1px solid rgba(182, 182, 182, 0.03)  ;
+    background-color: rgba(217, 217, 217, 0.10)  ;
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(rgba(224, 224, 224, 0.17)), to(rgba(210, 210, 210, 0.03)))  ;
+}
+

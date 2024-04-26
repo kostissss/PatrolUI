@@ -80,6 +80,7 @@ import { AuthServiceService } from './services/auth-service.service';
     FilterService,
     GroupService,
     AuthServiceService,
+    ExcelExportService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,
