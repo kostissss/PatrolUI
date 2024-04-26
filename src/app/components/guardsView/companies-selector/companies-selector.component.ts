@@ -47,7 +47,7 @@ export class CompaniesSelectorComponent {
 
   public dataStateChange(state: DataStateChangeEventArgs): void {
     //debugger
-    console.log("dataStateChange",state);
+    
     this.accountsService.execute(state, this.grid);
 }
 
@@ -64,10 +64,9 @@ public ngOnInit(): void {
   
   rowSelected() {
      this.selectedRecords = this.grid.getSelectedRecords()[0] as gridRecord;
-    console.log(this.selectedRecords);
+    
     this.selectedCompanyId = this.selectedRecords.id ;
-    console.log(this.selectedCompanyId);
-    console.log(this.fetchEntity,"fefefefe");
+    
     if(this.fetchEntity === "guard"){
       this.fetchGuards();
     }
@@ -80,12 +79,12 @@ public ngOnInit(): void {
 
   fetchGuards(){
     this.guardsService.getFilteredGuards("userId",this.selectedCompanyId).subscribe((response) => {
-      console.log(response);
+      
       
 
     }
     ,(error) => {
-      console.log(error);
+      
       alert("Failed to fetch guards");
     });
 
@@ -95,12 +94,12 @@ public ngOnInit(): void {
 
   fetchCheckPoints(){
     this.checkPointService.getFilteredCheckPoints("userId",this.selectedCompanyId).subscribe((response) => {
-      console.log(response);
+      
       
 
     }
     ,(error) => {
-      console.log(error);
+      
       alert("Failed to fetch checkPoint");
     });
   }

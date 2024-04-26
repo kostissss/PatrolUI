@@ -35,8 +35,6 @@ export class GuardsManagerComponent implements OnInit {
       this.originalData = data;
       this.guardsCount =  this.data?.length;
       (this.grid as GridComponent)?.toolbarModule.enableItems(['Generate' ], true);
-      console.log(data);
-      // this.buttonStatus = data.length === 0 ? true : false;
       
     });
     
@@ -70,13 +68,12 @@ export class GuardsManagerComponent implements OnInit {
 
   onCancelClick(){
     this.guardsService.getFilteredGuards("userId",this.data[0].userId).subscribe((response) => {
-     
-      console.log(response);
+
       // this.buttonStatus = data.length === 0 ? true : false;
       
     }
     ,(error) => {
-      console.log(error);
+
       alert("Failed to fetch guards");
     });
 
@@ -105,13 +102,12 @@ export class GuardsManagerComponent implements OnInit {
     
       
       this.guardsService.updateMultipleGuards(this.data).subscribe((response) => {
-        console.log(response);
         alert('Guards updated successfully');
         this.buttonStatus = true;
 
       }
       ,(error) => {
-        console.log(error);
+
         alert("Failed to update guards");
       });
     

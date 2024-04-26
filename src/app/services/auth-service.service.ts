@@ -37,10 +37,7 @@ export class AuthServiceService  {
   
 
   logIn(accountData :Account): Observable<any> {
-    // this.loadTokenFromStorage();
-    // debugger
-    // console.log(this.authSubject);
-    // debugger
+    
     return this.http.post<AuthResponse>(`${this.apiUrl}accounts/login`, accountData,this.httpOptions).pipe(tap(res => this.handleLoginSuccess(res)));;
   }
 
@@ -64,16 +61,14 @@ export class AuthServiceService  {
         
       });
     }
-    console.log(this.authSubject);
-    console.log(userName);
-    console.log(authToken); 
+   
    
   }
   
 
   refreshToken(): Observable<any> {
     //debugger
-    console.log(document.cookie)
+    
     return this.http.get<AuthResponse>(`${this.apiUrl}accounts/refreshToken`,this.httpOptions).pipe(tap(res => this.handleRefreshSuccess(res)));
   }
 
@@ -92,7 +87,7 @@ export class AuthServiceService  {
 
   private handleLoginSuccess(res: AuthResponse) {
     this.authSubject.next(res);
-    console.log(this.authSubject,"login success");
+    
     
     this.storeTokens(res.authToken); 
     
@@ -128,7 +123,7 @@ export class AuthServiceService  {
   }
   handleRefreshSuccess(res: AuthResponse) {
     //debugger
-    console.log("refresh success");
+    
     this.authSubject.next(res);
     
     this.storeTokens(res.authToken);
@@ -141,7 +136,7 @@ export class AuthServiceService  {
       authToken: this.authToken
       
     });
-    console.log(this.authSubject+"update success");
+    
     this.storeAccountDetails(res.account);
     this.storeTokens(res.authToken);
   

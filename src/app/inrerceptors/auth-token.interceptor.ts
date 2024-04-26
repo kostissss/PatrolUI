@@ -16,15 +16,15 @@ export class AuthTokenInterceptor implements HttpInterceptor {
          
      this.authService.authState$.subscribe(authResponse => {
       if (authResponse && authResponse.authToken) {
-        console.log('auth token found',authResponse.authToken);
+        
         this.authToken = authResponse.authToken;
       } else {
-        console.log('No auth token found');
+        
        
       }
     });
     if (this.authToken ) {
-      console.log(' headers',request.headers.get('Authorization'));
+      
       request = request.clone({
         setHeaders: { 
 
@@ -32,7 +32,7 @@ export class AuthTokenInterceptor implements HttpInterceptor {
         }
        
       });
-      console.log('changed with token',this.authToken);
+     
     }
 
     return next.handle(request); 
