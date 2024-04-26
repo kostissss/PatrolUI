@@ -71,7 +71,9 @@ export class CheckPointService {
       .pipe(
         tap((response) => {
           //debugger
-          this.dataSubject.next(response);
+          this.dataSubject.next(
+            this.dataSubject.getValue().concat(response)
+          ); 
         }),
       );
   }
