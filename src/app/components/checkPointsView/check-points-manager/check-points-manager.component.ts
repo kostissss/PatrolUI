@@ -56,7 +56,7 @@ export class CheckPointsManagerComponent implements OnInit {
       { text: 'View QR-Code', tooltipText: 'QR-Code', id: 'QR', disabled: true},
       { text: 'Remove', tooltipText: 'Remove', id: 'Remove', disabled: true},
       { text: 'Assign', tooltipText: 'Assign', id: 'Assign', disabled: true},
-      { text: 'Export To Excel', tooltipText: 'Edit', id: 'Export',disabled: false}, 
+      { text: 'Export To Excel',tooltipText: 'ExcelExport', id: 'ExcelExport',disabled: false}, 
       'Search'
       
       
@@ -85,6 +85,9 @@ export class CheckPointsManagerComponent implements OnInit {
     }
     if (args.item.id === 'Assign') { 
       this.onAssignClick();
+    }
+    if(args.item.id === 'ExcelExport'){
+      (this.grid as GridComponent).excelExport();
     }
     
   }

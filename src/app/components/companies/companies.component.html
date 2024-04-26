@@ -1,6 +1,6 @@
 <app-notifheader title="Companies" icon="fa fa-users fa-lg "></app-notifheader>
 <div class="dbcompanies " style="display: flex; flex-direction: column; box-sizing: border-box; height: 75vh;" >
-    <ejs-grid #grid [dataSource]="data" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]="true" 
+    <ejs-grid #grid [dataSource]="data"  [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]="true" 
     [allowSorting]='true' height='100%' width="100%" [textWrapSettings]='wrapOption' [allowTextWrap]="true"
     (toolbarClick)='clickHandler($event)' (recordClick)="onItemClick()" [allowExcelExport]='true'>
         <e-columns>

@@ -95,7 +95,7 @@ setDialogSize(): void {
         cssClass: 'border-kinda-gray col-sm-2 m-auto p-1 float-left text-lowercase font-weight-normal '
       }
     },{
-      'click': this.hideDialog.bind(this),
+      'click': this.onPrintClick.bind(this),
       buttonModel : {
         
         content: 'Print',
@@ -111,6 +111,10 @@ setDialogSize(): void {
       }
     }
   ];
+
+  onPrintClick() {
+    window.print();
+  }
   
 
     

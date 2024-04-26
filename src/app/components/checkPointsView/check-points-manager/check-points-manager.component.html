@@ -1,7 +1,7 @@
 <app-notifheader title="Check Points" icon="fa fa-qrcode"></app-notifheader>
 
 <div class="dbtable border border-secondary " style="display: flex; flex-direction: column; box-sizing: border-box;">
-    <ejs-grid #grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' [allowTextWrap]="true"
+    <ejs-grid #grid [dataSource]='data' [allowExcelExport]='true' [editSettings]='editSettings' [toolbar]='toolbar' [allowTextWrap]="true"
         [textWrapSettings]='wrapOption' [allowSorting]='true' height='100%' (toolbarClick)='clickHandler($event)'
         (rowSelected)="rowSelected($event)" (checkBoxChange)='onCheckBoxChange($event)' (rowDataBound)='rowDataBound($event)'>
         <e-columns >
