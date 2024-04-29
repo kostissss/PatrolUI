@@ -6,6 +6,8 @@ import { environment } from '../../../../../enviroment';
 import { AccountsService } from '../../../services/accounts.service';
 
 import { Account } from '../../../interfaces/account';
+import { Message } from '../../../interfaces/message';
+import { ToastService } from '../../../services/toast.service';
 @Component({
   selector: 'app-create-new-account',
   templateUrl: './create-new-account.component.html',
@@ -54,7 +56,7 @@ setDialogSize(): void {
 
   
   
-  constructor(private apiService: AccountsService) { 
+  constructor(private apiService: AccountsService,private toastService: ToastService) { 
     this.account.demoSelected=false;
    }
 
@@ -101,13 +103,19 @@ setDialogSize(): void {
     this.apiService.createAccount(this.account).subscribe(
       
       (response ) => {
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Account created successfully!",style:"success",id:id};
+        this.toastService.sendMessage(toast);
         
-        alert('Account created successfully');
+        
         //localStorage.setItem('token', response.token);
       },
       (error) => {
         //debugger
-        alert(error.error);
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:error.error,style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
       }
      
     )

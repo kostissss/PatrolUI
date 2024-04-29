@@ -1,22 +1,23 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component,  OnInit, ViewChild } from '@angular/core';
 import { DropDownButtonComponent, ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { AccountChangeDropDownComponent } from '../account-change-drop-down/account-change-drop-down.component';
 import { AccountsService } from '../../../services/accounts.service';
 import { AuthServiceService } from '../../../services/auth-service.service';
+import { Message } from '../../../interfaces/message';
+import { ToastService } from '../../../services/toast.service';
 
 @Component({
   selector: 'app-settings-drop-down-buttons',
   templateUrl: './settings-drop-down-buttons.component.html',
   styleUrl: './settings-drop-down-buttons.component.css'
 })
-export class SettingsDropDownButtonsComponent implements OnInit,OnDestroy{
+export class SettingsDropDownButtonsComponent implements OnInit{
   authSubscription: any;
 
-  constructor(private authService: AuthServiceService) { }
+  constructor(private authService: AuthServiceService,private toastService:ToastService) { }
   @ViewChild(AccountChangeDropDownComponent)
   public accountChangeDropdown!: AccountChangeDropDownComponent;
-  @ViewChild('myDropD')
-  public myDropDown!: DropDownButtonComponent;
+  
 
   public accountName: string = 'Account Name';
 
@@ -50,18 +51,13 @@ export class SettingsDropDownButtonsComponent implements OnInit,OnDestroy{
   }
 
 
-  ngOnDestroy(): void {
-    
-    this.authSubscription.unsubscribe();
-  }
-    
-  
+
   public select(args: MenuEventArgs) {
     if (args.item.text === 'Account Settings') {
       //const event: any = null; // Pass any relevant event object here
       this.accountChangeDropdown.onOpen();
-      this.myDropDown.toggle();
-      this.myDropDown.toggle();
+      
+      
       // this.accountChangeDropdown.toggle();
     }
     if (args.item.text === 'Logout') {
@@ -69,10 +65,12 @@ export class SettingsDropDownButtonsComponent implements OnInit,OnDestroy{
       this.authService.logOut().subscribe(
 
         (response) => {
-          alert('Logged out successfully');
+          const toast:Message = { id: this.toastService.getCurrentId(), message: 'Logout Succesfull', style: 'success' };
+          this.toastService.sendMessage(toast);
         },
         (error) => {
-          alert('An error occurred during log out');
+          const toast:Message = { id: this.toastService.getCurrentId(), message: 'An error occurred during log out', style: 'danger' };
+          this.toastService.sendMessage(toast);
         }
       )
     

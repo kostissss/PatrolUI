@@ -32,6 +32,8 @@ import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 import { FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { AuthServiceService } from './services/auth-service.service';
+import { ToasterComponent } from './components/toaster/toaster.component';
+import { ToastService } from './services/toast.service';
 
 
 
@@ -42,6 +44,9 @@ import { AuthServiceService } from './services/auth-service.service';
     AppComponent,
     EditNotificationDialogComponent,
     FormsDirectiveDirective,
+    ToasterComponent
+    
+    
    
   ],
 
@@ -82,6 +87,7 @@ import { AuthServiceService } from './services/auth-service.service';
     GroupService,
     ExcelExportService,
     AuthServiceService,
+    ToastService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,
@@ -94,6 +100,7 @@ import { AuthServiceService } from './services/auth-service.service';
     }
   
   ],
+  
 
   bootstrap: [AppComponent]
 })

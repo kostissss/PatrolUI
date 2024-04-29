@@ -1,0 +1,46 @@
+.wrapper {
+    position: fixed;  /* Positions it in a specific location */
+    top: 20px;        /* Adjust as needed */
+    right: 20px;      /* Adjust as needed */
+    z-index: 1000;    /* Ensures it's on top of other content */
+  }
+  
+  .notification {
+    background-color: #f0f0f0;  /* Base background color */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    position: relative; /* Allows positioning of the close button */
+  
+    
+  }
+  
+ 
+  
+  /* Style variations for 'info', 'danger', and 'success' */
+  .is-info {
+    background-color: #e0f2fe; 
+    color: #3880e0; 
+  }
+  
+  .is-danger {
+    background-color: #ffe0e2; 
+    color: #cc1f2d; 
+  }
+  
+  .is-success {
+    background-color: #e1f7ed; 
+    color: #389c4e;  
+  }
+  
+  .delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none; 
+    border: none;  
+    cursor: pointer;
+    font-size: 14px; 
+    z-index: 2; /* Ensure the delete button is on top */
+  }

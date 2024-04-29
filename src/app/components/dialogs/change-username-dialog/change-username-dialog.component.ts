@@ -3,6 +3,8 @@ import { AccountsService } from '../../../services/accounts.service';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { NgForm } from '@angular/forms';
+import { ToastService } from '../../../services/toast.service';
+import { Message } from '../../../interfaces/message';
 
 @Component({
   selector: 'app-change-username-dialog',
@@ -11,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ChangeUsernameDialogComponent {
 
-  constructor(private apiService: AccountsService) { }
+  constructor(private apiService: AccountsService,private toastService: ToastService) { }
   public unameInput='';
   public enabledSelected :boolean = false;
 
@@ -52,10 +54,15 @@ export class ChangeUsernameDialogComponent {
     this.apiService.changeUserName(this.unameInput).subscribe(
 
       (response) => {
-        alert('UserName changed successfully');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Username changed succesfully!",style:"success",id:id};
+        this.toastService.sendMessage(toast);
       },
       (error) => {
-        alert(error.message);
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:error.message,style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
       }
     )
 
