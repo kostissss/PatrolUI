@@ -34,6 +34,7 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { AuthServiceService } from './services/auth-service.service';
 import { ToasterComponent } from './components/toaster/toaster.component';
 import { ToastService } from './services/toast.service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -88,6 +89,7 @@ import { ToastService } from './services/toast.service';
     ExcelExportService,
     AuthServiceService,
     ToastService,
+    CookieService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,

@@ -80,6 +80,9 @@ export class AuthServiceService  {
 
   private clearTokensFromStorage() {
     localStorage.removeItem('AuthToken');
+    //localStorage.removeItem('userName');
+    //localStorage.removeItem('userId');
+
     //localStorage.removeItem('refreshToken');
   }
 
@@ -103,6 +106,8 @@ export class AuthServiceService  {
     this.clearTokensFromStorage();
     //debugger
     this.authSubject.next(null);
+
+    
     this.router.navigate(['/login']);
     
     //debugger
@@ -114,9 +119,9 @@ export class AuthServiceService  {
   }
   private storeAccountDetails(account: Account) {
     
-    localStorage.setItem('userName', account.uname);
+    //localStorage.setItem('userName', account.uname);
     
-    localStorage.setItem('userId', String(account.id));
+    //localStorage.setItem('userId', String(account.id));
   }
 
   isLoggedIn(): boolean {

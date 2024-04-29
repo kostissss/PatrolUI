@@ -54,7 +54,7 @@ setDialogSize(): void {
   
   
   constructor(private apiService: AccountsService,private sanitizer:DomSanitizer) { 
-    this.account.demoSelected=false;
+    
    }
 
   

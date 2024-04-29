@@ -57,7 +57,7 @@ setDialogSize(): void {
   
   
   constructor(private apiService: AccountsService,private toastService: ToastService) { 
-    this.account.demoSelected=false;
+    
    }
 
   
