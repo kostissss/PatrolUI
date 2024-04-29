@@ -99,10 +99,11 @@ export class AuthServiceService  {
     //debugger
     
     
-    this.router.navigateByUrl('/login');
+    
     this.clearTokensFromStorage();
     //debugger
     this.authSubject.next(null);
+    this.router.navigate(['/login']);
     
     //debugger
   }

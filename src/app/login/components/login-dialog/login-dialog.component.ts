@@ -7,6 +7,8 @@ import { Account } from '../../../interfaces/account';
 import { AuthServiceService } from '../../../services/auth-service.service';
 import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { ToastService } from '../../../services/toast.service';
+import { Message } from '../../../interfaces/message';
 
 @Component({
   selector: 'app-login-dialog',
@@ -18,7 +20,7 @@ export class LoginDialogComponent  {
   passwordInput :string = '';
   invalidLogin :boolean = false;
   faUser = faUser;
-  constructor( private authService: AuthServiceService,private router:Router) {
+  constructor( private authService: AuthServiceService,private router:Router,private toastService:ToastService) {
 
     console.log('Login Dialog Component');
    }
@@ -32,7 +34,9 @@ export class LoginDialogComponent  {
     this.authService.logIn(account).subscribe(
       (response ) => {
         //console.log(response);
-        alert('Logged In successfully');
+        
+        const toast:Message = { id: this.toastService.getCurrentId(), message: 'Login Successful', style: 'success' };
+        this.toastService.sendMessage(toast);
         
 
         

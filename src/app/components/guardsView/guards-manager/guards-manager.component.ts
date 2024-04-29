@@ -4,6 +4,8 @@ import { ClickEventArgs } from '@syncfusion/ej2-navigations';
 import { ToolbarItems, EditSettingsModel, SelectionSettingsModel, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { GuardsService } from '../../../services/guards.service';
 import { Guard } from '../../../interfaces/guard';
+import { ToastService } from '../../../services/toast.service';
+import { Message } from '../../../interfaces/message';
 
 
 
@@ -27,7 +29,7 @@ export class GuardsManagerComponent implements OnInit {
   public grid!: GridComponent;
 
 
-  constructor(private dialog: MatDialog,private guardsService: GuardsService) { }
+  constructor(private dialog: MatDialog,private guardsService: GuardsService,private toastService:ToastService) { }
 
   ngOnInit(): void {
     this.guardsService.data$.subscribe(data => {
@@ -59,6 +61,12 @@ export class GuardsManagerComponent implements OnInit {
     if (args.item.prefixIcon === 'e-refresh') {
       this.reloadPage();
     }
+    if (args.item.id === 'Generate') {
+      let id =this.toastService.getCurrentId();
+      const toast:Message= {message:"Cannot Generate Guards for Demo Accounts!",style:"danger",id:id};
+      console.log('adding',this.toastService.getMessages());
+      this.toastService.sendMessage(toast);
+    }
     
   }
 
@@ -74,7 +82,10 @@ export class GuardsManagerComponent implements OnInit {
     }
     ,(error) => {
 
-      alert("Failed to fetch guards");
+      let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to fetch guards!",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
     });
 
   }
@@ -102,13 +113,17 @@ export class GuardsManagerComponent implements OnInit {
     
       
       this.guardsService.updateMultipleGuards(this.data).subscribe((response) => {
-        alert('Guards updated successfully');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Guards updated successfully!",style:"success",id:id};
+        this.toastService.sendMessage(toast);
+        
         this.buttonStatus = true;
 
       }
       ,(error) => {
-
-        alert("Failed to update guards");
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to update guards!",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
       });
     
   }

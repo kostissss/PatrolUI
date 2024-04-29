@@ -15,6 +15,8 @@ import { checkBoxPosition } from '@syncfusion/ej2-angular-lists';
 import { QRCodeDialogComponent } from '../../dialogs/qrcode-dialog/qrcode-dialog.component';
 import { GeneratePointsDialogComponent } from '../../dialogs/generate-points-dialog/generate-points-dialog.component';
 import { AuthServiceService } from '../../../services/auth-service.service';
+import { Message } from '../../../interfaces/message';
+import { ToastService } from '../../../services/toast.service';
 
 @Component({
   selector: 'app-check-points-manager',
@@ -46,6 +48,7 @@ export class CheckPointsManagerComponent implements OnInit {
   constructor(
     private checkPointService: CheckPointService,
     private authService: AuthServiceService,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit(): void {
@@ -127,7 +130,10 @@ export class CheckPointsManagerComponent implements OnInit {
         },
         (error) => {
           
-          alert('Failed to fetch checkPoint');
+          let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to Fetch checkPoint",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
         },
       );
   }
@@ -159,12 +165,16 @@ export class CheckPointsManagerComponent implements OnInit {
     this.checkPointService.updateMultipleCheckPoints(this.data).subscribe(
       (response) => {
         
-        alert('checkPoint updated successfully');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"CheckPoints updated succesfully!",style:"success",id:id};
+        this.toastService.sendMessage(toast);
         this.buttonStatus = true;
       },
       (error) => {
         
-        alert('Failed to update checkPoint');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to update checkPoints!",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
       },
     );
   }
@@ -249,11 +259,17 @@ export class CheckPointsManagerComponent implements OnInit {
     this.checkPointService.bulkCreateCheckPoints(checkPointsToCreate).subscribe(
       (response) => {
        
-        alert('CheckPoints created successfully');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"CheckPoints Created successfuly",style:"success",id:id};
+        this.toastService.sendMessage(toast);
+        
       },
       (error) => {
         
-        alert('Failed to create CheckPoints');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to create CheckPoints",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
       },
     );
   }
