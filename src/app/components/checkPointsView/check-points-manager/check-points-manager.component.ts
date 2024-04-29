@@ -130,7 +130,10 @@ export class CheckPointsManagerComponent implements OnInit {
         },
         (error) => {
           
-          alert('Failed to fetch checkPoint');
+          let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to Fetch checkPoint",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
         },
       );
   }
@@ -256,11 +259,17 @@ export class CheckPointsManagerComponent implements OnInit {
     this.checkPointService.bulkCreateCheckPoints(checkPointsToCreate).subscribe(
       (response) => {
        
-        alert('CheckPoints created successfully');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"CheckPoints Created successfuly",style:"success",id:id};
+        this.toastService.sendMessage(toast);
+        
       },
       (error) => {
         
-        alert('Failed to create CheckPoints');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to create CheckPoints",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
       },
     );
   }

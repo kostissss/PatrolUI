@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { DialogComponent, ResizeDirections } from '@syncfusion/ej2-angular-popups';
 import { EmitType } from '@syncfusion/ej2-base';
 import { AccountsService } from '../../../services/accounts.service';
+import { Message } from '../../../interfaces/message';
+import { ToastService } from '../../../services/toast.service';
 
 @Component({
   selector: 'app-manage-partner-account-modal',
@@ -11,7 +13,7 @@ import { AccountsService } from '../../../services/accounts.service';
 })
 export class ManagePartnerAccountModalComponent {
 
-  constructor(private apiService : AccountsService) { }
+  constructor(private apiService : AccountsService,private toastService: ToastService) { }
 
   public passwordInput='';
   public enabledSelected :boolean = false;
@@ -53,10 +55,15 @@ export class ManagePartnerAccountModalComponent {
     this.apiService.resetPassword(this.passwordInput).subscribe(
 
       (response) => {
-        alert('Password resseted successfully');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Succesfully updated password",style:"sucess",id:id};
+        this.toastService.sendMessage(toast);
       },
       (error) => {
-        alert('An error occurred');
+        let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Error chaning Password",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
       }
     )
 

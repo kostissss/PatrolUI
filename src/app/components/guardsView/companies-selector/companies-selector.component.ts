@@ -7,6 +7,8 @@ import { GuardsService } from '../../../services/guards.service';
 import { NotifHeaderComponent } from '../../headers/blackHeader/header.component';
 import { Observable } from 'rxjs';
 import { CheckPointService } from '../../../services/check-point.service';
+import { Message } from '../../../interfaces/message';
+import { ToastService } from '../../../services/toast.service';
 
 interface gridRecord{
   id: number,
@@ -40,7 +42,7 @@ export class CompaniesSelectorComponent {
   @Input() public fetchEntity: string = "";
 
 
-  constructor(  private guardsService: GuardsService, private accountsService: AccountsService,private checkPointService: CheckPointService) {
+  constructor(  private guardsService: GuardsService, private accountsService: AccountsService,private checkPointService: CheckPointService,private toastService:ToastService) {
         
     this.data = accountsService;
 }
@@ -85,7 +87,10 @@ public ngOnInit(): void {
     }
     ,(error) => {
       
-      alert("Failed to fetch guards");
+      let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to fetch Guards",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
     });
 
 
@@ -100,7 +105,10 @@ public ngOnInit(): void {
     }
     ,(error) => {
       
-      alert("Failed to fetch checkPoint");
+      let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to fetch Checkpoints",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
     });
   }
 

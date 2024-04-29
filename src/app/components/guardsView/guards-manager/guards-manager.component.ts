@@ -82,7 +82,10 @@ export class GuardsManagerComponent implements OnInit {
     }
     ,(error) => {
 
-      alert("Failed to fetch guards");
+      let id =this.toastService.getCurrentId();
+        const toast:Message= {message:"Failed to fetch guards!",style:"danger",id:id};
+        this.toastService.sendMessage(toast);
+        
     });
 
   }
