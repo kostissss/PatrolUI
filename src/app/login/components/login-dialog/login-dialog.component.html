@@ -20,7 +20,7 @@
         <button class="LoginBtn" (click)="onLoginSubmit()">Login</button>
       </div>
       <div class="d-flex justify-content-center align-items-center mt-3">
-        <input (click)="{}" type="checkbox" class="mr-3 align-self-center m-0" id="demo" name="demo" #demo="" />
+        <input (click)="{}" [(ngModel)]="rememberMe" type="checkbox" class="mr-3 align-self-center m-0" id="rememberCheckBox" name="rememberCheckBox" #rememberCheckBox="ngModel" />
         <label class="font-weight-normal m-0 mr-5 fs-12 " for="demo">Remember Me</label>
         <a class="flex-grow-1 text-dark fs-12 ml-5 hover-blue" href="">Forgot Your Password?</a>
       </div>
